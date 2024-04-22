@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+.hiragana-layout{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  max-width: max-content;
+  padding: var(--spacing) 0 0;
+  overflow-x: auto;
+  justify-self: center;
+}
+.layout-part{
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse; 
+  justify-content: center;
+}
+.key{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0)k;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+  width: 40px;
+
+  transition: background-color 0.1s ease;
+}
+.key:hover{
+  background-color: #f0f0f0;
+}
+.key-empty{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  height: 50px;
+  width: 40px;
+
+}
