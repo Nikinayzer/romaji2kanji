@@ -13,15 +13,59 @@
   }
 }
 
+/*BUTTONS*/
+button {
+  padding: 10px 20px;
+  background-color: rgb(236, 52, 153);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #b30092;
+}
+.layout-buttons button{
+  background-color: rgba(208, 27, 178, 0);
+  color: #141414;
+  border: 1px solid rgb(41, 41, 41);
+}
+.layout-buttons button.active {
+  background-color: rgb(208, 27, 178);
+  border: none;
+  color: #fcfcfc;
+}
+
+
+/* HEADER */
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.mode-switch {
+  display: flex;
+  gap: 10px;
+}
+
+.mode-button {
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mode-button.active {
+  background-color: #007bff;
+  color: #fff;
 }
 
 .App-link {
@@ -36,15 +80,31 @@
     transform: rotate(360deg);
   }
 }
-.hiragana-layout{
+/*LAYOUT */
+.keyboard{
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  gap: 20px;
   width: 100%;
-  max-width: max-content;
   padding: var(--spacing) 0 0;
   overflow-x: auto;
   justify-self: center;
+}
+.layout{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+
+}
+.layout-buttons{
+  display: flex;
+  gap:5px;
+  padding: 5px;
+  justify-content: start;
 }
 .layout-part{
   flex: 1;
@@ -61,7 +121,7 @@
   border-radius: 5px;
   cursor: pointer;
   height: 50px;
-  width: 40px;
+  width: 30px;
 
   transition: background-color 0.1s ease;
 }
@@ -76,6 +136,88 @@
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
   height: 50px;
-  width: 40px;
+  width: 30px;
+}
+.layout-switch {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
 
+.layout-switch button {
+  flex: 1;
+  padding: 10px 15px;
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.layout-switch button[data-active="true"] {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.layout-switch button[data-active="false"] {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+/* INPUT FIELD */
+.input-field {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.input-container {
+  position: relative;
+  width: 50%;
+}
+.input-container .submit-button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  padding: 5px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.input-field input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+
+  border-radius: 4px;
+  font-size: 16px;
+  
+  text-align: center;
+}
+.input-field input:focus {
+  border-bottom: 1px solid #ff00c8; /* Change the bottom border color when input is focused */
+  box-shadow: 0px 10px 20px -10px rgba(255, 0, 225, 0.5);
+  outline: none; /* Remove default outline */
+}
+.input-field button {
+  padding: 10px 20px;
+  background-color: rgb(236, 52, 153);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-field button:hover {
+  background-color: #b30092;
 }

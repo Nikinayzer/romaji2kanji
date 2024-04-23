@@ -180,9 +180,19 @@
       "type": "gojuuon"
     },
     {
+      "kana": "",
+      "roumaji": "",
+      "type": "empty"
+    },
+    {
       "kana": "ユ",
       "roumaji": "yu",
       "type": "gojuuon"
+    },
+    {
+      "kana": "",
+      "roumaji": "",
+      "type": "empty"
     },
     {
       "kana": "ヨ",
@@ -218,6 +228,21 @@
       "kana": "ワ",
       "roumaji": "wa",
       "type": "gojuuon"
+    },
+    {
+      "kana": "",
+      "roumaji": "",
+      "type": "empty"
+    },
+    {
+      "kana": "",
+      "roumaji": "",
+      "type": "empty"
+    },
+    {
+      "kana": "",
+      "roumaji": "",
+      "type": "empty"
     },
     {
       "kana": "ヲ",
