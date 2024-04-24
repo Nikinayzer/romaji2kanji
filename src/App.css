@@ -82,9 +82,24 @@ button:hover {
 }
 
 /* WORDFIELD SECTION*/
+.word-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.word-container {
+  width: max-content;
+}
+.word-container .word-part{
+  display: inline-block;
+  font: 3em sans-serif;
+  cursor: pointer;
+}
 .tooltip {
   position: absolute;
-  transform: translate(-90%, -100%);
+  transform: translate(-90%, -80%);
   background-color: #333;
   color: #fff;
   padding: 5px;
@@ -92,7 +107,7 @@ button:hover {
   font-size: 14px;
   z-index: 1;
   opacity: 0;
-  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   white-space: nowrap; /* Prevents text from wrapping */
   max-width: calc(100vw - 20px); /* Ensures the tooltip doesn't go beyond the window width */
   overflow: hidden; /* Hides any overflow */
@@ -101,6 +116,7 @@ button:hover {
 
 .tooltip.active {
   opacity: 1;
+  transform: translate(-90%, -90%);
 }
 
 

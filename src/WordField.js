@@ -14,8 +14,8 @@ function WordField() {
 
     const [hoveredChar, setHoveredChar] = useState(null);
 
-    const handleHover = (romaji) => {
-        setHoveredChar(romaji);
+    const handleHover = (char) => {
+        setHoveredChar(char);
     };
 
     const handleMouseLeave = () => {
@@ -24,18 +24,18 @@ function WordField() {
 
     const renderWord = () => {
         const charsArray = appMode === 'r2k' ? splitWord.rmj : splitWord.wd;
-
+        
         return charsArray.map((char, index) => (
-            <span
+            <span 
                 className='word-part'
                 key={index}
                 onMouseEnter={() => handleHover(appMode === 'r2k' ? char : wanakana.toRomaji(char))}
                 onMouseLeave={handleMouseLeave}
             >
                 {char}
-                {hoveredChar === (appMode === 'r2k' ? char : wanakana.toRomaji(char)) && (
-                    <span className="tooltip active">
-                        {hoveredChar}
+                {(
+                    <span className={"tooltip" + (hoveredChar===char?" active":"")}>
+                        {appMode === 'r2k' ? wanakana.toKana(char) : wanakana.toRomaji(char)}
                     </span>
                 )}
             </span>
@@ -44,7 +44,9 @@ function WordField() {
 
     return (
         <div className='word-field'>
+            <div className='word-container'>
             {renderWord()}
+            </div>
             <button onClick={() => {
                 dispatch(setGuessWord(Util.randomNewWord()));
                 dispatch(setInputValue(''));
