@@ -2424,7 +2424,7 @@
     "mean": "lettuce",
     "jp": {
       "wd": "レタス",
-      "kj": "-",
+      "kj": "",
       "rmj": "re-ta-su"
     },
     "category": "nature"
@@ -2435,7 +2435,7 @@
     "jp": {
       "wd": "とおだい",
       "kj": "灯台",
-      "rmj": "tō-da-i"
+      "rmj": "to-o-da-i"
     },
     "category": "city"
   },

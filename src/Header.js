@@ -22,20 +22,22 @@ function Header() {
                     className={`mode-button ${appMode === 'r2k' ? 'active' : ''}`}
                     onClick={() => handleModeChange('r2k')}
                 >
-                    Romaji to Kana
+                    R2K
                 </button>
                 <button
                     className={`mode-button ${appMode === 'k2r' ? 'active' : ''}`}
                     onClick={() => handleModeChange('k2r')}
                 >
-                    Kana to Romaji
+                    K2R
                 </button>
+                {/*
                 <button
                     className={`mode-button ${appMode === 't' ? 'active' : ''}`}
                     onClick={() => handleModeChange('t')}   
                 >
                     Typing
                 </button>
+                */}
             </div>
         </header>
     );

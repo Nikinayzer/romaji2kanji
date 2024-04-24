@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useRef, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setInputValue, setGuessWord } from './actions';
+import { setInputValue, setGuessWord, setAppMode } from './actions';
 //import words from './words.json'; //words library
 import * as wanakana from "wanakana";
 import Util from "./util";
@@ -9,6 +9,7 @@ import Util from "./util";
 
 function WordField() {
     const guessWord = useSelector((state) => state.guessWord);
+    const appMode = useSelector((state) => state.appMode);
     const dispatch = useDispatch();
     const inputRef = useRef(null);
 
@@ -17,14 +18,6 @@ function WordField() {
 
     }, []);
 
-    useEffect(() => {
-        //const newInputValue = wanakana.toKana(inputValue);
-        //inputRef.current.value = newInputValue;
-        //debug
-        //console.log(guessWord);
-        //console.log(guessWord[0].img)
-    }, [guessWord]);
-
     const handleChange = (e) => {
         //dispatch(setInputValue(e.target.value));
         //const typedValue = e.target.value;
@@ -32,18 +25,34 @@ function WordField() {
         dispatch(setGuessWord(Util.randomNewWord()));
         dispatch(setInputValue(''));
     };
-    const chunkedWord = wanakana.tokenize(guessWord.jp.wd)
+    const test = Util.splitWordToCharsObject(guessWord.jp);
+    console.log(test);
 
+    
+    const renderWord = () => {
+        if (appMode === 'r2k') {
+            return (
+                <h1>{wanakana.toRomaji(guessWord.jp.wd)}</h1>
+            );
+        } 
+        if (appMode === 'k2r'){
+            return (
+                <h1>{wanakana.toKana(guessWord.jp.wd)}</h1>
+            );
+        }
+    }
+    
     return (
         <div className='word-field'>
-            <h1>{
-                wanakana.tokenize(wanakana.toRomaji(guessWord.jp.wd))
+            {
+                //wanakana.tokenize(wanakana.toRomaji(guessWord.jp.wd))
+                renderWord()
                 /*
                 chunkedWord.map((token, index) => (
                     <span key={index}>{token}</span>
                   ))
                   */
-            }</h1>
+            }
             <button onClick={handleChange}>
                 New
             </button>

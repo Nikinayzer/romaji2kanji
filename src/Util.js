@@ -38,4 +38,13 @@ function randomNewWord(){
     //dispatch(setGuessWord(choosenWord)); //dispatch to the store
     return choosenWord;
 };
-export default { chunkArray, randomNewWord };
+function splitWordToCharsObject(obj) {
+  const rmjChars = obj.rmj.split('-');
+  const wdChars = [...obj.wd];
+
+  return {
+      rmj: rmjChars,
+      wd: wdChars
+  };
+}
+export default { chunkArray, randomNewWord, splitWordToCharsObject };

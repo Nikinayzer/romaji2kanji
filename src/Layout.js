@@ -4,11 +4,12 @@ import katagana from "./katagana.json";
 import Util from "./util";
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setInputValue, setTypingMode } from './actions';
+import { setInputValue, setTypingMode, setAppMode } from './actions';
 
 function Layout() {
   const inputValue = useSelector((state) => state.inputValue);
   const typingMode = useSelector((state) => state.typingMode);
+  const appMode = useSelector((state) => state.appMode);
   const dispatch = useDispatch();
 
   // Layout states
@@ -19,7 +20,7 @@ function Layout() {
     dispatch(setInputValue(inputValue + kana));
   };
 
-  const hiraGojuuonKeys = hiragana.filter(d => d.type === "gojuuon" || d.type === "empty");
+  const hiraGojuuonKeys = hiragana.filter(d => d.type === "gojuuon" || d.type === "empty"); //empty is for the space between the keys to make it look proper 
   const hiraAdditionalKeys = hiragana.filter(d => d.type === "dakuon" || d.type === "handakuon");
 
   const kataGojuuonKeys = katagana.filter(d => d.type === "gojuuon" || d.type === "empty");
@@ -34,7 +35,7 @@ function Layout() {
   const hiraGojuuonLayout = hiraChunkedGojuuon.map((chunk, index) => (
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
-        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(d.kana)}>
+        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode==="r2k"?d.kana:d.roumaji)}>
           {showKana && <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>}
           {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
         </div>
@@ -44,7 +45,7 @@ function Layout() {
   const hiraAdditionalLayout = hiraChunkedAdditional.map((chunk, index) => (
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
-        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(d.kana)}>
+        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode==="r2k"?d.kana:d.roumaji)}>
           {showKana && <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>}
           {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
         </div>
@@ -54,7 +55,7 @@ function Layout() {
   const kataGojuuonLayout = kataChunkedGojuuon.map((chunk, index) => (
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
-        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(d.kana)}>
+        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode==="r2k"?d.kana:d.roumaji)}>
           {showKana && <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>}
           {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
         </div>
@@ -64,7 +65,7 @@ function Layout() {
   const kataAdditionalLayout = kataChunkedAdditional.map((chunk, index) => (
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
-        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(d.kana)}>
+        <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode==="r2k"?d.kana:d.roumaji)}>
           {showKana && <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>}
           {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
         </div>
