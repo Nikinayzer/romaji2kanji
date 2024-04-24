@@ -80,6 +80,31 @@ button:hover {
     transform: rotate(360deg);
   }
 }
+
+/* WORDFIELD SECTION*/
+.tooltip {
+  position: absolute;
+  transform: translate(-90%, -100%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
+  white-space: nowrap; /* Prevents text from wrapping */
+  max-width: calc(100vw - 20px); /* Ensures the tooltip doesn't go beyond the window width */
+  overflow: hidden; /* Hides any overflow */
+}
+
+
+.tooltip.active {
+  opacity: 1;
+}
+
+
+
 /*LAYOUT */
 .keyboard{
   display: flex;
