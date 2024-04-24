@@ -99,7 +99,8 @@ button:hover {
 }
 .tooltip {
   position: absolute;
-  transform: translate(-90%, -80%);
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Adjust for perfect centering */
   background-color: #333;
   color: #fff;
   padding: 5px;
@@ -108,17 +109,21 @@ button:hover {
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  white-space: nowrap; /* Prevents text from wrapping */
-  max-width: calc(100vw - 20px); /* Ensures the tooltip doesn't go beyond the window width */
-  overflow: hidden; /* Hides any overflow */
+  white-space: nowrap;
+  max-width: calc(100vw - 20px);
+  overflow: hidden;
 }
-
 
 .tooltip.active {
   opacity: 1;
-  transform: translate(-90%, -90%);
+  transform: translate(-50%, -35px);
 }
-
+.word-part{
+  transition: color 0.1s ease-in-out;
+}
+.word-part.active{
+  color: #b30092;
+}
 
 
 /*LAYOUT */

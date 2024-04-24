@@ -24,13 +24,23 @@ function WordField() {
 
     const renderWord = () => {
         const charsArray = appMode === 'r2k' ? splitWord.rmj : splitWord.wd;
+        //console.log(charsArray);
         
         return charsArray.map((char, index) => (
             <span 
-                className='word-part'
+                className={"word-part" + (hoveredChar===char?" active":"")}
                 key={index}
-                onMouseEnter={() => handleHover(appMode === 'r2k' ? char : wanakana.toRomaji(char))}
+                onMouseEnter={() => handleHover(char)}
                 onMouseLeave={handleMouseLeave}
+                ref={el => { 
+                    if (el) {
+                        const rect = el.getBoundingClientRect();
+                        // Calculate middle position dynamically
+                        const middleX = rect.left + rect.width / 2;
+                        const tooltip = el.querySelector('.tooltip');
+                        tooltip.style.left = `${middleX}px`;
+                    }
+                }}
             >
                 {char}
                 {(
@@ -51,7 +61,7 @@ function WordField() {
                 dispatch(setGuessWord(Util.randomNewWord()));
                 dispatch(setInputValue(''));
             }}>
-                New
+                new
             </button>
         </div>
     );
