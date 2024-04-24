@@ -16,6 +16,7 @@ function WordField() {
 
     const handleHover = (char) => {
         setHoveredChar(char);
+        console.log(wanakana.toRomaji("シヤツ"))
     };
 
     const handleMouseLeave = () => {
@@ -24,32 +25,33 @@ function WordField() {
 
     const renderWord = () => {
         const charsArray = appMode === 'r2k' ? splitWord.rmj : splitWord.wd;
-        //console.log(charsArray);
         
-        return charsArray.map((char, index) => (
-            <span 
-                className={"word-part" + (hoveredChar===char?" active":"")}
-                key={index}
-                onMouseEnter={() => handleHover(char)}
-                onMouseLeave={handleMouseLeave}
-                ref={el => { 
-                    if (el) {
-                        const rect = el.getBoundingClientRect();
-                        // Calculate middle position dynamically
-                        const middleX = rect.left + rect.width / 2;
-                        const tooltip = el.querySelector('.tooltip');
-                        tooltip.style.left = `${middleX}px`;
-                    }
-                }}
-            >
-                {char}
-                {(
-                    <span className={"tooltip" + (hoveredChar===char?" active":"")}>
-                        {appMode === 'r2k' ? wanakana.toKana(char) : wanakana.toRomaji(char)}
+        return charsArray.map((char, index) => {
+            const uniqueKey = `${char}-${index}`;
+            const isActive = hoveredChar === uniqueKey;
+    
+            return (
+                <span 
+                    className={`word-part ${isActive ? 'active' : ''}`}
+                    key={index}
+                    onMouseEnter={() => handleHover(uniqueKey)}
+                    onMouseLeave={handleMouseLeave}
+                    ref={el => { 
+                        if (el && isActive) {
+                            const rect = el.getBoundingClientRect();
+                            const middleX = rect.left + rect.width / 2;
+                            const tooltip = el.querySelector('.tooltip');
+                            tooltip.style.left = `${middleX}px`;
+                        }
+                    }}
+                >
+                    {char}
+                    <span className={`tooltip ${isActive ? 'active' : ''}`}>
+                        {isActive?((appMode === 'r2k') ? wanakana.toKana(char) : wanakana.toRomaji(char)):""}
                     </span>
-                )}
-            </span>
-        ));
+                </span>
+            );
+        });
     };
 
     return (
