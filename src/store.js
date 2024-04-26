@@ -8,6 +8,7 @@ const initialState = {
     //guessWord: [words[Math.floor(Math.random() * words.length)]],
     guessWord: words[Math.floor(Math.random() * words.length)],
     typingMode: 'hiragana',
+    showLayout: true,
     appMode: 'r2k', //r2k: romaji to kana, k2r: kana to romaji, t: typing
 };
 
@@ -33,6 +34,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 appMode: action.payload
+            };
+            case 'SET_SHOW_LAYOUT': 
+            return {
+                ...state,
+                showLayout: action.payload
             };
         default:
             return state;

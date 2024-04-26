@@ -15,3 +15,7 @@ export const setAppMode = (value) => ({
     type: 'SET_APP_MODE',
     payload: value
 });
+export const setShowLayout = (value) => ({
+    type: 'SET_SHOW_LAYOUT',
+    payload: value
+});

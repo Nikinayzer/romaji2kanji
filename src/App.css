@@ -3,9 +3,18 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  color: #333;
+  position: relative;
+  width: max-content;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.App-logo:hover {
+  color: rgb(219, 127, 255);
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -24,18 +33,9 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: #b30092;
-}
-.layout-buttons button{
-  background-color: rgba(208, 27, 178, 0);
-  color: #141414;
-  border: 1px solid rgb(41, 41, 41);
-}
-.layout-buttons button.active {
-  background-color: rgb(208, 27, 178);
-  border: none;
-  color: #fcfcfc;
 }
 
 
@@ -43,29 +43,28 @@ button:hover {
 .App-header {
   background-color: #282c34;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 .mode-switch {
   display: flex;
   gap: 10px;
 }
 
-.mode-button {
+.nav-button {
   padding: 10px 20px;
-  background-color: #ccc;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.mode-button.active {
-  background-color: #007bff;
-  color: #fff;
+.nav-button.active {
+  color: #ff00c8;
 }
 
 .App-link {
@@ -76,6 +75,7 @@ button:hover {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -89,18 +89,23 @@ button:hover {
   justify-content: center;
   margin-top: 20px;
 }
+
 .word-container {
   width: max-content;
 }
-.word-container .word-part{
+
+.word-container .word-part {
   display: inline-block;
   font: 3em sans-serif;
   cursor: pointer;
 }
+
 .tooltip {
   position: absolute;
-  left: 50%; /* Center it horizontally */
-  transform: translateX(-50%); /* Adjust for perfect centering */
+  left: 50%;
+  /* Center it horizontally */
+  transform: translateX(-50%);
+  /* Adjust for perfect centering */
   background-color: #333;
   color: #fff;
   padding: 5px;
@@ -118,72 +123,91 @@ button:hover {
   opacity: 1;
   transform: translate(-50%, -35px);
 }
-.word-part{
+
+.word-part {
   transition: color 0.1s ease-in-out;
 }
-.word-part.active{
+
+.word-part.active {
   color: #b30092;
 }
 
 
 /*LAYOUT */
-.keyboard{
+.keyboard {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column-reverse;
-  gap: 20px;
   width: 100%;
   padding: var(--spacing) 0 0;
-  overflow-x: auto;
+  align-items: center;
   justify-self: center;
+  justify-content: center;
 }
-.layout{
+
+.layout {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  gap: 10px;
+  width: max-content;
+  gap: 30px;
   padding: 10px;
   justify-content: center;
+  opacity: 1;
+  max-height: 1000px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.020);
+  border-radius: 20px;
+}
 
+.layout.hide {
+  opacity: 0;
+  max-height: 0;
+  padding: 10px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
 }
-.layout-buttons{
+
+.layout-part {
   display: flex;
-  gap:5px;
-  padding: 5px;
-  justify-content: start;
-}
-.layout-part{
-  flex: 1;
-  display: flex;
-  flex-direction: row-reverse; 
+  flex-direction: row-reverse;
   justify-content: center;
 }
-.key{
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0)k;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 50px;
-  width: 30px;
 
-  transition: background-color 0.1s ease;
+.layout-divider {
+  width: 2px;
+  height: 300px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.key:hover{
-  background-color: #f0f0f0;
+
+.layout-buttons-container {
+  margin: auto;
+  padding: 10px;
 }
-.key-empty{
+
+.layout-buttons {
   display: flex;
-  flex-direction: column;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0);
+  gap: 5px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.03);
   border-radius: 5px;
-  height: 50px;
-  width: 30px;
+  justify-content: center;
+  flex-grow: 1;
 }
+
+.layout-buttons-container button {
+  background-color: rgba(40, 40, 40, 0);
+  color: #141414;
+  padding: 5px 10px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.layout-buttons-container button.active {
+  background-color: rgba(208, 27, 178, 0);
+  border: none;
+  color: rgba(208, 27, 178,100);
+}
+
 .layout-switch {
   display: flex;
   align-items: center;
@@ -194,16 +218,17 @@ button:hover {
 
 .layout-switch button {
   flex: 1;
-  padding: 10px 15px;
+  padding: 15px 15px;
   margin: 0;
   border: none;
+  border-radius: 0;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .layout-switch button[data-active="true"] {
-  background-color: #007bff;
+  background-color: rgb(208, 27, 178);
   color: #ffffff;
 }
 
@@ -211,16 +236,49 @@ button:hover {
   background-color: #f8f9fa;
   color: #495057;
 }
+
+.key {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+  width: 30px;
+
+  transition: background-color 0.1s ease;
+}
+
+.key:hover {
+  background-color: #f0f0f0;
+}
+
+.key-empty {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  height: 50px;
+  width: 30px;
+}
+
+
 /* INPUT FIELD */
 .input-field {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
 .input-container {
   position: relative;
   width: 50%;
 }
+
 .input-container .submit-button {
   position: absolute;
   top: 50%;
@@ -233,6 +291,7 @@ button:hover {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .input-field input {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -245,14 +304,18 @@ button:hover {
 
   border-radius: 4px;
   font-size: 16px;
-  
+
   text-align: center;
 }
+
 .input-field input:focus {
-  border-bottom: 1px solid #ff00c8; /* Change the bottom border color when input is focused */
+  border-bottom: 1px solid #ff00c8;
+  /* Change the bottom border color when input is focused */
   box-shadow: 0px 10px 20px -10px rgba(255, 0, 225, 0.5);
-  outline: none; /* Remove default outline */
+  outline: none;
+  /* Remove default outline */
 }
+
 .input-field button {
   padding: 10px 20px;
   background-color: rgb(236, 52, 153);

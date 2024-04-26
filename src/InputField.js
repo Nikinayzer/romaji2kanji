@@ -31,7 +31,7 @@ function InputField() {
 
     const handleSubmit = () => {
         const inputWord = inputValueRef.current; // Use ref instead of state
-        console.log('InputValue ref:', inputWord);
+        console.log('InputValue:', inputWord);
         console.log('GuessWord:', wanakana.toRomaji(guessWord.jp.wd));
         if ((inputWord === guessWord.jp.wd && appMode === "r2k") || (inputWord === wanakana.toRomaji(guessWord.jp.wd) && appMode === "k2r")) { // romaji to kanji logic
             console.log("Correct guess!");

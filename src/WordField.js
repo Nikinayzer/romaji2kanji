@@ -16,7 +16,6 @@ function WordField() {
 
     const handleHover = (char) => {
         setHoveredChar(char);
-        console.log(wanakana.toRomaji("シヤツ"))
     };
 
     const handleMouseLeave = () => {
@@ -25,18 +24,18 @@ function WordField() {
 
     const renderWord = () => {
         const charsArray = appMode === 'r2k' ? splitWord.rmj : splitWord.wd;
-        
+
         return charsArray.map((char, index) => {
             const uniqueKey = `${char}-${index}`;
             const isActive = hoveredChar === uniqueKey;
-    
+
             return (
-                <span 
+                <span
                     className={`word-part ${isActive ? 'active' : ''}`}
                     key={index}
                     onMouseEnter={() => handleHover(uniqueKey)}
                     onMouseLeave={handleMouseLeave}
-                    ref={el => { 
+                    ref={el => {
                         if (el && isActive) {
                             const rect = el.getBoundingClientRect();
                             const middleX = rect.left + rect.width / 2;
@@ -47,7 +46,7 @@ function WordField() {
                 >
                     {char}
                     <span className={`tooltip ${isActive ? 'active' : ''}`}>
-                        {isActive?((appMode === 'r2k') ? wanakana.toKana(char) : wanakana.toRomaji(char)):""}
+                        {isActive ? ((appMode === 'r2k') ? wanakana.toKana(char) : wanakana.toRomaji(char)) : ""}
                     </span>
                 </span>
             );
@@ -57,13 +56,14 @@ function WordField() {
     return (
         <div className='word-field'>
             <div className='word-container'>
-            {renderWord()}
+                {renderWord()}
             </div>
-            <button onClick={() => {
+            <button id="new-word-button"
+            onClick={() => {
                 dispatch(setGuessWord(Util.randomNewWord()));
                 dispatch(setInputValue(''));
             }}>
-                new
+                
             </button>
         </div>
     );
