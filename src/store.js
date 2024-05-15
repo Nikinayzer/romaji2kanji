@@ -1,16 +1,31 @@
 // store.js
 import { createStore } from 'redux';
 import words from './words.json'; //words library
-
+/*
+const getRandomWord = (words, appMode) => {
+    if (appMode === 'r2k') {
+        // Filter words to exclude those where jp.iskata is true
+        const filteredWords = words.filter(word => !word.jp.iskata);
+        // Select a random word from the filtered list
+        return filteredWords[Math.floor(Math.random() * filteredWords.length)];
+    } else {
+        // Select a random word from the entire list
+        return words[Math.floor(Math.random() * words.length)];
+    }
+};
+*/
+const getRandomWord = (words, appMode) => {
+    return words[Math.floor(Math.random() * words.length)];
+}
 // Initial state
 const initialState = {
     inputValue: '',
-    //guessWord: [words[Math.floor(Math.random() * words.length)]],
-    guessWord: words[Math.floor(Math.random() * words.length)],
+    guessWord: getRandomWord(words, 'r2k'), // Use the default appMode here
     typingMode: 'hiragana',
     showLayout: true,
-    appMode: 'r2k', //r2k: romaji to kana, k2r: kana to romaji, t: typing
+    appMode: 'r2k', // r2k: romaji to kana, k2r: kana to romaji, t: typing
 };
+
 
 // Reducer
 const rootReducer = (state = initialState, action) => {
@@ -35,7 +50,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 appMode: action.payload
             };
-            case 'SET_SHOW_LAYOUT': 
+        case 'SET_SHOW_LAYOUT':
             return {
                 ...state,
                 showLayout: action.payload
@@ -44,6 +59,7 @@ const rootReducer = (state = initialState, action) => {
             return state;
     }
 };
+
 
 // Create store
 const store = createStore(rootReducer);

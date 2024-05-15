@@ -1,5 +1,6 @@
 import words from './words.json'; //words library
 import * as wanakana from "wanakana"; //wanakana library
+import * as japanese from "japanese"; //japanese library  
 
 
 /**
@@ -35,11 +36,32 @@ function randomNewWord(){
     console.log("New word in kanji: " + wanakana.toHiragana(choosenWord.jp.kj));
     console.log("New word in romaji: " + wanakana.toRomaji(wanakana.toHiragana(choosenWord.jp.wd)));
 
-    //dispatch(setGuessWord(choosenWord)); //dispatch to the store
     return choosenWord;
 };
+
 function splitWordToCharsObject(obj) {
-  const rmjChars = obj.rmj.split('-');
+  const wdChars = [...obj.wd];
+  for (let i = 0; i < wdChars.length; i++) {
+    if (wdChars[i] === "ー") {
+      wdChars[i-1] = wdChars[i-1] + wdChars[i];
+      wdChars.splice(i, 1);
+    }
+    if(wdChars[i] === "ゃ" || wdChars[i] === "ゅ" || wdChars[i] === "ょ") {
+      wdChars[i-1] = wdChars[i-1] + wdChars[i];
+      wdChars.splice(i, 1);
+    }
+  }
+
+  return {
+      wd: wdChars
+  };
+}
+
+/*
+function splitWordToCharsObject(obj) {
+  //const rmjChars = obj.rmj.split('-');
+  const rmjWord = japanese.romanize(obj.wd);
+  const rmjChars = [...rmjWord];
   const wdChars = [...obj.wd];
 
   return {
@@ -47,4 +69,5 @@ function splitWordToCharsObject(obj) {
       wd: wdChars
   };
 }
+*/
 export default { chunkArray, randomNewWord, splitWordToCharsObject };

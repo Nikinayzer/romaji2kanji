@@ -83,15 +83,30 @@ button:hover {
 
 /* WORDFIELD SECTION*/
 .word-field {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  position: relative; /* Make the word field a positioning context for absolute positioning */
   margin-top: 20px;
 }
 
+#new-word-button {
+  position: relative; /* Position the button absolutely */
+  top: 50%; /* Position the button vertically centered relative to the word */
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  height: 30px;
+  width: 30px;
+}
+
+#new-word-button svg {
+  fill: #333;
+  transition: fill 0.3s ease;
+}
+
+#new-word-button:hover svg {
+  fill: #b30092;
+}
+
 .word-container {
-  width: max-content;
+  text-align: center; /* Center content horizontally */
 }
 
 .word-container .word-part {
@@ -100,11 +115,12 @@ button:hover {
   cursor: pointer;
 }
 
+
+
 .tooltip {
   position: absolute;
   left: 50%;
   /* Center it horizontally */
-  transform: translateX(-50%);
   /* Adjust for perfect centering */
   background-color: #333;
   color: #fff;
@@ -130,6 +146,23 @@ button:hover {
 
 .word-part.active {
   color: #b30092;
+}
+.word-info {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+.word-info-item{
+  display: flex;
+  gap: 2px;
+}
+.word-info-title {
+  width: 25px;
+  height: 25px;
+}
+.word-info-value{
 }
 
 
@@ -197,7 +230,7 @@ button:hover {
 .layout-buttons-container button {
   background-color: rgba(40, 40, 40, 0);
   color: #141414;
-  padding: 5px 10px;
+  padding: 0px 10px;
   font-size: 24px;
   font-weight: 400;
 }
@@ -218,7 +251,7 @@ button:hover {
 
 .layout-switch button {
   flex: 1;
-  padding: 15px 15px;
+  padding: 10px 15px;
   margin: 0;
   border: none;
   border-radius: 0;
@@ -248,11 +281,24 @@ button:hover {
   height: 50px;
   width: 30px;
 
+
   transition: background-color 0.1s ease;
 }
 
 .key:hover {
   background-color: #f0f0f0;
+  color:#b30092
+}
+
+.key-kana{
+  font-size: 1.2em;
+  font-weight: 500;
+
+}
+.key-romaji{
+  font-size: 0.9em;
+  font-weight: 300;
+
 }
 
 .key-empty {

@@ -36,8 +36,8 @@ function Layout() {
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
         <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode === "r2k" ? d.kana : d.roumaji)}>
-          <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>
-          {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
+          <span className="key-kana">{d.kana}</span>
+          {showRomaji && <span className="key-romaji">{d.roumaji}</span>}
         </div>
       ))}
     </div>
@@ -46,8 +46,8 @@ function Layout() {
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
         <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode === "r2k" ? d.kana : d.roumaji)}>
-          <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>
-          {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
+          <span className="key-kana">{d.kana}</span>
+          {showRomaji && <span className="key-romaji">{d.roumaji}</span>}
         </div>
       ))}
     </div>
@@ -56,8 +56,8 @@ function Layout() {
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
         <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode === "r2k" ? d.kana : d.roumaji)}>
-          <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>
-          {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
+          <span className="key-kana">{d.kana}</span>
+          {showRomaji && <span className="key-romaji">{d.roumaji}</span>}
         </div>
       ))}
     </div>
@@ -66,8 +66,8 @@ function Layout() {
     <div key={index} className={"layout-column"}>
       {chunk.map((d, idx) => (
         <div key={idx} className={(d.type === "empty" ? "key-empty" : "key")} onClick={() => handleKeyPress(appMode === "r2k" ? d.kana : d.roumaji)}>
-          <span className="Keyboard_keyboardKeyTo__OyXaq">{d.kana}</span>
-          {showRomaji && <span className="Keyboard_keyboardKeyFrom__DQFmJ">{d.roumaji}</span>}
+          <span className="key-kana">{d.kana}</span>
+          {showRomaji && <span className="key-romaji">{d.roumaji}</span>}
         </div>
       ))}
     </div>
