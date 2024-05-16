@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Romaji2Kanji
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikinayzer/romaji2kanji/blob/main/LICENSE)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [About This Project](#about-this-project)
+- [Why This Project Exists](#why-this-project-exists)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### `npm start`
+## About This Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Romaji2Kanji** is a web application designed to make learning Japanese symbols (Hiragana and Katakana) easier for Japanese language students. By providing a platform to practice writing words with these symbols, the project aims to enhance the learning experience and proficiency of learners.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Why This Project Exists
 
-### `npm test`
+The idea for Romaji2Kanji arose from my personal need for an effective tool to practice writing Japanese symbols. As a Japanese language learner, I encountered a lack of resources tailored specifically to this aspect of learning. This project was created to address this gap and provide a valuable learning tool for students like myself who want to improve their proficiency in Japanese writing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Introduction
 
-### `npm run build`
+**Romaji2Kanji** is a web application designed to help users learn and practice Japanese Hiragana and Katakana by transforming words from kana to romaji and vice versa. The app is built with React and includes features such as a keyboard for input, large word base, and 2 mods (r2k & k2r).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Interactive Learning**: Practice converting between kana and romaji.
+- **Keyboard Support**: On-screen keyboard for easy input.
+- **Animated Feedback**: Visual feedback for correct and incorrect guesses.
+- **Responsive Design**: Works well on both desktop and mobile devices.
+- **Report feauture**: Report wrong words with one click by GitHub or email.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+To get started with Romaji2Kanji, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repository**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    git clone https://github.com/nikinayzer/romaji2kanji.git
+    cd romaji2kanji
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install dependencies**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ```bash
+    npm install
+    ```
 
-## Learn More
+3. **Start the development server**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    npm start
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Build for production**:
 
-### Code Splitting
+    ```bash
+    npm run build
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+1. **Run the Application**: After starting the development server, open your browser and navigate to `http://localhost:3000/romaji2kanji`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **Navigate the App**:
+   - Use the **input field** to type your answers.
+   - Use the **keyboard** for input if preferred.
+   - Check the **FAQ** section for any questions about the app's functionality.
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We welcome contributions to make Romaji2Kanji even better! Here’s how you can contribute:
 
-### Advanced Configuration
+1. **Fork the repository**.
+2. **Create a new branch**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```bash
+    git checkout -b feature-branch
+    ```
 
-### Deployment
+3. **Make your changes**.
+4. **Commit your changes**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    ```bash
+    git commit -m "Add some feature"
+    ```
 
-### `npm run build` fails to minify
+5. **Push to the branch**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    ```bash
+    git push origin feature-branch
+    ```
+
+6. **Open a pull request**.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out:
+
+- **GitHub**: [nikinayzer](https://github.com/nikinayzer)
+- **Instagram**: [Instagram](https://instagram.com)
+
+---

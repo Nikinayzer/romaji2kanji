@@ -6,7 +6,7 @@
   margin-bottom: 60px;
 }
 
-a:-webkit-any-link {
+a:link, a:visited {
   text-decoration: none;
   color: white;
   cursor: pointer;

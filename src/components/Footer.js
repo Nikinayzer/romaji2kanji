@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <p className="footer-text">
-          From n1ckor with love |{" "}
+          By n1ckor with love |{" "}
           <a
             href="https://github.com/nikinayzer/romaji2kanji"
             target="_blank"
