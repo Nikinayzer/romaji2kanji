@@ -13,12 +13,12 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router>
+    <Router basename="romaji2kanji">
       <Provider store={store}>
         <div className="App">
           <Header />
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/faq" element={<FAQPage />} />
           </Routes>
           <Footer />

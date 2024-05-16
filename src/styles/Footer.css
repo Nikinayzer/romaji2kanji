@@ -3,6 +3,11 @@
     color: white;
     padding: 10px 20px;
     text-align: center;
+    position: fixed;
+    /* Position the footer relative to the viewport */
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer p {
