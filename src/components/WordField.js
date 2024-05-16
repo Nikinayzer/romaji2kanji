@@ -12,6 +12,8 @@ import Util from "../scripts/util";
 function WordField() {
   const guessWord = useSelector((state) => state.guessWord);
   const appMode = useSelector((state) => state.appMode);
+  const shake = useSelector((state) => state.shake);
+  const correct = useSelector((state) => state.correct);
   const dispatch = useDispatch();
 
   const splitWord = Util.splitWordToCharsObject(guessWord.jp);
@@ -69,7 +71,11 @@ function WordField() {
   return (
     <div className="word-field">
       <div className="word-container">
-        <div className="word">{renderWord()}</div>
+        <div
+          className={`word ${shake ? "shake" : ""} ${correct ? "correct" : ""}`}
+        >
+          {renderWord()}
+        </div>
         <button
           id="new-word-button"
           onClick={() => {

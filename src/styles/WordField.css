@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    /* Center content horizontally */
+    overflow: hidden;
 }
 
 .word-container .word-part {
@@ -84,6 +84,66 @@
 .word-info-title {
     width: 25px;
     height: 25px;
+}
+
+/* SHAKE (WRONG ANSWER) ANIMATION */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(10px);
+        color: red;
+    }
+
+    60% {
+        transform: translateX(-10px);
+        color: red;
+    }
+
+    80% {
+        transform: translateX(10px);
+        color: red;
+    }
+
+    100% {
+        transform: translateX(0);
+        color: red;
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* CORRECT ANIMATION */
+@keyframes correctGuess {
+    0% {
+        color: inherit;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        color: green;
+        transform: rotate(20deg);
+        opacity: 1;
+    }
+
+    100% {
+        color: green;
+        transform: rotate(180deg);
+        opacity: 0;
+    }
+}
+
+.correct {
+    animation: correctGuess 0.5s forwards;
 }
 
 @media (max-width: 600px) {

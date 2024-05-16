@@ -19,6 +19,20 @@ function chunkArray(array, size) {
   return chunkedArray;
 }
 /**
+ *  Function to check if the input word is correct
+ * @param {string} inputWord  The word input by the user
+ * @param {Object} guessWord  The word object that the user should guess
+ * @param {string} appMode   The current app mode
+ * @returns {boolean}  True if the input word is correct, false otherwise
+ */
+function checkAnswer(inputWord, guessWord, appMode) {
+  return (
+    (inputWord === guessWord.jp.wd && appMode === "r2k") ||
+    (inputWord === wanakana.toRomaji(guessWord.jp.wd) && appMode === "k2r")
+  );
+}
+
+/**
  * Randomly selects a new word from the words library
  * @returns {Object} The new word object, need to be dispatched to the store
  */
@@ -60,4 +74,4 @@ function splitWordToCharsObject(obj) {
   };
 }
 
-export default { chunkArray, randomNewWord, splitWordToCharsObject };
+export default { chunkArray, checkAnswer, randomNewWord, splitWordToCharsObject };

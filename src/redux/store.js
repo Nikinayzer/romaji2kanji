@@ -24,6 +24,8 @@ const initialState = {
   typingMode: "hiragana",
   showLayout: true,
   appMode: "r2k", // r2k: romaji to kana, k2r: kana to romaji, t: typing
+  shake: false,
+  correct: false,
 };
 
 // Reducer
@@ -54,12 +56,21 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         showLayout: action.payload,
       };
+    case "SET_SHAKE":
+      return {
+        ...state,
+        shake: action.payload,
+      };
+    case "SET_CORRECT":
+      return {
+        ...state,
+        correct: action.payload,
+      };
     default:
       return state;
   }
 };
 
-// Create store
 const store = createStore(rootReducer);
 
 export default store;

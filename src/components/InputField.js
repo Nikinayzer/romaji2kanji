@@ -2,7 +2,12 @@ import "../styles/App.css";
 import "../styles/InputField.css";
 import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setInputValue, setGuessWord } from "../redux/actions";
+import {
+  setInputValue,
+  setGuessWord,
+  setShake,
+  setCorrect,
+} from "../redux/actions";
 import * as wanakana from "wanakana";
 import Util from "../scripts/util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,15 +40,21 @@ function InputField() {
     const inputWord = inputValueRef.current; // Use ref instead of state
     console.log("InputValue:", inputWord);
     console.log("GuessWord:", wanakana.toRomaji(guessWord.jp.wd));
-    if (
-      (inputWord === guessWord.jp.wd && appMode === "r2k") ||
-      (inputWord === wanakana.toRomaji(guessWord.jp.wd) && appMode === "k2r")
-    ) {
-      // romaji to kanji logic
+    if (Util.checkAnswer(inputWord, guessWord, appMode)) {
+      /** 
       console.log("Correct guess!");
-      console.log(inputWord);
       dispatch(setGuessWord(Util.randomNewWord()));
-      dispatch(setInputValue(""));
+      dispatch(setInputValue(""));*/
+      dispatch(setCorrect(true));
+      setTimeout(() => {
+        dispatch(setCorrect(false));
+        dispatch(setGuessWord(Util.randomNewWord()));
+        dispatch(setInputValue(""));
+      }, 1000);
+    } else {
+      console.log("Incorrect guess!");
+      dispatch(setShake(true));
+      setTimeout(() => dispatch(setShake(false)), 500); // Remove shake state after animation
     }
   };
 
