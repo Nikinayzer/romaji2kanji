@@ -74,7 +74,7 @@ To get started with Romaji2Kanji, follow these steps:
 
 ## Contributing
 
-We welcome contributions to make Romaji2Kanji even better! Here’s how you can contribute:
+I welcome contributions to make Romaji2Kanji even better! Here’s how you can contribute:
 
 1. **Fork the repository**.
 2. **Create a new branch**:
