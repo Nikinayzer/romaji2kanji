@@ -1,0 +1,98 @@
+/* WORDFIELD SECTION*/
+.word-field {
+    position: relative;
+    /* Make the word field a positioning context for absolute positioning */
+    margin-top: 20px;
+}
+
+.word-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* Center content horizontally */
+}
+
+.word-container .word-part {
+    display: inline-block;
+    font: 4em sans-serif;
+    cursor: pointer;
+}
+
+#new-word-button {
+    position: relative;
+    /* Position the button absolutely */
+    top: 50%;
+    /* Position the button vertically centered relative to the word */
+    right: calc(-2% + 10px);
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+}
+
+.new-word-icon {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.new-word-icon:hover {
+    color: #b30092;
+}
+
+.tooltip {
+    position: absolute;
+    left: 50%;
+    /* Center it horizontally */
+    /* Adjust for perfect centering */
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    white-space: nowrap;
+    max-width: calc(100vw - 20px);
+    overflow: hidden;
+}
+
+.tooltip.active {
+    opacity: 1;
+    transform: translate(-50%, -35px);
+}
+
+.word-part {
+    transition: color 0.1s ease-in-out;
+}
+
+.word-part.active {
+    color: #b30092;
+}
+
+.word-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.word-info-item {
+    display: flex;
+    gap: 2px;
+}
+
+.word-info-title {
+    width: 25px;
+    height: 25px;
+}
+
+@media (max-width: 600px) {
+    #new-word-button {
+        right: calc(-5% + 10px);
+    }
+
+    .word-container .word-part {
+        font: 2em sans-serif;
+    }
+
+}

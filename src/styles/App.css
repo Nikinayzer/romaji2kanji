@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+.main-wrapper{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.disabled {
+  position: relative;
+  pointer-events: none;
+  /* Disable click events */
+  opacity: 0.2
+    /* Make the element look semi-transparent */
+}
+
+
+/*BUTTONS*/
+button {
+  padding: 10px 20px;
+  background-color: rgb(236, 52, 153);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b30092;
+}

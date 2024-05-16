@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-import Layout from './Layout';
-import InputField from './InputField';
-import WordField from './WordField';
+import "./styles/App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 //redux
-import { Provider } from 'react-redux';
-import store from './store';
-import Header from './Header';
-//<img src={logo} className="App-logo" alt="logo" />
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import Header from "./components/Header";
+// components
+import Layout from "./components/Layout";
+import InputField from "./components/InputField";
+import WordField from "./components/WordField";
+import FAQPage from "./components/FAQPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Provider store={store}>
-    <div className="App">
-      <Header />
-      <WordField  />
+    <Router>
+      <Provider store={store}>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/faq" element={<FAQPage />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Provider>
+    </Router>
+  );
+}
+
+const HomePage = () => (
+  <>
+    <div className="main-wrapper">
+      <WordField />
       <InputField />
       <Layout />
     </div>
-    </Provider>
-  );
-}
+  </>
+);
 
 export default App;

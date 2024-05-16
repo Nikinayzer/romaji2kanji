@@ -1,0 +1,203 @@
+/*LAYOUT */
+.keyboard {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  width: 100%;
+  padding: var(--spacing) 0 0;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  gap: 15px;
+  padding: 10px;
+  justify-content: center;
+  opacity: 1;
+  max-height: 1000px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.020);
+  border-radius: 20px;
+}
+
+.layout.hide {
+  opacity: 0;
+  max-height: 0;
+  padding: 10px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.layout-part {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.layout-divider {
+  width: 2px;
+  height: 300px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.layout-buttons-container {
+  margin: auto;
+  padding: 10px;
+}
+
+.layout-buttons {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.layout-buttons-container button {
+  background-color: rgba(40, 40, 40, 0);
+  color: #141414;
+  padding: 0px 10px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.layout-buttons-container button.active {
+  background-color: rgba(208, 27, 178, 0);
+  border: none;
+  color: rgba(208, 27, 178, 100);
+}
+
+.layout-switch {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.layout-switch button {
+  flex: 1;
+  padding: 10px 15px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.layout-switch button[data-active="true"] {
+  background-color: rgb(208, 27, 178);
+  color: #ffffff;
+}
+
+.layout-switch button[data-active="false"] {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.report-button-container {
+  position: relative;
+  /* Position relative for absolute positioning of the tooltip */
+}
+
+.report-button-container::after {
+  content: attr(title);
+  /* Display the title attribute content */
+  display: none;
+  /* Hide the tooltip by default */
+  position: absolute;
+  /* Position the tooltip */
+  bottom: 100%;
+  /* Position above the button */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
+  background-color: #333;
+  /* Tooltip background color */
+  color: #fff;
+  /* Tooltip text color */
+  padding: 5px 5px;
+  /* Padding for the tooltip */
+  border-radius: 5px;
+  /* Rounded corners */
+  white-space: nowrap;
+  /* Prevent wrapping of long text */
+  font-size: 0.5em;
+}
+
+.report-button-container:hover::after {
+  display: block;
+  /* Display the tooltip when hovered */
+}
+
+.key {
+  display: flex;
+  flex-direction: column;
+  margin: 2px 5px 2px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 45px;
+  width: 30px;
+
+  transition: background-color 0.1s ease;
+}
+
+.key:hover {
+  background-color: #f0f0f0;
+  color: #b30092
+}
+
+.key-empty:hover {
+  background-color: rgba(0, 0, 0, 0.0);
+  cursor: auto;
+}
+
+.key-kana {
+  font-size: 1.2em;
+  font-weight: 500;
+
+}
+
+.key-romaji {
+  font-size: 0.9em;
+  font-weight: 300;
+
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .layout {
+    flex-direction: column;
+    gap: 0px;
+    padding: 5px;
+  }
+
+  .layout-divider {
+    width: 300px;
+    height: 2px;
+  }
+
+  .dakuon-layout {
+    justify-content: space-evenly;
+  }
+
+  .key {
+    height: 40px;
+    width: 15px;
+    font-size: 0.9em;
+    margin: 3px;
+  }
+
+
+
+
+}
