@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 
-import { ReactComponent as Logo } from "../resources/logos/logo.svg";
+import AppLogo from "./AppLogo";
 
 function Header() {
   const appMode = useSelector((state) => state.appMode);
@@ -22,10 +22,7 @@ function Header() {
 
   return (
     <header className="app-header">
-      <div className="logo-container" data-text="Romaji2kaji">
-        <Logo className="app-logo" />
-        <h1 className="app-logo-text">Romaji2kanji</h1>
-      </div>
+      <AppLogo />
       <div className="mode-switch">
         {location.pathname === "/faq" ? ( // Render "Back to App" link only on FAQ page
           <Link to="/" className="nav-button">

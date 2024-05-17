@@ -8,38 +8,8 @@
     font-size: 1em;
     color: white;
     gap: 15px;
-}
-
-.logo-container {
-    display: flex;
-    color: rgba(255, 255, 255, 1);
-    margin: 0;
-    cursor: pointer;
-    transition: 0.3s;
-    line-height: 80px;
-    align-items: center;
-}
-
-.app-logo {
-    height: 100px;
-    width: 100px;
-    margin-right: 20px;
-    fill: white;
-}
-
-.app-logo * {
-    fill: white;
-    transition: fill 0.1s;
-}
-
-.app-logo:hover * {
-    fill: rgb(219, 127, 255);
-}
-
-.app-logo-text {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0;
+    background-image: url(../resources/petals.gif);
+    background-repeat: no-repeat;
 }
 
 .mode-switch {
@@ -67,36 +37,16 @@
     margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 @media (max-width: 600px) {
     .app-header {
         flex-direction: column;
         gap: 0;
     }
-
-    .logo-container {
-        width: 100%;
-        margin-top: 10px;
-        justify-content: center;
-        align-items: end;
-    }
-
-    .app-logo-text {
-        font-size: 2em;
-    }
-
     .mode-switch {
         justify-content: center;
         font-size: 1.5em;
     }
+
 
 }

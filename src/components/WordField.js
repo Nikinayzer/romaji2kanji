@@ -2,8 +2,7 @@ import "../styles/App.css";
 import "../styles/WordField.css";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setInputValue, setGuessWord, setAppMode } from "../redux/actions";
-import * as wanakana from "wanakana";
+import { setInputValue, setGuessWord } from "../redux/actions";
 import * as japanese from "japanese";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +15,7 @@ function WordField() {
   const correct = useSelector((state) => state.correct);
   const dispatch = useDispatch();
 
-  const splitWord = Util.splitWordToCharsObject(guessWord.jp);
+  const splitWord = Util.tokenize(guessWord.jp);
 
   const [hoveredChar, setHoveredChar] = useState(null);
 
@@ -29,7 +28,6 @@ function WordField() {
   };
 
   const renderWord = () => {
-    //const charsArray = appMode === 'r2k' ? splitWord.rmj : splitWord.wd;
     const charsArray = splitWord.wd;
     return charsArray.map((char, index) => {
       const uniqueKey = `${char}-${index}`;
@@ -51,7 +49,7 @@ function WordField() {
           }}
         >
           {appMode === "r2k"
-            ? japanese.romanize(char, "modified hepburn")
+            ? japanese.romanize(char, Util.makeDefaultConfig())
             : char}
           <span className={`tooltip ${isActive ? "active" : ""}`}>
             {
@@ -59,7 +57,7 @@ function WordField() {
               isActive
                 ? appMode === "r2k"
                   ? char
-                  : japanese.romanize(char)
+                  : japanese.romanize(char, Util.makeDefaultConfig())
                 : ""
             }
           </span>
@@ -96,11 +94,15 @@ function WordField() {
             <img
               width="25"
               height="25"
-              src="https://img.icons8.com/color/48/great-britain-circular.png"
+              src="https://img.icons8.com/color/48/great-britain-circular.png" //change later
               alt="great-britain-circular"
             />
           </div>
-          <span className="word-info-value">{guessWord.mean}</span>
+          <span className="word-info-value">
+            {
+              guessWord.mean
+            }
+          </span>
         </div>
       </div>
     </div>

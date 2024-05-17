@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Modal.css";
-import { useSelector, useDispatch } from "react-redux";
-import * as wanakana from "wanakana";
+import { useSelector } from "react-redux";
 import * as japanese from "japanese";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -9,8 +8,6 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 const Modal = ({ isOpen, onClose }) => {
   const inputValue = useSelector((state) => state.inputValue);
-  const typingMode = useSelector((state) => state.typingMode);
-  const showLayout = useSelector((state) => state.showLayout);
   const guessWord = useSelector((state) => state.guessWord);
 
   const appMode = useSelector((state) => state.appMode);
@@ -39,7 +36,6 @@ const Modal = ({ isOpen, onClose }) => {
     e.preventDefault();
 
     const title = encodeURIComponent("Wrong Word Report");
-    const body = encodeURIComponent(`Incorrect word: '${guessWord.jp.wd}'`);
     const githubUrl = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${reportText}`;
 
     window.open(githubUrl, "_blank");
