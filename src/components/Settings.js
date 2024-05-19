@@ -38,14 +38,10 @@ function Settings() {
     } else if (type === "katakana") {
       dispatch(setIncludeKatakana(!includeKatakana));
       localStorage.setItem("includeKatakana", JSON.stringify(!includeKatakana));
-      console.log("kata lesgooo");
     }
   };
 
   useEffect(() => {
-    console.log("debugging");
-    console.log(isDarkMode, includeHiragana, includeKatakana)
-
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowDropdown(false);

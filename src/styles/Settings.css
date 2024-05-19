@@ -11,8 +11,9 @@
     background-color: transparent;
     transition: all 0.3s ease;
 }
-#settings-button.active{
-    color:#ff00c8;
+
+#settings-button.active {
+    color: #ff00c8;
     transition: color 0.3s ease;
 }
 

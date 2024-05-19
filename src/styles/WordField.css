@@ -61,7 +61,7 @@
 
 .word-part {
     transition: color 0.1s ease-in-out;
-    color: var(--text-color);
+    color: #fff;
 }
 
 .word-part.active {

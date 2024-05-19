@@ -15,9 +15,13 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 function InputField() {
   const inputValue = useSelector((state) => state.inputValue);
   const guessWord = useSelector((state) => state.guessWord);
-  const appMode = useSelector((state) => state.appMode);  
-  const includeHiragana = useSelector((state) => state.userSettings.includeHiragana);
-  const includeKatakana = useSelector((state) => state.userSettings.includeKatakana);
+  const appMode = useSelector((state) => state.appMode);
+  const includeHiragana = useSelector(
+    (state) => state.userSettings.includeHiragana
+  );
+  const includeKatakana = useSelector(
+    (state) => state.userSettings.includeKatakana
+  );
   const dispatch = useDispatch();
   const inputValueRef = useRef("");
 
@@ -36,7 +40,9 @@ function InputField() {
       dispatch(setCorrect(true));
       setTimeout(() => {
         dispatch(setCorrect(false));
-        dispatch(setGuessWord(Util.getRandomWord(includeHiragana, includeKatakana)));
+        dispatch(
+          setGuessWord(Util.getRandomWord(includeHiragana, includeKatakana))
+        );
         dispatch(setInputValue(""));
       }, 1000);
     } else {

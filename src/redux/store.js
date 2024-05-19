@@ -4,8 +4,6 @@ import Util from "../scripts/util";
 
 const getStoredValue = (key, defaultValue) => {
   const storedValue = localStorage.getItem(key);
-  console.log(key);
-  console.log(storedValue !== null ? JSON.parse(storedValue) : defaultValue);
   return storedValue !== null ? JSON.parse(storedValue) : defaultValue;
 };
 
