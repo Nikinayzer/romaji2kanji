@@ -33,7 +33,7 @@ function AppLogo() {
   };
 
   const handleFastMovement = () => {
-    if (directionChanges > 3000) {
+    if (directionChanges > 300) {
       setDirectionChanges(0);
       handleDialog(true);
     }
@@ -84,7 +84,6 @@ function AppLogo() {
           </div>
         )}
       </div>
-      <h1 className="app-logo-text">Romaji2kanji</h1>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import words from "../data/words.json"; //words library
 import * as japanese from "japanese"; //japanese library
+import * as wanakana from "wanakana"; //wanakana library
 
 const japaneseConfig = {
   し: "shi si",
@@ -81,6 +82,21 @@ function findWrongPart(inputWord, guessWord, appMode) {
     );
   }
 }
+const getRandomWord = (includeHiragana, includeKatakana) => {
+  let filteredWords = words;
+
+  if (!includeHiragana) {
+    filteredWords = filteredWords.filter(word => word.jp.isKatakana === true);
+  }
+
+  if (!includeKatakana) {
+    filteredWords = filteredWords.filter(word => word.jp.isKatakana === false);
+  }
+
+  const randomWord = filteredWords[Math.floor(Math.random() * filteredWords.length)];
+
+  return randomWord;
+};
 /**
  *  Function to check if the input word is correct. Compares the input word with the guess word: in r2k compares if input (in kana) is equal to guess (in kana),
  *  in k2r compares if input (in romaji) is equal to guess (multiple romanization options are considered correct)
@@ -95,9 +111,9 @@ function checkAnswer(inputWord, guessWord, appMode) {
 
   let isCorrect = false;
 
-  if (inputWord === guessWord.jp.wd && appMode === "r2k") {
+  if (appMode === "r2k" && inputWord === guessWord.jp.wd) {
     isCorrect = true;
-  } else {
+  } else if (appMode === "k2r") {
     const inputWordOptions = {
       default: japanese.romanize(guessWord.jp.wd, defaultConfig),
       wiki: japanese.romanize(guessWord.jp.wd, "wikipedia"),
@@ -105,8 +121,7 @@ function checkAnswer(inputWord, guessWord, appMode) {
       modhepburn: japanese.romanize(guessWord.jp.wd, "modified hepburn"),
       nihon: japanese.romanize(guessWord.jp.wd, "nihon"),
     };
-
-    console.log(inputWordOptions);
+    //console.log(inputWordOptions);
 
     // Check if inputWord matches any of the values in inputWordOptions
     for (let key in inputWordOptions) {
@@ -120,15 +135,6 @@ function checkAnswer(inputWord, guessWord, appMode) {
   return isCorrect;
 }
 
-/**
- * Randomly selects a new word from the words library
- * @returns {Object} The new word object, need to be dispatched to the store
- */
-function randomNewWord() {
-  const randomIndex = Math.floor(Math.random() * words.length);
-  const choosenWord = words[randomIndex];
-  return choosenWord;
-}
 
 /**
  * Tokenizes a word into smaller parts.
@@ -216,6 +222,6 @@ export default {
   makeDefaultConfig,
   chunkArray,
   checkAnswer,
-  randomNewWord,
+  getRandomWord,
   tokenize,
 };

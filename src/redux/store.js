@@ -1,31 +1,27 @@
 // store.js
 import { createStore } from "redux";
-import words from "../data/words.json"; //words library
-/*
-const getRandomWord = (words, appMode) => {
-    if (appMode === 'r2k') {
-        // Filter words to exclude those where jp.iskata is true
-        const filteredWords = words.filter(word => !word.jp.iskata);
-        // Select a random word from the filtered list
-        return filteredWords[Math.floor(Math.random() * filteredWords.length)];
-    } else {
-        // Select a random word from the entire list
-        return words[Math.floor(Math.random() * words.length)];
-    }
+import Util from "../scripts/util";
+
+const getStoredValue = (key, defaultValue) => {
+  const storedValue = localStorage.getItem(key);
+  console.log(key);
+  console.log(storedValue !== null ? JSON.parse(storedValue) : defaultValue);
+  return storedValue !== null ? JSON.parse(storedValue) : defaultValue;
 };
-*/
-const getRandomWord = (words, appMode) => {
-  return words[Math.floor(Math.random() * words.length)];
-};
-// Initial state
+
 const initialState = {
   inputValue: "",
-  guessWord: getRandomWord(words, "r2k"), // Use the default appMode here
+  guessWord: Util.getRandomWord(true, true),
   typingMode: "hiragana",
   showLayout: true,
   appMode: "r2k", // r2k: romaji to kana, k2r: kana to romaji, t: typing
   shake: false,
   correct: false,
+  userSettings: {
+    isDarkMode: getStoredValue("darkMode", false),
+    includeHiragana: getStoredValue("includeHiragana", true),
+    includeKatakana: getStoredValue("includeKatakana", true),
+  },
 };
 
 // Reducer
@@ -65,6 +61,27 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         correct: action.payload,
+      };
+    case "SET_DARK_MODE":
+      return {
+        ...state,
+        userSettings: { ...state.userSettings, isDarkMode: action.payload },
+      };
+    case "SET_INCLUDE_HIRAGANA":
+      return {
+        ...state,
+        userSettings: {
+          ...state.userSettings,
+          includeHiragana: action.payload,
+        },
+      };
+    case "SET_INCLUDE_KATAKANA":
+      return {
+        ...state,
+        userSettings: {
+          ...state.userSettings,
+          includeKatakana: action.payload,
+        },
       };
     default:
       return state;

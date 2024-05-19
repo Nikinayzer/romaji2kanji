@@ -27,3 +27,15 @@ export const setCorrect = (value) => ({
   type: "SET_CORRECT",
   payload: value,
 });
+export const setDarkMode = (value) => ({
+  type: "SET_DARK_MODE",
+  payload: value,
+});
+export const setIncludeHiragana = (value) => ({
+  type: "SET_INCLUDE_HIRAGANA",
+  payload: value,
+});
+export const setIncludeKatakana = (value) => ({
+  type: "SET_INCLUDE_KATAKANA",
+  payload: value,
+});

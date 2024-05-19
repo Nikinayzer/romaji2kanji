@@ -22,14 +22,11 @@ function transformJson(inputFile, outputFile) {
         // Iterate over each object in the JSON array
         jsonData.forEach(item => {
             if (item.jp) {
-                // Delete the "rmj" key if it exists
-                delete item.jp.rmj;
 
+                delete item.jp.iskata;
                 // Add the "kata": false key-value pair
-                item.jp.iskata = wanakana.isKatakana(item.jp.wd);
-                if (item.jp.kj == "-"){
-                    item.jp.kj = "";
-                }
+                item.jp.isKatakana = wanakana.isKatakana(item.jp.wd);
+
             }
         });
 
@@ -47,9 +44,8 @@ function transformJson(inputFile, outputFile) {
     });
 }
 
-// Specify the input and output file paths
-const inputFile = './src/words.json';  // Replace with the path to your input JSON file
-const outputFile = './src/words1.json';  // Replace with the desired path for the output JSON file
+const inputFile = '../data/words.json';  
+const outputFile = '../data/words1.json';
 
 // Call the function to transform the JSON
 transformJson(inputFile, outputFile);

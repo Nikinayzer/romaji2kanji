@@ -5,7 +5,7 @@
         "jp": {
             "wd": "どんぐり",
             "kj": "団栗",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -15,7 +15,7 @@
         "jp": {
             "wd": "ひこうき",
             "kj": "飛行機",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -25,7 +25,7 @@
         "jp": {
             "wd": "くうこう",
             "kj": "空港",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -35,7 +35,7 @@
         "jp": {
             "wd": "めざましどけい",
             "kj": "目覚まし時計",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -45,7 +45,7 @@
         "jp": {
             "wd": "わにぐち",
             "kj": "鰐口",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -55,7 +55,7 @@
         "jp": {
             "wd": "アーモンド",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -65,7 +65,7 @@
         "jp": {
             "wd": "きゅうきゅうしゃ",
             "kj": "救急車",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -75,7 +75,7 @@
         "jp": {
             "wd": "あり",
             "kj": "蟻",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -85,7 +85,7 @@
         "jp": {
             "wd": "しがつ",
             "kj": "四月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -95,7 +95,7 @@
         "jp": {
             "wd": "はいざら",
             "kj": "灰皿",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -105,7 +105,7 @@
         "jp": {
             "wd": "アスパラガス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -115,7 +115,7 @@
         "jp": {
             "wd": "はちがつ",
             "kj": "八月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -125,7 +125,7 @@
         "jp": {
             "wd": "あき",
             "kj": "秋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -135,7 +135,7 @@
         "jp": {
             "wd": "アボカド",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -145,7 +145,7 @@
         "jp": {
             "wd": "あかちゃん",
             "kj": "赤ちゃん",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -155,7 +155,7 @@
         "jp": {
             "wd": "ベーコン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -165,7 +165,7 @@
         "jp": {
             "wd": "バドミントン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -175,7 +175,7 @@
         "jp": {
             "wd": "かばん",
             "kj": "鞄",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -185,7 +185,7 @@
         "jp": {
             "wd": "ベーグル",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -195,7 +195,7 @@
         "jp": {
             "wd": "ベーカリー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "city"
     },
@@ -205,7 +205,7 @@
         "jp": {
             "wd": "ききゅう",
             "kj": "気球",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -215,7 +215,7 @@
         "jp": {
             "wd": "たけ",
             "kj": "竹",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -225,7 +225,7 @@
         "jp": {
             "wd": "バナナ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -235,7 +235,7 @@
         "jp": {
             "wd": "バンドエイド",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "health"
     },
@@ -245,7 +245,7 @@
         "jp": {
             "wd": "ぎんこう",
             "kj": "銀行",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -255,7 +255,7 @@
         "jp": {
             "wd": "おおむぎ",
             "kj": "大麦",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -265,7 +265,7 @@
         "jp": {
             "wd": "やきゅう",
             "kj": "野球",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -275,7 +275,7 @@
         "jp": {
             "wd": "バスケットボール",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -285,7 +285,7 @@
         "jp": {
             "wd": "よくしつ",
             "kj": "浴室",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -295,7 +295,7 @@
         "jp": {
             "wd": "たいじゅうけい",
             "kj": "体重計",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -305,7 +305,7 @@
         "jp": {
             "wd": "よくそう",
             "kj": "浴槽",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -315,7 +315,7 @@
         "jp": {
             "wd": "でんち",
             "kj": "電池",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -325,7 +325,7 @@
         "jp": {
             "wd": "はま",
             "kj": "浜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -335,7 +335,7 @@
         "jp": {
             "wd": "まめ",
             "kj": "豆",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -345,7 +345,7 @@
         "jp": {
             "wd": "ベッド",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -355,7 +355,7 @@
         "jp": {
             "wd": "しんしつ",
             "kj": "寝室",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -365,7 +365,7 @@
         "jp": {
             "wd": "はち",
             "kj": "蜂",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -375,7 +375,7 @@
         "jp": {
             "wd": "ぎゅうにく",
             "kj": "牛肉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -385,7 +385,7 @@
         "jp": {
             "wd": "ビール",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -395,7 +395,7 @@
         "jp": {
             "wd": "じてんしゃ",
             "kj": "自転車",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -405,7 +405,7 @@
         "jp": {
             "wd": "たんじょうび",
             "kj": "誕生日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -415,7 +415,7 @@
         "jp": {
             "wd": "もうふ",
             "kj": "毛布",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -425,7 +425,7 @@
         "jp": {
             "wd": "ブラインド",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -435,7 +435,7 @@
         "jp": {
             "wd": "ブルーベリー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -445,7 +445,7 @@
         "jp": {
             "wd": "しゅうてい",
             "kj": "舟艇",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -455,7 +455,7 @@
         "jp": {
             "wd": "ほん",
             "kj": "本",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -465,7 +465,7 @@
         "jp": {
             "wd": "ほんだな",
             "kj": "本棚",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -475,7 +475,7 @@
         "jp": {
             "wd": "わん",
             "kj": "碗",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -485,7 +485,7 @@
         "jp": {
             "wd": "ボーリング",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -495,7 +495,7 @@
         "jp": {
             "wd": "はこ",
             "kj": "箱",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -505,7 +505,7 @@
         "jp": {
             "wd": "はし",
             "kj": "橋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -515,7 +515,7 @@
         "jp": {
             "wd": "ブロッコリー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -525,7 +525,7 @@
         "jp": {
             "wd": "たてもの",
             "kj": "建物",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -535,7 +535,7 @@
         "jp": {
             "wd": "バス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "transportation"
     },
@@ -545,7 +545,7 @@
         "jp": {
             "wd": "バター",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -555,7 +555,7 @@
         "jp": {
             "wd": "ちょう",
             "kj": "蝶",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -565,7 +565,7 @@
         "jp": {
             "wd": "ボタン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "things"
     },
@@ -575,7 +575,7 @@
         "jp": {
             "wd": "はくさい",
             "kj": "白菜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -585,7 +585,7 @@
         "jp": {
             "wd": "さぼてん",
             "kj": "仙人掌",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -595,7 +595,7 @@
         "jp": {
             "wd": "ケーキ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -605,7 +605,7 @@
         "jp": {
             "wd": "でんたく",
             "kj": "電卓",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -615,7 +615,7 @@
         "jp": {
             "wd": "カレンダー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "time"
     },
@@ -625,7 +625,7 @@
         "jp": {
             "wd": "らくだ",
             "kj": "駱駝",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -635,7 +635,7 @@
         "jp": {
             "wd": "カメラ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -645,7 +645,7 @@
         "jp": {
             "wd": "しゃしんき",
             "kj": "写真器",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -655,7 +655,7 @@
         "jp": {
             "wd": "やえい",
             "kj": "野営",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -665,7 +665,7 @@
         "jp": {
             "wd": "かん",
             "kj": "缶",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -675,7 +675,7 @@
         "jp": {
             "wd": "ろおそく",
             "kj": "蝋燭",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -685,7 +685,7 @@
         "jp": {
             "wd": "おかし",
             "kj": "お菓子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -695,7 +695,7 @@
         "jp": {
             "wd": "くるま",
             "kj": "車",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -705,7 +705,7 @@
         "jp": {
             "wd": "ちゅうしゃじょう",
             "kj": "駐車場",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -715,7 +715,7 @@
         "jp": {
             "wd": "にんじん",
             "kj": "人参",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -725,7 +725,7 @@
         "jp": {
             "wd": "ねこ",
             "kj": "猫",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -735,7 +735,7 @@
         "jp": {
             "wd": "けむし",
             "kj": "毛虫",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -745,7 +745,7 @@
         "jp": {
             "wd": "くどう",
             "kj": "空洞",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -755,7 +755,7 @@
         "jp": {
             "wd": "セロリ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -765,7 +765,7 @@
         "jp": {
             "wd": "いす",
             "kj": "椅子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -775,7 +775,7 @@
         "jp": {
             "wd": "かんぱい",
             "kj": "乾杯",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -785,7 +785,7 @@
         "jp": {
             "wd": "チーズ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -795,7 +795,7 @@
         "jp": {
             "wd": "ばけがく",
             "kj": "化学",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -805,7 +805,7 @@
         "jp": {
             "wd": "さくらんぼ",
             "kj": "桜ん坊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -815,7 +815,7 @@
         "jp": {
             "wd": "さくら",
             "kj": "桜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -825,7 +825,7 @@
         "jp": {
             "wd": "こども",
             "kj": "子供",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -835,7 +835,7 @@
         "jp": {
             "wd": "チリ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -845,7 +845,7 @@
         "jp": {
             "wd": "はし",
             "kj": "箸",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -855,7 +855,7 @@
         "jp": {
             "wd": "きょうかい",
             "kj": "教会",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "society"
     },
@@ -865,7 +865,7 @@
         "jp": {
             "wd": "タバコ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -875,7 +875,7 @@
         "jp": {
             "wd": "とけい",
             "kj": "時計",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -885,7 +885,7 @@
         "jp": {
             "wd": "ふく",
             "kj": "服",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -895,7 +895,7 @@
         "jp": {
             "wd": "くも",
             "kj": "雲",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -905,7 +905,7 @@
         "jp": {
             "wd": "コート",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -915,7 +915,7 @@
         "jp": {
             "wd": "ごきぶり",
             "kj": "蜚蠊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -925,7 +925,7 @@
         "jp": {
             "wd": "カクテル",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -935,7 +935,7 @@
         "jp": {
             "wd": "ココナッツ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -945,7 +945,7 @@
         "jp": {
             "wd": "まゆ",
             "kj": "繭",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -955,7 +955,7 @@
         "jp": {
             "wd": "コーヒー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -965,7 +965,7 @@
         "jp": {
             "wd": "いろ",
             "kj": "色",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "things"
     },
@@ -975,7 +975,7 @@
         "jp": {
             "wd": "くし",
             "kj": "櫛",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -985,7 +985,7 @@
         "jp": {
             "wd": "まんが",
             "kj": "漫画",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -995,7 +995,7 @@
         "jp": {
             "wd": "らしんばん",
             "kj": "羅針盤",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1005,7 +1005,7 @@
         "jp": {
             "wd": "とうもろこし",
             "kj": "玉蜀黍",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1015,7 +1015,7 @@
         "jp": {
             "wd": "けしょうひん",
             "kj": "化粧品",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1025,7 +1025,7 @@
         "jp": {
             "wd": "わたがし",
             "kj": "綿菓子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1035,7 +1035,7 @@
         "jp": {
             "wd": "めんぼう",
             "kj": "綿棒",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1045,7 +1045,7 @@
         "jp": {
             "wd": "うし",
             "kj": "牛",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1055,7 +1055,7 @@
         "jp": {
             "wd": "かに",
             "kj": "蟹",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1065,7 +1065,7 @@
         "jp": {
             "wd": "キューブ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -1075,7 +1075,7 @@
         "jp": {
             "wd": "きゅうり",
             "kj": "胡瓜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1085,7 +1085,7 @@
         "jp": {
             "wd": "カーテン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -1095,7 +1095,7 @@
         "jp": {
             "wd": "にゅうせいひん",
             "kj": "乳製品",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1105,7 +1105,7 @@
         "jp": {
             "wd": "ひなぎく",
             "kj": "雛菊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1115,7 +1115,7 @@
         "jp": {
             "wd": "たんぽぽ",
             "kj": "蒲公英",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1125,7 +1125,7 @@
         "jp": {
             "wd": "じゅうにがつ",
             "kj": "十二月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -1135,7 +1135,7 @@
         "jp": {
             "wd": "しか",
             "kj": "鹿",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1145,7 +1145,7 @@
         "jp": {
             "wd": "しかいいん",
             "kj": "歯科医院",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -1155,7 +1155,7 @@
         "jp": {
             "wd": "しかい",
             "kj": "歯科医",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1165,7 +1165,7 @@
         "jp": {
             "wd": "デスクトップピーシー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "things"
     },
@@ -1175,7 +1175,7 @@
         "jp": {
             "wd": "たんてい",
             "kj": "探偵",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1185,7 +1185,7 @@
         "jp": {
             "wd": "せんざい",
             "kj": "洗剤",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1195,7 +1195,7 @@
         "jp": {
             "wd": "さいころ",
             "kj": "賽子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -1205,7 +1205,7 @@
         "jp": {
             "wd": "じしょ",
             "kj": "辞書",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -1215,7 +1215,7 @@
         "jp": {
             "wd": "いしゃ",
             "kj": "医者",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1225,7 +1225,7 @@
         "jp": {
             "wd": "いぬ",
             "kj": "犬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1235,7 +1235,7 @@
         "jp": {
             "wd": "いるか",
             "kj": "海豚",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1245,7 +1245,7 @@
         "jp": {
             "wd": "ろば",
             "kj": "驢馬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1255,7 +1255,7 @@
         "jp": {
             "wd": "ドア",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -1265,7 +1265,7 @@
         "jp": {
             "wd": "げんかん",
             "kj": "玄関",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1275,7 +1275,7 @@
         "jp": {
             "wd": "ドーナツ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1285,7 +1285,7 @@
         "jp": {
             "wd": "とんぼ",
             "kj": "蜻蛉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1295,7 +1295,7 @@
         "jp": {
             "wd": "たいこ",
             "kj": "大鼓",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -1305,7 +1305,7 @@
         "jp": {
             "wd": "かも",
             "kj": "鴨",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1315,7 +1315,7 @@
         "jp": {
             "wd": "ぎょうざ",
             "kj": "餃子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1325,7 +1325,7 @@
         "jp": {
             "wd": "わし",
             "kj": "鷲",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1335,7 +1335,7 @@
         "jp": {
             "wd": "みみ",
             "kj": "耳",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1345,7 +1345,7 @@
         "jp": {
             "wd": "イヤリング",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -1355,7 +1355,7 @@
         "jp": {
             "wd": "イヤホン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -1365,7 +1365,7 @@
         "jp": {
             "wd": "ちきゅう",
             "kj": "地球",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1375,7 +1375,7 @@
         "jp": {
             "wd": "たまご",
             "kj": "卵",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1385,7 +1385,7 @@
         "jp": {
             "wd": "なす",
             "kj": "茄子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1395,7 +1395,7 @@
         "jp": {
             "wd": "せんぷうき",
             "kj": "扇風機",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1405,7 +1405,7 @@
         "jp": {
             "wd": "ぞう",
             "kj": "象",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1415,7 +1415,7 @@
         "jp": {
             "wd": "ふうとう",
             "kj": "封筒",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "things"
     },
@@ -1425,7 +1425,7 @@
         "jp": {
             "wd": "けしゴム",
             "kj": "消しゴム",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -1435,7 +1435,7 @@
         "jp": {
             "wd": "でぐち",
             "kj": "出口",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1445,7 +1445,7 @@
         "jp": {
             "wd": "め",
             "kj": "目",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1455,7 +1455,7 @@
         "jp": {
             "wd": "まゆげ",
             "kj": "眉毛",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1465,7 +1465,7 @@
         "jp": {
             "wd": "まつげ",
             "kj": "睫毛",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1475,7 +1475,7 @@
         "jp": {
             "wd": "こうじょう",
             "kj": "工場",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -1485,7 +1485,7 @@
         "jp": {
             "wd": "かぞく",
             "kj": "家族",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1495,7 +1495,7 @@
         "jp": {
             "wd": "はね",
             "kj": "羽",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1505,7 +1505,7 @@
         "jp": {
             "wd": "にがつ",
             "kj": "二月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -1515,7 +1515,7 @@
         "jp": {
             "wd": "かきね",
             "kj": "垣根",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1525,7 +1525,7 @@
         "jp": {
             "wd": "おんどけい",
             "kj": "温度計",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -1535,7 +1535,7 @@
         "jp": {
             "wd": "フィルム",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -1545,7 +1545,7 @@
         "jp": {
             "wd": "しもん",
             "kj": "指紋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1555,7 +1555,7 @@
         "jp": {
             "wd": "ひ",
             "kj": "火",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1565,7 +1565,7 @@
         "jp": {
             "wd": "しょうぼうし",
             "kj": "消防士",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1575,7 +1575,7 @@
         "jp": {
             "wd": "ほたる",
             "kj": "蛍",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1585,7 +1585,7 @@
         "jp": {
             "wd": "はなび",
             "kj": "花火",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -1595,7 +1595,7 @@
         "jp": {
             "wd": "さかな",
             "kj": "魚",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1605,7 +1605,7 @@
         "jp": {
             "wd": "さかな",
             "kj": "魚",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1615,7 +1615,7 @@
         "jp": {
             "wd": "かいちゅうでんとう",
             "kj": "懐中電灯",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1625,7 +1625,7 @@
         "jp": {
             "wd": "ゆか",
             "kj": "床",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -1635,7 +1635,7 @@
         "jp": {
             "wd": "フロス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -1645,7 +1645,7 @@
         "jp": {
             "wd": "こむぎこ",
             "kj": "小麦粉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1655,7 +1655,7 @@
         "jp": {
             "wd": "はな",
             "kj": "花",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1665,7 +1665,7 @@
         "jp": {
             "wd": "らん",
             "kj": "蘭",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1675,7 +1675,7 @@
         "jp": {
             "wd": "はえ",
             "kj": "蝿",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1685,7 +1685,7 @@
         "jp": {
             "wd": "たべもの",
             "kj": "食べ物",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1695,7 +1695,7 @@
         "jp": {
             "wd": "チョコレート",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1705,7 +1705,7 @@
         "jp": {
             "wd": "オレンジ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1715,7 +1715,7 @@
         "jp": {
             "wd": "サーモン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1725,7 +1725,7 @@
         "jp": {
             "wd": "トマト",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1735,7 +1735,7 @@
         "jp": {
             "wd": "あし",
             "kj": "足",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1745,7 +1745,7 @@
         "jp": {
             "wd": "あしあと",
             "kj": "足跡",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1755,7 +1755,7 @@
         "jp": {
             "wd": "しんりん",
             "kj": "森林",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1765,7 +1765,7 @@
         "jp": {
             "wd": "きつね",
             "kj": "狐",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1775,7 +1775,7 @@
         "jp": {
             "wd": "フライドポテト",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1785,7 +1785,7 @@
         "jp": {
             "wd": "きんようび",
             "kj": "金曜日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -1795,7 +1795,7 @@
         "jp": {
             "wd": "かえる",
             "kj": "蛙",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1805,7 +1805,7 @@
         "jp": {
             "wd": "くだもの",
             "kj": "果物",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1815,7 +1815,7 @@
         "jp": {
             "wd": "にんにく",
             "kj": "大蒜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1825,7 +1825,7 @@
         "jp": {
             "wd": "ガソリンスタンド",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "city"
     },
@@ -1835,7 +1835,7 @@
         "jp": {
             "wd": "しょうが",
             "kj": "生姜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1845,7 +1845,7 @@
         "jp": {
             "wd": "いちょう",
             "kj": "銀杏",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1855,7 +1855,7 @@
         "jp": {
             "wd": "こうらいにんじん",
             "kj": "高麗人参",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1865,7 +1865,7 @@
         "jp": {
             "wd": "きりん",
             "kj": "麒麟",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1875,7 +1875,7 @@
         "jp": {
             "wd": "グラス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -1885,7 +1885,7 @@
         "jp": {
             "wd": "めがね",
             "kj": "眼鏡",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1895,7 +1895,7 @@
         "jp": {
             "wd": "てぶくろ",
             "kj": "手袋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -1905,7 +1905,7 @@
         "jp": {
             "wd": "のり",
             "kj": "糊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -1915,7 +1915,7 @@
         "jp": {
             "wd": "やぎ",
             "kj": "山羊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1925,7 +1925,7 @@
         "jp": {
             "wd": "ゴルフ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -1935,7 +1935,7 @@
         "jp": {
             "wd": "ガチョウ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1945,7 +1945,7 @@
         "jp": {
             "wd": "ぶどう",
             "kj": "葡萄",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1955,7 +1955,7 @@
         "jp": {
             "wd": "くさ",
             "kj": "草",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1965,7 +1965,7 @@
         "jp": {
             "wd": "ねぎ",
             "kj": "葱",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1975,7 +1975,7 @@
         "jp": {
             "wd": "ピーマン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -1985,7 +1985,7 @@
         "jp": {
             "wd": "おちゃ",
             "kj": "お茶",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -1995,7 +1995,7 @@
         "jp": {
             "wd": "ギータ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -2005,7 +2005,7 @@
         "jp": {
             "wd": "かみ",
             "kj": "髪",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2015,7 +2015,7 @@
         "jp": {
             "wd": "ハンバーガー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2025,7 +2025,7 @@
         "jp": {
             "wd": "つち",
             "kj": "槌",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2035,7 +2035,7 @@
         "jp": {
             "wd": "ハムスター",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2045,7 +2045,7 @@
         "jp": {
             "wd": "て",
             "kj": "手",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2055,7 +2055,7 @@
         "jp": {
             "wd": "はなふき",
             "kj": "鼻拭き",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2065,7 +2065,7 @@
         "jp": {
             "wd": "ハンガー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -2075,7 +2075,7 @@
         "jp": {
             "wd": "ぼうし",
             "kj": "帽子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2085,7 +2085,7 @@
         "jp": {
             "wd": "ヘッドホン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -2095,7 +2095,7 @@
         "jp": {
             "wd": "はりねずみ",
             "kj": "針鼠",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2105,7 +2105,7 @@
         "jp": {
             "wd": "かば",
             "kj": "河馬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2115,7 +2115,7 @@
         "jp": {
             "wd": "れきし",
             "kj": "歴史",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -2125,7 +2125,7 @@
         "jp": {
             "wd": "はちみつ",
             "kj": "蜂蜜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2135,7 +2135,7 @@
         "jp": {
             "wd": "うま",
             "kj": "馬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2145,7 +2145,7 @@
         "jp": {
             "wd": "びょういん",
             "kj": "病院",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -2155,7 +2155,7 @@
         "jp": {
             "wd": "てんてき",
             "kj": "点滴",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -2165,7 +2165,7 @@
         "jp": {
             "wd": "ホットドッグ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2175,7 +2175,7 @@
         "jp": {
             "wd": "ホテル",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "city"
     },
@@ -2185,7 +2185,7 @@
         "jp": {
             "wd": "おんせん",
             "kj": "温泉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2195,7 +2195,7 @@
         "jp": {
             "wd": "こおり",
             "kj": "氷",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2205,7 +2205,7 @@
         "jp": {
             "wd": "アイスクリーム",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2215,7 +2215,7 @@
         "jp": {
             "wd": "しま",
             "kj": "島",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2225,7 +2225,7 @@
         "jp": {
             "wd": "いちがつ",
             "kj": "一月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2235,7 +2235,7 @@
         "jp": {
             "wd": "ジーンズ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -2245,7 +2245,7 @@
         "jp": {
             "wd": "くらげ",
             "kj": "海月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2255,7 +2255,7 @@
         "jp": {
             "wd": "じゅうどう",
             "kj": "柔道",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2265,7 +2265,7 @@
         "jp": {
             "wd": "ジュース",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2275,7 +2275,7 @@
         "jp": {
             "wd": "ジューサー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -2285,7 +2285,7 @@
         "jp": {
             "wd": "しちがつ",
             "kj": "七月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2295,7 +2295,7 @@
         "jp": {
             "wd": "ろくがつ",
             "kj": "六月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2305,7 +2305,7 @@
         "jp": {
             "wd": "カヤック",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -2315,7 +2315,7 @@
         "jp": {
             "wd": "けんどう",
             "kj": "剣道",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2325,7 +2325,7 @@
         "jp": {
             "wd": "やかん",
             "kj": "薬缶",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2335,7 +2335,7 @@
         "jp": {
             "wd": "かぎ",
             "kj": "鍵",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2345,7 +2345,7 @@
         "jp": {
             "wd": "だいどころ",
             "kj": "台所",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2355,7 +2355,7 @@
         "jp": {
             "wd": "たこ",
             "kj": "凧",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2365,7 +2365,7 @@
         "jp": {
             "wd": "キウイ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2375,7 +2375,7 @@
         "jp": {
             "wd": "おたま",
             "kj": "お玉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2385,7 +2385,7 @@
         "jp": {
             "wd": "てんとうむし",
             "kj": "天道虫",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2395,7 +2395,7 @@
         "jp": {
             "wd": "ノートパソコン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "things"
     },
@@ -2405,7 +2405,7 @@
         "jp": {
             "wd": "は",
             "kj": "葉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2415,7 +2415,7 @@
         "jp": {
             "wd": "レモン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2425,7 +2425,7 @@
         "jp": {
             "wd": "レタス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2435,7 +2435,7 @@
         "jp": {
             "wd": "とおだい",
             "kj": "灯台",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -2445,7 +2445,7 @@
         "jp": {
             "wd": "ゆり",
             "kj": "百合",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2455,7 +2455,7 @@
         "jp": {
             "wd": "しし",
             "kj": "獅子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2465,7 +2465,7 @@
         "jp": {
             "wd": "くちびる",
             "kj": "唇",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2475,7 +2475,7 @@
         "jp": {
             "wd": "いま",
             "kj": "居間",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2485,7 +2485,7 @@
         "jp": {
             "wd": "とかげ",
             "kj": "蜥蜴",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2495,7 +2495,7 @@
         "jp": {
             "wd": "ロブスター",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2505,7 +2505,7 @@
         "jp": {
             "wd": "ロリポップ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2515,7 +2515,7 @@
         "jp": {
             "wd": "はす",
             "kj": "蓮",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2525,7 +2525,7 @@
         "jp": {
             "wd": "にもつ",
             "kj": "荷物",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2535,7 +2535,7 @@
         "jp": {
             "wd": "かくだいきょう",
             "kj": "拡大鏡",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2545,7 +2545,7 @@
         "jp": {
             "wd": "マンゴー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2555,7 +2555,7 @@
         "jp": {
             "wd": "ちず",
             "kj": "地図",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "things"
     },
@@ -2565,7 +2565,7 @@
         "jp": {
             "wd": "さんがつ",
             "kj": "三月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2575,7 +2575,7 @@
         "jp": {
             "wd": "マッチ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -2585,7 +2585,7 @@
         "jp": {
             "wd": "すうがく",
             "kj": "数学",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -2595,7 +2595,7 @@
         "jp": {
             "wd": "ごがつ",
             "kj": "五月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2605,7 +2605,7 @@
         "jp": {
             "wd": "くすり",
             "kj": "薬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -2615,7 +2615,7 @@
         "jp": {
             "wd": "めいそう",
             "kj": "瞑想",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2625,7 +2625,7 @@
         "jp": {
             "wd": "けんびきょう",
             "kj": "顕微鏡",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -2635,7 +2635,7 @@
         "jp": {
             "wd": "でんしレンジ",
             "kj": "電子レンジ",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2645,7 +2645,7 @@
         "jp": {
             "wd": "ぎゅうにゅう",
             "kj": "牛乳",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2655,7 +2655,7 @@
         "jp": {
             "wd": "かがみ",
             "kj": "鏡",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2665,7 +2665,7 @@
         "jp": {
             "wd": "けいたいでんわ",
             "kj": "携帯電話",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "things"
     },
@@ -2675,7 +2675,7 @@
         "jp": {
             "wd": "げつようび",
             "kj": "月曜日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2685,7 +2685,7 @@
         "jp": {
             "wd": "おかね",
             "kj": "お金",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "society"
     },
@@ -2695,7 +2695,7 @@
         "jp": {
             "wd": "つき",
             "kj": "月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2705,7 +2705,7 @@
         "jp": {
             "wd": "か",
             "kj": "蚊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2715,7 +2715,7 @@
         "jp": {
             "wd": "やま",
             "kj": "山",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2725,7 +2725,7 @@
         "jp": {
             "wd": "ねずみ",
             "kj": "鼠",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2735,7 +2735,7 @@
         "jp": {
             "wd": "くちひげ",
             "kj": "口髭",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2745,7 +2745,7 @@
         "jp": {
             "wd": "くち",
             "kj": "口",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2755,7 +2755,7 @@
         "jp": {
             "wd": "せんこうえき",
             "kj": "洗口液",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -2765,7 +2765,7 @@
         "jp": {
             "wd": "えいが",
             "kj": "映画",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2775,7 +2775,7 @@
         "jp": {
             "wd": "マフィン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -2785,7 +2785,7 @@
         "jp": {
             "wd": "マグカップ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -2795,7 +2795,7 @@
         "jp": {
             "wd": "きのこ",
             "kj": "茸",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2805,7 +2805,7 @@
         "jp": {
             "wd": "おんがく",
             "kj": "音楽",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2815,7 +2815,7 @@
         "jp": {
             "wd": "つめきり",
             "kj": "爪切り",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2825,7 +2825,7 @@
         "jp": {
             "wd": "マニキュアえき",
             "kj": "マニキュア液",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2835,7 +2835,7 @@
         "jp": {
             "wd": "ネックレス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -2845,7 +2845,7 @@
         "jp": {
             "wd": "す",
             "kj": "巣",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2855,7 +2855,7 @@
         "jp": {
             "wd": "しんぶん",
             "kj": "新聞",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -2865,7 +2865,7 @@
         "jp": {
             "wd": "はな",
             "kj": "鼻",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2875,7 +2875,7 @@
         "jp": {
             "wd": "じゅういちがつ",
             "kj": "十一月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2885,7 +2885,7 @@
         "jp": {
             "wd": "かんごし",
             "kj": "看護師",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2895,7 +2895,7 @@
         "jp": {
             "wd": "かいぐん",
             "kj": "海軍",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -2905,7 +2905,7 @@
         "jp": {
             "wd": "じゅうがつ",
             "kj": "十月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -2915,7 +2915,7 @@
         "jp": {
             "wd": "たこ",
             "kj": "蛸",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2925,7 +2925,7 @@
         "jp": {
             "wd": "たまねぎ",
             "kj": "玉葱",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2935,7 +2935,7 @@
         "jp": {
             "wd": "しゃち",
             "kj": "鯱",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2945,7 +2945,7 @@
         "jp": {
             "wd": "おりがみ",
             "kj": "折り紙",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -2955,7 +2955,7 @@
         "jp": {
             "wd": "かわうそ",
             "kj": "川獺",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2965,7 +2965,7 @@
         "jp": {
             "wd": "オーブン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -2975,7 +2975,7 @@
         "jp": {
             "wd": "ふくろう",
             "kj": "梟",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2985,7 +2985,7 @@
         "jp": {
             "wd": "かき",
             "kj": "牡蠣",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -2995,7 +2995,7 @@
         "jp": {
             "wd": "えふで",
             "kj": "絵筆",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -3005,7 +3005,7 @@
         "jp": {
             "wd": "やし",
             "kj": "椰子",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3015,7 +3015,7 @@
         "jp": {
             "wd": "パンダ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3025,7 +3025,7 @@
         "jp": {
             "wd": "かみ",
             "kj": "紙",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "things"
     },
@@ -3035,7 +3035,7 @@
         "jp": {
             "wd": "おうむ",
             "kj": "鸚鵡",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3045,7 +3045,7 @@
         "jp": {
             "wd": "パスポート",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -3055,7 +3055,7 @@
         "jp": {
             "wd": "かんじゃ",
             "kj": "患者",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -3065,7 +3065,7 @@
         "jp": {
             "wd": "えんどう",
             "kj": "豌豆",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3075,7 +3075,7 @@
         "jp": {
             "wd": "へいわ",
             "kj": "平和",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "society"
     },
@@ -3085,7 +3085,7 @@
         "jp": {
             "wd": "もも",
             "kj": "桃",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3095,7 +3095,7 @@
         "jp": {
             "wd": "なんきんまめ",
             "kj": "南京豆",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3105,7 +3105,7 @@
         "jp": {
             "wd": "なし",
             "kj": "梨",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3115,7 +3115,7 @@
         "jp": {
             "wd": "しんじゅ",
             "kj": "真珠",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3125,7 +3125,7 @@
         "jp": {
             "wd": "こいし",
             "kj": "小石",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3135,7 +3135,7 @@
         "jp": {
             "wd": "えんぴつ",
             "kj": "鉛筆",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -3145,7 +3145,7 @@
         "jp": {
             "wd": "ペンギン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3155,7 +3155,7 @@
         "jp": {
             "wd": "こうすい",
             "kj": "香水",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3165,7 +3165,7 @@
         "jp": {
             "wd": "やっきょく",
             "kj": "薬局",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -3175,7 +3175,7 @@
         "jp": {
             "wd": "でんわボックス",
             "kj": "電話ボックス",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -3185,7 +3185,7 @@
         "jp": {
             "wd": "しゃしん",
             "kj": "写真",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -3195,7 +3195,7 @@
         "jp": {
             "wd": "ピアノ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -3205,7 +3205,7 @@
         "jp": {
             "wd": "パイ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3215,7 +3215,7 @@
         "jp": {
             "wd": "ぶた",
             "kj": "豚",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3225,7 +3225,7 @@
         "jp": {
             "wd": "はと",
             "kj": "鳩",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3235,7 +3235,7 @@
         "jp": {
             "wd": "まくら",
             "kj": "枕",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3245,7 +3245,7 @@
         "jp": {
             "wd": "パイナップル",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3255,7 +3255,7 @@
         "jp": {
             "wd": "かざぐるま",
             "kj": "風車",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -3265,7 +3265,7 @@
         "jp": {
             "wd": "ピザ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3275,7 +3275,7 @@
         "jp": {
             "wd": "わくせい",
             "kj": "惑星",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3285,7 +3285,7 @@
         "jp": {
             "wd": "しょくぶつ",
             "kj": "植物",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3295,7 +3295,7 @@
         "jp": {
             "wd": "さら",
             "kj": "皿",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3305,7 +3305,7 @@
         "jp": {
             "wd": "ポケット",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -3315,7 +3315,7 @@
         "jp": {
             "wd": "ほっきょくぐま",
             "kj": "北極熊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3325,7 +3325,7 @@
         "jp": {
             "wd": "けいさつ",
             "kj": "警察",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -3335,7 +3335,7 @@
         "jp": {
             "wd": "けいさつしょ",
             "kj": "警察署",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -3345,7 +3345,7 @@
         "jp": {
             "wd": "ぶたにく",
             "kj": "豚肉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3355,7 +3355,7 @@
         "jp": {
             "wd": "ポストカード",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -3365,7 +3365,7 @@
         "jp": {
             "wd": "ゆうびんきょく",
             "kj": "郵便局",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -3375,7 +3375,7 @@
         "jp": {
             "wd": "なべ",
             "kj": "鍋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3385,7 +3385,7 @@
         "jp": {
             "wd": "じゃがいも",
             "kj": "じゃが芋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3395,7 +3395,7 @@
         "jp": {
             "wd": "しょほうせん",
             "kj": "処方箋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -3405,7 +3405,7 @@
         "jp": {
             "wd": "かぼちゃ",
             "kj": "南瓜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3415,7 +3415,7 @@
         "jp": {
             "wd": "かけぶとん",
             "kj": "掛け布団",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3425,7 +3425,7 @@
         "jp": {
             "wd": "うさぎ",
             "kj": "兎",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3435,7 +3435,7 @@
         "jp": {
             "wd": "ラジオ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -3445,7 +3445,7 @@
         "jp": {
             "wd": "あめ",
             "kj": "雨",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3455,7 +3455,7 @@
         "jp": {
             "wd": "レインコート",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -3465,7 +3465,7 @@
         "jp": {
             "wd": "ラズベリー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3475,7 +3475,7 @@
         "jp": {
             "wd": "かみそり",
             "kj": "剃刀",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3485,7 +3485,7 @@
         "jp": {
             "wd": "りょうしゅうしょ",
             "kj": "領収書",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -3495,7 +3495,7 @@
         "jp": {
             "wd": "リサイクル",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3505,7 +3505,7 @@
         "jp": {
             "wd": "れいぞうこ",
             "kj": "冷蔵庫",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3515,7 +3515,7 @@
         "jp": {
             "wd": "さい",
             "kj": "犀",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3525,7 +3525,7 @@
         "jp": {
             "wd": "ごはん",
             "kj": "ご飯",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3535,7 +3535,7 @@
         "jp": {
             "wd": "こめ",
             "kj": "米",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3545,7 +3545,7 @@
         "jp": {
             "wd": "いわ",
             "kj": "岩",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3555,7 +3555,7 @@
         "jp": {
             "wd": "へや",
             "kj": "部屋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3565,7 +3565,7 @@
         "jp": {
             "wd": "なわ",
             "kj": "縄",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3575,7 +3575,7 @@
         "jp": {
             "wd": "ばら",
             "kj": "薔薇",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3585,7 +3585,7 @@
         "jp": {
             "wd": "ラグビー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -3595,7 +3595,7 @@
         "jp": {
             "wd": "じょうぎ",
             "kj": "定規",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3605,7 +3605,7 @@
         "jp": {
             "wd": "きんこ",
             "kj": "金庫",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3615,7 +3615,7 @@
         "jp": {
             "wd": "しお",
             "kj": "塩",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3625,7 +3625,7 @@
         "jp": {
             "wd": "すなのおじょう",
             "kj": "砂のお城",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -3635,7 +3635,7 @@
         "jp": {
             "wd": "サンドイッチ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3645,7 +3645,7 @@
         "jp": {
             "wd": "さしみ",
             "kj": "刺身",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3655,7 +3655,7 @@
         "jp": {
             "wd": "どようび",
             "kj": "土曜日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -3665,7 +3665,7 @@
         "jp": {
             "wd": "ソーセージ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3675,7 +3675,7 @@
         "jp": {
             "wd": "マフラー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -3685,7 +3685,7 @@
         "jp": {
             "wd": "がっこう",
             "kj": "学校",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -3695,7 +3695,7 @@
         "jp": {
             "wd": "がくせいふく",
             "kj": "学生服",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -3705,7 +3705,7 @@
         "jp": {
             "wd": "かがく",
             "kj": "科学",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -3715,7 +3715,7 @@
         "jp": {
             "wd": "はさみ",
             "kj": "鋏",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3725,7 +3725,7 @@
         "jp": {
             "wd": "スクーター",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "transportation"
     },
@@ -3735,7 +3735,7 @@
         "jp": {
             "wd": "うみ",
             "kj": "海",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3745,7 +3745,7 @@
         "jp": {
             "wd": "かいば",
             "kj": "海馬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3755,7 +3755,7 @@
         "jp": {
             "wd": "あざらし",
             "kj": "海豹",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3765,7 +3765,7 @@
         "jp": {
             "wd": "くがつ",
             "kj": "九月",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -3775,7 +3775,7 @@
         "jp": {
             "wd": "シャンプー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -3785,7 +3785,7 @@
         "jp": {
             "wd": "サメ",
             "kj": "鮫",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3795,7 +3795,7 @@
         "jp": {
             "wd": "ひつじ",
             "kj": "羊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3805,7 +3805,7 @@
         "jp": {
             "wd": "ふね",
             "kj": "船",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -3815,7 +3815,7 @@
         "jp": {
             "wd": "シャツ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -3825,7 +3825,7 @@
         "jp": {
             "wd": "くつ",
             "kj": "靴",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -3835,7 +3835,7 @@
         "jp": {
             "wd": "みせ",
             "kj": "店",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -3845,7 +3845,7 @@
         "jp": {
             "wd": "スキー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -3855,7 +3855,7 @@
         "jp": {
             "wd": "スカート",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -3865,7 +3865,7 @@
         "jp": {
             "wd": "スリッパ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -3875,7 +3875,7 @@
         "jp": {
             "wd": "かたつむり",
             "kj": "蝸牛",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3885,7 +3885,7 @@
         "jp": {
             "wd": "へび",
             "kj": "蛇",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3895,7 +3895,7 @@
         "jp": {
             "wd": "スニーカー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -3905,7 +3905,7 @@
         "jp": {
             "wd": "ゆきだるま",
             "kj": "雪だるま",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -3915,7 +3915,7 @@
         "jp": {
             "wd": "せっけん",
             "kj": "石鹸",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -3925,7 +3925,7 @@
         "jp": {
             "wd": "サッカー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -3935,7 +3935,7 @@
         "jp": {
             "wd": "くつした",
             "kj": "靴下",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -3945,7 +3945,7 @@
         "jp": {
             "wd": "ソーダ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -3955,7 +3955,7 @@
         "jp": {
             "wd": "へいし",
             "kj": "兵士",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -3965,7 +3965,7 @@
         "jp": {
             "wd": "しる",
             "kj": "汁",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3975,7 +3975,7 @@
         "jp": {
             "wd": "しょうゆ",
             "kj": "醤油",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3985,7 +3985,7 @@
         "jp": {
             "wd": "ほうれんそう",
             "kj": "菠薐草",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -3995,7 +3995,7 @@
         "jp": {
             "wd": "スプーン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -4005,7 +4005,7 @@
         "jp": {
             "wd": "はる",
             "kj": "春",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -4015,7 +4015,7 @@
         "jp": {
             "wd": "いか",
             "kj": "烏賊",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4025,7 +4025,7 @@
         "jp": {
             "wd": "りす",
             "kj": "栗鼠",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4035,7 +4035,7 @@
         "jp": {
             "wd": "かいだん",
             "kj": "階段",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4045,7 +4045,7 @@
         "jp": {
             "wd": "きって",
             "kj": "切手",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -4055,7 +4055,7 @@
         "jp": {
             "wd": "ほし",
             "kj": "星",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4065,7 +4065,7 @@
         "jp": {
             "wd": "ちょうしんき",
             "kj": "聴診器",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -4075,7 +4075,7 @@
         "jp": {
             "wd": "ストロー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "things"
     },
@@ -4085,7 +4085,7 @@
         "jp": {
             "wd": "いちご",
             "kj": "苺",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4095,7 +4095,7 @@
         "jp": {
             "wd": "ベビーカー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -4105,7 +4105,7 @@
         "jp": {
             "wd": "がくせい",
             "kj": "学生",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4115,7 +4115,7 @@
         "jp": {
             "wd": "ちかてつ",
             "kj": "地下鉄",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -4125,7 +4125,7 @@
         "jp": {
             "wd": "と",
             "kj": "糖",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4135,7 +4135,7 @@
         "jp": {
             "wd": "なつ",
             "kj": "夏",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -4145,7 +4145,7 @@
         "jp": {
             "wd": "たいよう",
             "kj": "太陽",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4155,7 +4155,7 @@
         "jp": {
             "wd": "にちようび",
             "kj": "日曜日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -4165,7 +4165,7 @@
         "jp": {
             "wd": "ひまわり",
             "kj": "向日葵",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4175,7 +4175,7 @@
         "jp": {
             "wd": "サングラス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -4185,7 +4185,7 @@
         "jp": {
             "wd": "げかい",
             "kj": "外科医",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4195,7 +4195,7 @@
         "jp": {
             "wd": "すし",
             "kj": "寿司",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4205,7 +4205,7 @@
         "jp": {
             "wd": "はくちょう",
             "kj": "白鳥",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4215,7 +4215,7 @@
         "jp": {
             "wd": "セーター",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "people"
     },
@@ -4225,7 +4225,7 @@
         "jp": {
             "wd": "さつま芋",
             "kj": "薩摩芋",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4235,7 +4235,7 @@
         "jp": {
             "wd": "ふぐ",
             "kj": "河豚",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4245,7 +4245,7 @@
         "jp": {
             "wd": "すいえい",
             "kj": "水泳",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -4255,7 +4255,7 @@
         "jp": {
             "wd": "プール",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -4265,7 +4265,7 @@
         "jp": {
             "wd": "みずぎ",
             "kj": "水着",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4275,7 +4275,7 @@
         "jp": {
             "wd": "ちゅうしゃき",
             "kj": "注射器",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -4285,7 +4285,7 @@
         "jp": {
             "wd": "じょうざい",
             "kj": "錠剤",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -4295,7 +4295,7 @@
         "jp": {
             "wd": "たっきゅう",
             "kj": "卓球",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -4305,7 +4305,7 @@
         "jp": {
             "wd": "タクシー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "transportation"
     },
@@ -4315,7 +4315,7 @@
         "jp": {
             "wd": "せんせい",
             "kj": "先生",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4325,7 +4325,7 @@
         "jp": {
             "wd": "ゆのみ",
             "kj": "湯呑み",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4335,7 +4335,7 @@
         "jp": {
             "wd": "きゅうす",
             "kj": "急須",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4345,7 +4345,7 @@
         "jp": {
             "wd": "でんわ",
             "kj": "電話",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4355,7 +4355,7 @@
         "jp": {
             "wd": "テレビ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -4365,7 +4365,7 @@
         "jp": {
             "wd": "おんど",
             "kj": "温度",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4375,7 +4375,7 @@
         "jp": {
             "wd": "テニス",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -4385,7 +4385,7 @@
         "jp": {
             "wd": "きょうかしょ",
             "kj": "教科書",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "education"
     },
@@ -4395,7 +4395,7 @@
         "jp": {
             "wd": "うちゅう",
             "kj": "宇宙",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4405,7 +4405,7 @@
         "jp": {
             "wd": "どろぼう",
             "kj": "泥棒",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4415,7 +4415,7 @@
         "jp": {
             "wd": "もくようび",
             "kj": "木曜日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -4425,7 +4425,7 @@
         "jp": {
             "wd": "きっぷ",
             "kj": "切符",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -4435,7 +4435,7 @@
         "jp": {
             "wd": "べんき",
             "kj": "便器",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4445,7 +4445,7 @@
         "jp": {
             "wd": "トイレットペーパー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -4455,7 +4455,7 @@
         "jp": {
             "wd": "は",
             "kj": "歯",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4465,7 +4465,7 @@
         "jp": {
             "wd": "はブラシ",
             "kj": "歯ブラシ",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4475,7 +4475,7 @@
         "jp": {
             "wd": "はみがきこ",
             "kj": "歯磨き粉",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4485,7 +4485,7 @@
         "jp": {
             "wd": "こま",
             "kj": "独楽",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -4495,7 +4495,7 @@
         "jp": {
             "wd": "タオル",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "house"
     },
@@ -4505,7 +4505,7 @@
         "jp": {
             "wd": "タワー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "city"
     },
@@ -4515,7 +4515,7 @@
         "jp": {
             "wd": "おもちゃ",
             "kj": "玩具",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -4525,7 +4525,7 @@
         "jp": {
             "wd": "トラフィックコーン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "transportation"
     },
@@ -4535,7 +4535,7 @@
         "jp": {
             "wd": "しんごう",
             "kj": "信号",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -4545,7 +4545,7 @@
         "jp": {
             "wd": "でんしゃ",
             "kj": "電車",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "transportation"
     },
@@ -4555,7 +4555,7 @@
         "jp": {
             "wd": "き",
             "kj": "木",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4565,7 +4565,7 @@
         "jp": {
             "wd": "かようび",
             "kj": "火曜日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -4575,7 +4575,7 @@
         "jp": {
             "wd": "チューリップ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -4585,7 +4585,7 @@
         "jp": {
             "wd": "かめ",
             "kj": "亀",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4595,7 +4595,7 @@
         "jp": {
             "wd": "かさ",
             "kj": "傘",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4605,7 +4605,7 @@
         "jp": {
             "wd": "だいがく",
             "kj": "大学",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -4615,7 +4615,7 @@
         "jp": {
             "wd": "そうじき",
             "kj": "掃除機",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4625,7 +4625,7 @@
         "jp": {
             "wd": "じどうはんばいき",
             "kj": "自動販売機",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "city"
     },
@@ -4635,7 +4635,7 @@
         "jp": {
             "wd": "す",
             "kj": "酢",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4645,7 +4645,7 @@
         "jp": {
             "wd": "バイオリン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -4655,7 +4655,7 @@
         "jp": {
             "wd": "ビタミン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "health"
     },
@@ -4665,7 +4665,7 @@
         "jp": {
             "wd": "かべ",
             "kj": "壁",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4675,7 +4675,7 @@
         "jp": {
             "wd": "さいふ",
             "kj": "財布",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4685,7 +4685,7 @@
         "jp": {
             "wd": "くるみ",
             "kj": "胡桃",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4695,7 +4695,7 @@
         "jp": {
             "wd": "せんたくき",
             "kj": "洗濯機",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4705,7 +4705,7 @@
         "jp": {
             "wd": "スズメばち",
             "kj": "雀蜂",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4715,7 +4715,7 @@
         "jp": {
             "wd": "うでどけい",
             "kj": "腕時計",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "people"
     },
@@ -4725,7 +4725,7 @@
         "jp": {
             "wd": "みず",
             "kj": "水",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4735,7 +4735,7 @@
         "jp": {
             "wd": "たき",
             "kj": "滝",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4745,7 +4745,7 @@
         "jp": {
             "wd": "すいか",
             "kj": "西瓜",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4755,7 +4755,7 @@
         "jp": {
             "wd": "なみ",
             "kj": "波",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4765,7 +4765,7 @@
         "jp": {
             "wd": "すいようび",
             "kj": "水曜日",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -4775,7 +4775,7 @@
         "jp": {
             "wd": "くじら",
             "kj": "鯨",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4785,7 +4785,7 @@
         "jp": {
             "wd": "まど",
             "kj": "窓",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "house"
     },
@@ -4795,7 +4795,7 @@
         "jp": {
             "wd": "ワイン",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -4805,7 +4805,7 @@
         "jp": {
             "wd": "つばさ",
             "kj": "翼",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4815,7 +4815,7 @@
         "jp": {
             "wd": "ふゆ",
             "kj": "冬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "time"
     },
@@ -4825,7 +4825,7 @@
         "jp": {
             "wd": "おおかみ",
             "kj": "狼",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "nature"
     },
@@ -4835,7 +4835,7 @@
         "jp": {
             "wd": "エックスせん",
             "kj": "X線",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "health"
     },
@@ -4845,7 +4845,7 @@
         "jp": {
             "wd": "もっきん",
             "kj": "木琴",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "fun"
     },
@@ -4855,7 +4855,7 @@
         "jp": {
             "wd": "いと",
             "kj": "糸",
-            "iskata": false
+            "isKatakana": false
         },
         "category": "things"
     },
@@ -4865,7 +4865,7 @@
         "jp": {
             "wd": "ヨガ",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "fun"
     },
@@ -4875,7 +4875,7 @@
         "jp": {
             "wd": "ヨーグルト",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "nature"
     },
@@ -4885,7 +4885,7 @@
         "jp": {
             "wd": "しまうま",
             "kj": "縞馬",
-            "iskata": false
+            "isKatakana": false
         },
         "category": ""
     },
@@ -4895,7 +4895,7 @@
         "jp": {
             "wd": "ジッパー",
             "kj": "",
-            "iskata": true
+            "isKatakana": true
         },
         "category": "things"
     }

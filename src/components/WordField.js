@@ -13,6 +13,8 @@ function WordField() {
   const appMode = useSelector((state) => state.appMode);
   const shake = useSelector((state) => state.shake);
   const correct = useSelector((state) => state.correct);
+  const includeHiragana = useSelector((state) => state.userSettings.includeHiragana);
+  const includeKatakana = useSelector((state) => state.userSettings.includeKatakana);
   const dispatch = useDispatch();
 
   const splitWord = Util.tokenize(guessWord.jp);
@@ -77,7 +79,7 @@ function WordField() {
         <button
           id="new-word-button"
           onClick={() => {
-            dispatch(setGuessWord(Util.randomNewWord()));
+            dispatch(setGuessWord(Util.getRandomWord(includeHiragana, includeKatakana)));
             dispatch(setInputValue(""));
           }}
         >
