@@ -42,7 +42,7 @@
     position: absolute;
     left: 50%;
     background-color: #333;
-    color: var(--text-color);
+    color: #fff;
     padding: 5px;
     border-radius: 4px;
     font-size: 14px;
@@ -61,7 +61,7 @@
 
 .word-part {
     transition: color 0.1s ease-in-out;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .word-part.active {
