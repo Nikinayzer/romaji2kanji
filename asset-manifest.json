@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/romaji2kanji/static/css/main.2c6918a5.css",
-    "main.js": "/romaji2kanji/static/js/main.ae7ce70b.js",
+    "main.css": "/romaji2kanji/static/css/main.3ff5de98.css",
+    "main.js": "/romaji2kanji/static/js/main.260b3ac0.js",
     "static/js/453.d9850d74.chunk.js": "/romaji2kanji/static/js/453.d9850d74.chunk.js",
     "static/media/error.gif": "/romaji2kanji/static/media/error.6fe9cc710b9cf6135924.gif",
     "static/media/logo-fill.png": "/romaji2kanji/static/media/logo-fill.cc68b5f9f30d1a3e2ea3.png",
     "static/media/petals.gif": "/romaji2kanji/static/media/petals.1b931850396f51225506.gif",
     "static/media/logo.svg": "/romaji2kanji/static/media/logo.35c0bbeba86113b571da3fdd49585d54.svg",
     "index.html": "/romaji2kanji/index.html",
-    "main.2c6918a5.css.map": "/romaji2kanji/static/css/main.2c6918a5.css.map",
-    "main.ae7ce70b.js.map": "/romaji2kanji/static/js/main.ae7ce70b.js.map",
+    "main.3ff5de98.css.map": "/romaji2kanji/static/css/main.3ff5de98.css.map",
+    "main.260b3ac0.js.map": "/romaji2kanji/static/js/main.260b3ac0.js.map",
     "453.d9850d74.chunk.js.map": "/romaji2kanji/static/js/453.d9850d74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c6918a5.css",
-    "static/js/main.ae7ce70b.js"
+    "static/css/main.3ff5de98.css",
+    "static/js/main.260b3ac0.js"
   ]
 }
