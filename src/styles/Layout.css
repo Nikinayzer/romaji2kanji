@@ -20,7 +20,7 @@
   opacity: 1;
   max-height: 1000px;
   transition: opacity 0.3s ease, max-height 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.020);
+  background-color: var(--background-box);
   border-radius: 20px;
 }
 
@@ -53,7 +53,7 @@
   display: flex;
   gap: 5px;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: var(--background-box);
   border-radius: 5px;
   justify-content: center;
   flex-grow: 1;
@@ -61,7 +61,7 @@
 
 .layout-buttons-container button {
   background-color: rgba(40, 40, 40, 0);
-  color: #141414;
+  color: var(text-color);
   padding: 0px 10px;
   font-size: 24px;
   font-weight: 400;
@@ -98,8 +98,8 @@
 }
 
 .layout-switch button[data-active="false"] {
-  background-color: #f8f9fa;
-  color: #495057;
+  background-color: var(--background-box);
+  color: #a0a2a3;
 }
 
 .report-button-container {
@@ -152,8 +152,8 @@
 }
 
 .key:hover {
-  background-color: #f0f0f0;
-  color: #b30092
+  background-color: var(--background-key);
+  color: var(--accent-color);
 }
 
 .key-empty:hover {

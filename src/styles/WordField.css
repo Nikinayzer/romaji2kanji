@@ -29,21 +29,20 @@
 }
 
 .new-word-icon {
-    color: #333;
+    color: var(--text-color);
     transition: color 0.3s ease;
 }
 
 .new-word-icon:hover {
     color: #b30092;
+    animation: spin 0.5s ease-in;
 }
 
 .tooltip {
     position: absolute;
     left: 50%;
-    /* Center it horizontally */
-    /* Adjust for perfect centering */
     background-color: #333;
-    color: #fff;
+    color: var(--text-color);
     padding: 5px;
     border-radius: 4px;
     font-size: 14px;
@@ -62,10 +61,11 @@
 
 .word-part {
     transition: color 0.1s ease-in-out;
+    color: var(--text-color);
 }
 
 .word-part.active {
-    color: #b30092;
+    color: var(--accent-color);
 }
 
 .word-info {

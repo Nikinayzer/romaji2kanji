@@ -8,7 +8,7 @@
 .faq-container h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-color);
 }
 
 .faq {
@@ -17,12 +17,13 @@
 
 .faq h2 {
     font-size: 1.5em;
-    color: #444;
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
 .faq p {
+    text-align: start;
     font-size: 1em;
     line-height: 1.6;
-    color: #666;
+    color: var(--text-color);
 }

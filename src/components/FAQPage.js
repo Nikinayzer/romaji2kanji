@@ -6,9 +6,9 @@ const FAQPage = () => {
     <div className="faq-container">
       <h1>Frequently Asked Questions</h1>
       <div className="faq">
-        <h2>What is Romaji2Kana?</h2>
+        <h2>What is Romaji2Kanji?</h2>
         <p>
-          Romaji2Kana is an application designed to help you practice and learn
+          Romaji2Kanji is an application designed to help you practice and learn
           Japanese hiragana and katakana by converting words between kana and
           romaji. It's a useful tool for learners at begginer level.
         </p>

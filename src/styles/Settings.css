@@ -15,14 +15,7 @@
     color:#ff00c8;
     transition: color 0.3s ease;
 }
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(180deg);
-    }
-}
+
 
 /* Apply the spin animation on hover */
 #settings-button:hover svg {
