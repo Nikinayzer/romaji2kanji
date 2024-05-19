@@ -22,16 +22,15 @@
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: var(--background-color);
     border-radius: 15px;
     width: 60%;
     padding: 5px;
     z-index: 1001;
-    /* Ensure modal content appears above overlay */
 }
 
 .modal-header {
-    background: #19b01c;
+    background: #000000;
     border-bottom: none;
     position: relative;
     text-align: center;
@@ -72,6 +71,8 @@
     padding: 10px;
     font-size: 0.8em;
     border: 1px solid #ccc;
+    color: var(--text-color);
+    background-color: var(--background-color);
     border-radius: 5px;
 }
 
