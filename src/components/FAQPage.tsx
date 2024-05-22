@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/FAQPage.css";
 
-const FAQPage = () => {
+const FAQPage: React.FC = () => {
   return (
     <div className="faq-container">
       <h1>Frequently Asked Questions</h1>

@@ -1,35 +1,30 @@
 import "../styles/App.css";
 import "../styles/InputField.css";
 import React, { useRef, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  setInputValue,
-  setGuessWord,
-  setShake,
-  setCorrect,
-} from "../redux/actions";
+import {useAppDispatch, useAppSelector} from "../redux/hooks";
+import { setInputValue, setCorrect, setGuessWord, setWrong } from "../redux/feautures/appStateSlice";
 import Util from "../scripts/util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
-function InputField() {
-  const inputValue = useSelector((state) => state.inputValue);
-  const guessWord = useSelector((state) => state.guessWord);
-  const appMode = useSelector((state) => state.appMode);
-  const includeHiragana = useSelector(
-    (state) => state.userSettings.includeHiragana
+const InputField: React.FC =() =>{
+  const inputValue = useAppSelector((state) => state.appState.inputValue);
+  const guessWord = useAppSelector((state) => state.appState.guessWord);
+  const appMode = useAppSelector((state) => state.appState.appMode);
+  const includeHiragana = useAppSelector(
+    (state) => state.settings.includeHiragana
   );
-  const includeKatakana = useSelector(
-    (state) => state.userSettings.includeKatakana
+  const includeKatakana = useAppSelector(
+    (state) => state.settings.includeKatakana
   );
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const inputValueRef = useRef("");
 
   useEffect(() => {
     inputValueRef.current = inputValue;
   }, [inputValue]);
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     const typedValue = e.target.value;
     dispatch(setInputValue(typedValue));
   };
@@ -47,8 +42,8 @@ function InputField() {
       }, 1000);
     } else {
       console.log("Incorrect guess!");
-      dispatch(setShake(true));
-      setTimeout(() => dispatch(setShake(false)), 500); // Remove shake state after animation
+      dispatch(setWrong(true));
+      setTimeout(() => dispatch(setWrong(false)), 500); // Remove shake state after animation
     }
   };
 

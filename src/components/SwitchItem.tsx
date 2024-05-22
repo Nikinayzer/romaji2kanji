@@ -1,6 +1,12 @@
 import React from "react";
+interface SwitchItemProps {
+  label: string;
+  checked: boolean;
+  disabled: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-const SwitchItem = ({ label, checked, disabled, onChange }) => {
+const SwitchItem:React.FC<SwitchItemProps> = ({ label, checked, disabled, onChange }) => {
   return (
     <div className="dropdown-item">
       <label className="switch">

@@ -1,16 +1,22 @@
 import "../styles/App.css";
 import "../styles/AppLogo.css";
-import React, { useState } from "react";
+import React, { useState, MouseEvent} from "react";
 import { ReactComponent as Logo } from "../resources/logos/logo.svg";
 
-function AppLogo() {
-  const [showDialog, setShowDialog] = useState(false);
-  const [prevMousePosition, setPrevMousePosition] = useState(null);
-  const [directionChanges, setDirectionChanges] = useState(0);
-  const [phrase, setPhrase] = useState("Hello, student!");
-  const [dialogTriggered, setDialogTriggered] = useState(false);
+// Define the shape of the mouse position state
+interface MousePosition {
+  x: number;
+  y: number;
+}
 
-  const phrases = [
+const AppLogo: React.FC = () => {
+  const [showDialog, setShowDialog] = useState<boolean>(false);
+  const [prevMousePosition, setPrevMousePosition] = useState<MousePosition | null>(null);
+  const [directionChanges, setDirectionChanges] = useState<number>(0);
+  const [phrase, setPhrase] = useState<string>("Hello, student!");
+  const [dialogTriggered, setDialogTriggered] = useState<boolean>(false);
+
+  const phrases: string[] = [
     "Welcome to Romaji2kanji!",
     "Learn Japanese with me!",
     "日本語を話しましょう！",
@@ -20,25 +26,26 @@ function AppLogo() {
     "Omae wa mou shindeiru.",
     "がんばって！",
   ];
-  const easterEggPhrase = "やめてください！";
+  const easterEggPhrase: string = "やめてください！";
 
-  function choosePhrase(easter) {
+  function choosePhrase(easter: boolean): void {
     const randomIndex = Math.floor(Math.random() * phrases.length);
     easter ? setPhrase(easterEggPhrase) : setPhrase(phrases[randomIndex]);
   }
 
-  const handleMouseClick = () => {
+  const handleMouseClick = (): void => {
     if (dialogTriggered) return;
     handleDialog(false);
   };
 
-  const handleFastMovement = () => {
+  const handleFastMovement = (): void => {
     if (directionChanges > 300) {
       setDirectionChanges(0);
       handleDialog(true);
     }
   };
-  const handleDialog = (easter) => {
+
+  const handleDialog = (easter: boolean): void => {
     choosePhrase(easter);
     setShowDialog(true);
     setDialogTriggered(true);
@@ -48,11 +55,11 @@ function AppLogo() {
     }, 2000);
   };
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = (e: MouseEvent<HTMLDivElement>): void => {
     setPrevMousePosition({ x: e.clientX, y: e.clientY });
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>): void => {
     if (!prevMousePosition) return;
     const currentMousePosition = { x: e.clientX, y: e.clientY };
     const deltaX = currentMousePosition.x - prevMousePosition.x;
@@ -62,7 +69,7 @@ function AppLogo() {
     setPrevMousePosition(currentMousePosition);
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (): void => {
     setPrevMousePosition(null);
     setDirectionChanges(0);
   };

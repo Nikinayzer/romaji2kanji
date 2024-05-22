@@ -1,31 +1,28 @@
 import "../styles/App.css";
 import "../styles/WordField.css";
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setInputValue, setGuessWord } from "../redux/actions";
+import { useAppSelector, useAppDispatch } from "../redux/hooks";
+import { setInputValue, setGuessWord } from "../redux/feautures/appStateSlice";
 import * as japanese from "japanese";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import Util from "../scripts/util";
+import { RootState } from "../redux/store";
 
-function WordField() {
-  const guessWord = useSelector((state) => state.guessWord);
-  const appMode = useSelector((state) => state.appMode);
-  const shake = useSelector((state) => state.shake);
-  const correct = useSelector((state) => state.correct);
-  const includeHiragana = useSelector(
-    (state) => state.userSettings.includeHiragana
-  );
-  const includeKatakana = useSelector(
-    (state) => state.userSettings.includeKatakana
-  );
-  const dispatch = useDispatch();
+const WordField: React.FC = () => {
+  const guessWord = useAppSelector((state: RootState) => state.appState.guessWord);
+  const appMode = useAppSelector((state: RootState) => state.appState.appMode);
+  const shake = useAppSelector((state: RootState) => state.appState.wrong);
+  const correct = useAppSelector((state: RootState) => state.appState.correct);
+  const includeHiragana = useAppSelector((state: RootState) => state.settings.includeHiragana);
+  const includeKatakana = useAppSelector((state: RootState) => state.settings.includeKatakana);
+  const dispatch = useAppDispatch();
 
   const splitWord = Util.tokenize(guessWord.jp);
 
-  const [hoveredChar, setHoveredChar] = useState(null);
+  const [hoveredChar, setHoveredChar] = useState<string | null>(null);
 
-  const handleHover = (char) => {
+  const handleHover = (char: string) => {
     setHoveredChar(char);
   };
 
@@ -35,7 +32,7 @@ function WordField() {
 
   const renderWord = () => {
     const charsArray = splitWord.wd;
-    return charsArray.map((char, index) => {
+    return charsArray.map((char: string, index: number) => {
       const uniqueKey = `${char}-${index}`;
       const isActive = hoveredChar === uniqueKey;
 
@@ -49,8 +46,8 @@ function WordField() {
             if (el && isActive) {
               const rect = el.getBoundingClientRect();
               const middleX = rect.left + rect.width / 2;
-              const tooltip = el.querySelector(".tooltip");
-              tooltip.style.left = `${middleX}px`;
+              const tooltip = el.querySelector(".tooltip") as HTMLElement; // Type assertion
+              if (tooltip) tooltip.style.left = `${middleX}px`;
             }
           }}
         >
@@ -58,14 +55,11 @@ function WordField() {
             ? japanese.romanize(char, Util.makeDefaultConfig())
             : char}
           <span className={`tooltip ${isActive ? "active" : ""}`}>
-            {
-              //isActive ? ((appMode === 'r2k') ? wanakana.toKana(char) : wanakana.toRomaji(char)) : ""
-              isActive
-                ? appMode === "r2k"
-                  ? char
-                  : japanese.romanize(char, Util.makeDefaultConfig())
-                : ""
-            }
+            {isActive
+              ? appMode === "r2k"
+                ? char
+                : japanese.romanize(char, Util.makeDefaultConfig())
+              : ""}
           </span>
         </span>
       );
@@ -75,9 +69,7 @@ function WordField() {
   return (
     <div className="word-field">
       <div className="word-container">
-        <div
-          className={`word ${shake ? "shake" : ""} ${correct ? "correct" : ""}`}
-        >
+        <div className={`word ${shake ? "shake" : ""} ${correct ? "correct" : ""}`}>
           {renderWord()}
         </div>
         <button

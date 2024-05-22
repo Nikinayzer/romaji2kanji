@@ -1,23 +1,22 @@
-import "../styles/App.css";
-import "../styles/Header.css";
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setAppMode } from "../redux/actions";
+
+import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+import "../styles/App.css";
+import "../styles/Header.css";
 import AppLogo from "./AppLogo";
-
 import Settings from "./Settings";
+import { setAppMode } from "../redux/feautures/appStateSlice";
 
-function Header() {
-  const appMode = useSelector((state) => state.appMode);
-  const dispatch = useDispatch();
+const Header: React.FC = () => {
+  const appMode = useAppSelector((state) => state.appState.appMode);
+  const dispatch = useAppDispatch();
   const location = useLocation();
 
-  const handleModeChange = (mode) => {
+  const handleModeChange = (mode: string) => {
     dispatch(setAppMode(mode));
   };
 
@@ -30,12 +29,11 @@ function Header() {
             <h1>Romaji2kanji</h1>
           </div>
           <div className="mode-switch">
-            {location.pathname === "/faq" ? ( // Render "Back to App" link only on FAQ page
+            {location.pathname === "/faq" ? (
               <Link to="/" className="nav-button">
                 <FontAwesomeIcon icon={faArrowLeft} /> Back to App
               </Link>
             ) : (
-              <>
               <div className="nav-buttons">
                 <a
                   className={`nav-button ${appMode === "r2k" ? "active" : ""}`}
@@ -57,17 +55,14 @@ function Header() {
                 >
                   FAQ
                 </Link>
-                </div>
-              </>
+              </div>
             )}
-            {/**<a className={`nav-button`}>Romaji rules</a>*/}
             <Settings />
           </div>
         </div>
-        
       </div>
     </header>
   );
-}
+};
 
 export default Header;

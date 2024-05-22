@@ -3,36 +3,38 @@ import "../styles/Layout.css";
 import hiragana from "../data/hiragana.json";
 import katakana from "../data/katakana.json";
 import Util from "../scripts/util";
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setInputValue, setTypingMode, setShowLayout } from "../redux/actions";
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import {
+  setInputValue,
+  setTypingMode,
+  setShowLayout,
+} from "../redux/feautures/appStateSlice";
+import { Symbol } from "../type_declarations/types";
 
-import Modal from "./Modal.js"; // Import the Modal component
+import Modal from "./Modal";
 
-const Layout = () => {
-  const inputValue = useSelector((state) => state.inputValue);
-  const typingMode = useSelector((state) => state.typingMode);
-  const showLayout = useSelector((state) => state.showLayout);
+const Layout: React.FC = () => {
+  const inputValue = useAppSelector((state) => state.appState.inputValue);
+  const typingMode = useAppSelector((state) => state.appState.typingMode);
+  const showLayout = useAppSelector((state) => state.appState.showLayout);
+  const appMode = useAppSelector((state) => state.appState.appMode);
+  const dispatch = useAppDispatch();
 
+  const [showRomaji, setShowRomaji] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  const appMode = useSelector((state) => state.appMode);
-  const dispatch = useDispatch();
-
-  // Layout states
-  const [showRomaji, setShowRomaji] = useState(true);
-
-  const handleKeyPress = (kana) => {
+  const handleKeyPress = (kana: string) => {
     if (appMode !== "k2r") {
       dispatch(setInputValue(inputValue + kana));
     }
   };
 
-  const filterKeys = (data, types) =>
+  const filterKeys = (data: Symbol[], types: string[]) =>
     data.filter((d) => types.includes(d.type));
-  const chunkKeys = (keys) => Util.chunkArray(keys, 5);
+  const chunkKeys = (keys: Symbol[]) => Util.chunkArray(keys, 5);
 
-  const getFilteredAndChunkedKeys = (data) => ({
+  const getFilteredAndChunkedKeys = (data: Symbol[]) => ({
     gojuuon: chunkKeys(filterKeys(data, ["gojuuon", "empty"])),
     additional: chunkKeys(filterKeys(data, ["dakuon", "handakuon"])),
   });
@@ -40,7 +42,7 @@ const Layout = () => {
   const hiraKeys = getFilteredAndChunkedKeys(hiragana);
   const kataKeys = getFilteredAndChunkedKeys(katakana);
 
-  const renderLayout = (chunks) =>
+  const renderLayout = (chunks: Symbol[][]) =>
     chunks.map((chunk, index) => (
       <div key={index} className="layout-column">
         {chunk.map((d, idx) => (

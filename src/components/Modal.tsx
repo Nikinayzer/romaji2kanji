@@ -1,26 +1,36 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Modal.css";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../redux/hooks"
 import * as japanese from "japanese";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-const Modal = ({ isOpen, onClose }) => {
-  const inputValue = useSelector((state) => state.inputValue);
-  const guessWord = useSelector((state) => state.guessWord);
+import { ModalProps } from "../type_declarations/types";
 
-  const appMode = useSelector((state) => state.appMode);
-  const [variant, setVariant] = useState("");
-  const [notes, setNotes] = useState("");
-  const [reportText, setReportText] = useState("");
+interface ErrorReport {
+  reportedWord: string;
+  inputValue: string;
+  appMode: string;
+  variant: string;
+  notes: string;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  const inputValue = useAppSelector((state) => state.appState.inputValue);
+  const guessWord = useAppSelector((state) => state.appState.guessWord);
+
+  const appMode = useAppSelector((state) => state.appState.appMode);
+  const [variant, setVariant] = useState<string>("");
+  const [notes, setNotes] = useState<string>("");
+  const [reportText, setReportText] = useState<string>("");
 
   useEffect(() => {
     setVariant(inputValue);
   }, [inputValue]);
 
   useEffect(() => {
-    const errorReport = {
+    const errorReport: ErrorReport = {
       reportedWord: guessWord.jp.wd,
       inputValue: japanese.romanize(guessWord.jp.wd),
       appMode: appMode,
@@ -32,20 +42,20 @@ const Modal = ({ isOpen, onClose }) => {
     setReportText(jsonBody);
   }, [guessWord, appMode, variant, notes]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const title = encodeURIComponent("Wrong Word Report");
-    const githubUrl = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${reportText}`;
+    const title:string = encodeURIComponent("Wrong Word Report");
+    const githubUrl:string = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${reportText}`;
 
     window.open(githubUrl, "_blank");
 
     onClose();
   };
   const handleMailSubmit = () => {
-    const subject = encodeURIComponent("Wrong Word Report");
-    const body = encodeURIComponent(reportText);
-    const mailtoUrl = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
+    const subject:string = encodeURIComponent("Wrong Word Report");
+    const body:string = encodeURIComponent(reportText);
+    const mailtoUrl:string = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
 
     window.location.href = mailtoUrl;
   };
@@ -125,10 +135,10 @@ const Modal = ({ isOpen, onClose }) => {
                   />
                 </div>
                 <div className="button-container">
-                  <button className="github-button" onClick={handleSubmit}>
+                  <button className="github-button" onClick={()=>handleSubmit}>
                     <FontAwesomeIcon icon={faGithub} /> Submit to GitHub
                   </button>
-                  <button className="mail-button" onClick={handleMailSubmit}>
+                  <button className="mail-button" onClick={()=>handleMailSubmit}>
                     <FontAwesomeIcon icon={faEnvelope} /> Submit via Email
                   </button>
                 </div>

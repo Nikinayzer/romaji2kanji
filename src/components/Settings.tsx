@@ -3,22 +3,26 @@ import "../styles/Settings.css";
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import {
-  setDarkMode,
-  setIncludeHiragana,
-  setIncludeKatakana,
-} from "../redux/actions";
+  toggleDarkMode,
+  toggleIncludeHiragana,
+  toggleIncludeKatakana,
+} from "../redux/feautures/settingsSlice";
 import SwitchItem from "./SwitchItem";
 
-function Settings() {
+const Settings: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const isDarkMode = useSelector((state) => state.userSettings.isDarkMode);
-  const includeKatakana = useSelector((state) => state.userSettings.includeKatakana);
-  const includeHiragana = useSelector((state) => state.userSettings.includeHiragana);
-  const dispatch = useDispatch();
+  const isDarkMode = useAppSelector((state) => state.settings.isDarkMode);
+  const includeKatakana = useAppSelector(
+    (state) => state.settings.includeKatakana
+  );
+  const includeHiragana = useAppSelector(
+    (state) => state.settings.includeHiragana
+  );
+  const dispatch = useAppDispatch();
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -26,23 +30,21 @@ function Settings() {
 
   const handleDarkModeToggle = () => {
     localStorage.setItem("darkMode", JSON.stringify(!isDarkMode));
-    dispatch(setDarkMode(!isDarkMode));
-    
+    dispatch(toggleDarkMode());
   };
 
-  const handleSwitchToggle = (type) => {
-    if (type === "hiragana") {      
+  const handleSwitchToggle = (type: "hiragana" | "katakana") => {
+    if (type === "hiragana") {
       localStorage.setItem("includeHiragana", JSON.stringify(!includeHiragana));
-      dispatch(setIncludeHiragana(!includeHiragana));
-
+      dispatch(toggleIncludeHiragana());
     } else if (type === "katakana") {
-      dispatch(setIncludeKatakana(!includeKatakana));
+      dispatch(toggleIncludeKatakana());
       localStorage.setItem("includeKatakana", JSON.stringify(!includeKatakana));
     }
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: any) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowDropdown(false);
       }
@@ -52,7 +54,6 @@ function Settings() {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-
   }, []);
 
   useEffect(() => {
@@ -65,16 +66,23 @@ function Settings() {
 
   return (
     <div className="settings-container" ref={dropdownRef}>
-      <button className={`settings-button ${showDropdown? "active": ""}`} id="settings-button" onClick={() => toggleDropdown()}>
+      <button
+        className={`settings-button ${showDropdown ? "active" : ""}`}
+        id="settings-button"
+        onClick={() => toggleDropdown()}
+      >
         <FontAwesomeIcon icon={faGear} size="2xl" />
       </button>
       {showDropdown && (
         <div className="settings-dropdown">
-          <div className="dark-mode-switch-container dropdown-item" onClick={handleDarkModeToggle}>
+          <div
+            className="dark-mode-switch-container dropdown-item"
+            onClick={() => handleDarkModeToggle()}
+          >
             <input
               className="dark-mode-switch"
               type="checkbox"
-              onChange={handleDarkModeToggle}
+              readOnly
               checked={isDarkMode}
             />
             <label htmlFor="toggle" className="title">
@@ -99,6 +107,6 @@ function Settings() {
       )}
     </div>
   );
-}
+};
 
 export default Settings;
