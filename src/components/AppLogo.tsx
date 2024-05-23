@@ -39,7 +39,7 @@ const AppLogo: React.FC = () => {
   };
 
   const handleFastMovement = (): void => {
-    if (directionChanges > 300) {
+    if (directionChanges > 1000) {
       setDirectionChanges(0);
       handleDialog(true);
     }
