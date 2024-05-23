@@ -12,18 +12,16 @@
     position: relative;
     display: inline-block;
     line-height: 0;
-
+}
+.logo-wrapper:hover .app-logo {
+    background-image: url(../resources/logos/logo-fill.png);
+    background-size: cover;
 }
 
 .app-logo {
-    height: 140px;
+    height: 100%;
     width: 150px;
     fill: white;
-}
-
-.app-logo:hover {
-    background-image: url(../resources/logos/logo-fill.png);
-    background-size: cover;
 }
 
 .app-logo * {
@@ -106,12 +104,6 @@
 }
 
 @media (max-width: 600px) {
-    .logo-container {
-    }
-    .app-logo {
-        height: 100%;
-    }
-
 
     .dialog-bubble {
         top: 100px;
