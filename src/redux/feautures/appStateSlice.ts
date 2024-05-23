@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Util from "../../scripts/util";
 import { Word } from "../../type_declarations/types";
+import { WordController } from "../../logic/WordController";
 
 interface AppState {
   inputValue: string;
@@ -14,7 +14,7 @@ interface AppState {
 
 const initialState: AppState = {
   inputValue: "",
-  guessWord: Util.getRandomWord(true, true),
+  guessWord: WordController.getRandomWord(true, true),
   typingMode: "hiragana",
   showLayout: true,
   appMode: "r2k",

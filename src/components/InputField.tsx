@@ -3,9 +3,11 @@ import "../styles/InputField.css";
 import React, { useRef, useEffect } from "react";
 import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import { setInputValue, setCorrect, setGuessWord, setWrong } from "../redux/feautures/appStateSlice";
-import Util from "../scripts/util";
+import Util from "../logic/util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import AnswerController from "../logic/AnswerController";
+import { WordController } from "../logic/WordController";
 
 const InputField: React.FC =() =>{
   const inputValue = useAppSelector((state) => state.appState.inputValue);
@@ -31,12 +33,12 @@ const InputField: React.FC =() =>{
 
   const handleSubmit = () => {
     const inputWord = inputValueRef.current; // Use ref instead of state
-    if (Util.checkAnswer(inputWord, guessWord, appMode)) {
+    if (AnswerController.checkAnswer(inputWord, guessWord, appMode)) {
       dispatch(setCorrect(true));
       setTimeout(() => {
         dispatch(setCorrect(false));
         dispatch(
-          setGuessWord(Util.getRandomWord(includeHiragana, includeKatakana))
+          setGuessWord(WordController.getRandomWord(includeHiragana, includeKatakana))
         );
         dispatch(setInputValue(""));
       }, 1000);

@@ -6,8 +6,10 @@ import { setInputValue, setGuessWord } from "../redux/feautures/appStateSlice";
 import * as japanese from "japanese";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
-import Util from "../scripts/util";
+import Util from "../logic/util";
 import { RootState } from "../redux/store";
+import Tokenizer from "../logic/Tokenizer";
+import { WordController } from "../logic/WordController";
 
 const WordField: React.FC = () => {
   const guessWord = useAppSelector((state: RootState) => state.appState.guessWord);
@@ -18,7 +20,7 @@ const WordField: React.FC = () => {
   const includeKatakana = useAppSelector((state: RootState) => state.settings.includeKatakana);
   const dispatch = useAppDispatch();
 
-  const splitWord = Util.tokenize(guessWord.jp);
+  const splitWord = Tokenizer.tokenize(guessWord.jp);
 
   const [hoveredChar, setHoveredChar] = useState<string | null>(null);
 
@@ -52,13 +54,13 @@ const WordField: React.FC = () => {
           }}
         >
           {appMode === "r2k"
-            ? japanese.romanize(char, Util.makeDefaultConfig())
+            ? japanese.romanize(char)
             : char}
           <span className={`tooltip ${isActive ? "active" : ""}`}>
             {isActive
               ? appMode === "r2k"
                 ? char
-                : japanese.romanize(char, Util.makeDefaultConfig())
+                : japanese.romanize(char)
               : ""}
           </span>
         </span>
@@ -76,7 +78,7 @@ const WordField: React.FC = () => {
           id="new-word-button"
           onClick={() => {
             dispatch(
-              setGuessWord(Util.getRandomWord(includeHiragana, includeKatakana))
+              setGuessWord(WordController.getRandomWord(includeHiragana, includeKatakana))
             );
             dispatch(setInputValue(""));
           }}
