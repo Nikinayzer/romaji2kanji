@@ -1,12 +1,11 @@
 # Romaji2Kanji
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikinayzer/romaji2kanji/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-GNU-blue.svg)](LICENCE)
 
 ## Table of Contents
 
 - [About This Project](#about-this-project)
 - [Why This Project Exists](#why-this-project-exists)
-- [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -15,21 +14,40 @@
 - [Contact](#contact)
 
 ## About This Project
+<p align="center">
+<picture >
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Nikinayzer/romaji2kanji/blob/master/src/resources/logos/logo-white.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Nikinayzer/romaji2kanji/blob/master/src/resources/logos/logo.svg">
+  <img alt="logo">
+</picture>
+</p>
 
-**Romaji2Kanji** is a web application designed to make learning Japanese symbols (Hiragana and Katakana) easier for Japanese language students. By providing a platform to practice writing words with these symbols, the project aims to enhance the learning experience and proficiency of learners.
+**Romaji2Kanji** is a user-friendly web app designed to help Japanese language learners practice writing Hiragana and Katakana symbols. Its interactive exercises make learning Japanese symbols easier and more enjoyable, whenever it's transforming symbols to their romanian representation or vice versa.
+
+**To access the application, visit [here](https://nikinayzer.github.io/romaji2kanji/).**
 
 ## Why This Project Exists
+<p>
+  <img src="https://github.com/Nikinayzer/romaji2kanji/blob/master/repo/welcome.gif" width="450" title="welcome gif">
+</p>
 
-The idea for Romaji2Kanji arose from my personal need for an effective tool to practice writing Japanese symbols. As a Japanese language learner, I encountered a lack of resources tailored specifically to this aspect of learning. This project was created to address this gap and provide a valuable learning tool for students like myself who want to improve their proficiency in Japanese writing.
-
-## Introduction
-
-**Romaji2Kanji** is a web application designed to help users learn and practice Japanese Hiragana and Katakana by transforming words from kana to romaji and vice versa. The app is built with React and includes features such as a keyboard for input, large word base, and 2 mods (r2k & k2r).
+The idea for Romaji2Kanji arose from my personal need for an effective tool to practice writing Japanese symbols. As a Japanese language learner, I encountered a lack of resources for this aspect of learning. This project was created to address this gap and provide a learning tool for students like myself who want to improve their proficiency in Japanese reading and writing.
 
 ## Features
-
-- **Interactive Learning**: Practice converting between kana and romaji.
 - **Keyboard Support**: On-screen keyboard for easy input.
+  <p>
+  <img src="https://github.com/Nikinayzer/romaji2kanji/blob/master/repo/use_example.gif" width="450" title="welcome gif">
+  </p>
+- **Interactive Learning**: Practice converting between kana and romaji, see tips on every sound of the word.
+  <p>
+  <img src="https://github.com/Nikinayzer/romaji2kanji/blob/master/repo/tooltip.gif" width="450" title="welcome gif">
+  </p>
+- **Dark Mode Support**: Easily enable dark mode in settings.
+  <p>
+  <img src="https://github.com/Nikinayzer/romaji2kanji/blob/master/repo/darkmode.gif" width="200" title="welcome gif">
+  </p>
+- **Choose between Hira and Kata**: If you don't want to practice Hiragana and Katakana together, you can choose to get words only in desired alphabet to practice (Settings switches).
+- **Word Translations**: English translation for every word, so you can learn them in the process.
 - **Animated Feedback**: Visual feedback for correct and incorrect guesses.
 - **Responsive Design**: Works well on both desktop and mobile devices.
 - **Report feauture**: Report wrong words with one click by GitHub or email.
@@ -111,4 +129,5 @@ If you have any questions or suggestions, feel free to reach out:
 - **GitHub**: [nikinayzer](https://github.com/nikinayzer)
 - **Instagram**: [Instagram](https://instagram.com)
 
+Let's make Japanese less suffering!
 ---
