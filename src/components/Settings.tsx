@@ -69,34 +69,38 @@ const Settings: React.FC = () => {
       <button
         className={`settings-button ${showDropdown ? "active" : ""}`}
         id="settings-button"
+        data-testid="settings-button"
         onClick={() => toggleDropdown()}
       >
         <FontAwesomeIcon icon={faGear} size="2xl" />
       </button>
       {showDropdown && (
-        <div className="settings-dropdown">
+        <div className="settings-dropdown" data-testid="settings-dropdown">
           <div
             className="dark-mode-switch-container dropdown-item"
             onClick={() => handleDarkModeToggle()}
           >
             <input
+              id="dark-mode-switch"
               className="dark-mode-switch"
               type="checkbox"
               readOnly
               checked={isDarkMode}
             />
-            <label htmlFor="toggle" className="title">
+            <label htmlFor="dark-mode-switch" className="title">
               {isDarkMode ? "Dark Mode" : "Light Mode"}
             </label>
           </div>
           <div className="switches-list">
             <SwitchItem
+              id="hiragana-switch"
               label="Include hiragana"
               checked={includeHiragana}
               disabled={!includeKatakana}
               onChange={() => handleSwitchToggle("hiragana")}
             />
             <SwitchItem
+              id="katakana-switch"
               label="Include katakana"
               checked={includeKatakana}
               disabled={!includeHiragana}

@@ -1,14 +1,16 @@
+import { tokenize } from "wanakana";
+
 /**
  * Tokenizer class for tokenizing Japanese words.
  */
 class Tokenizer {
-    /**
-     * Tokenizes the given word, using regex to split the word into characters. Some of the characters are combined into digraphs, long vowels, etc; so they make up a single sound, different to original characters.
-     * @param obj - The word to tokenize.
-     * @returns The tokenized word.
-     */
-  public static tokenize(obj: { wd: string }): { wd: string[] } {
-    const wdChars = Array.from(obj.wd);
+  /**
+   * Tokenizes the given word, using regex to split the word into characters. Some of the characters are combined into digraphs, long vowels, etc; so they make up a single sound, different to original characters)
+   * @param word - The word to tokenize.
+   * @returns The tokenized word.
+   */
+  public static tokenize(word: string): string[] {
+    const wdChars:string[] = Array.from(word);
     const hiraganaDigraphs: RegExp = /[きしちにひみりぎじぢびぴ]/;
     const katakanaDigraphs: RegExp = /[キシチニヒミリギジヂビピ]/;
     const digraphsSuffix: RegExp = /[ゃゅょャュョ]/;
@@ -81,9 +83,7 @@ class Tokenizer {
         continue;
       }
     }
-    return {
-      wd: wdChars,
-    };
+    return wdChars;
   }
 }
 

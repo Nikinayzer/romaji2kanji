@@ -1,9 +1,8 @@
 import "../styles/App.css";
 import "../styles/AppLogo.css";
-import React, { useState, MouseEvent} from "react";
+import React, { useState, MouseEvent } from "react";
 import { ReactComponent as Logo } from "../resources/logos/logo.svg";
 
-// Define the shape of the mouse position state
 interface MousePosition {
   x: number;
   y: number;
@@ -78,6 +77,7 @@ const AppLogo: React.FC = () => {
     <div className="logo-container" data-text="Romaji2kaji">
       <div
         className="logo-wrapper"
+        data-testid="logo-wrapper"
         onClick={handleMouseClick}
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
@@ -86,7 +86,7 @@ const AppLogo: React.FC = () => {
       >
         <Logo className="app-logo" />
         {showDialog && (
-          <div className={`dialog-bubble ${showDialog ? "show" : ""}`}>
+          <div className={`dialog-bubble ${showDialog ? "show" : ""}`} data-testid="dialog-bubble">
             <p>{phrase}</p>
           </div>
         )}

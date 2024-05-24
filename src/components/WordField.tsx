@@ -1,15 +1,14 @@
-import "../styles/App.css";
-import "../styles/WordField.css";
-import React, { useState } from "react";
-import { useAppSelector, useAppDispatch } from "../redux/hooks";
-import { setInputValue, setGuessWord } from "../redux/feautures/appStateSlice";
-import * as japanese from "japanese";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
-import Util from "../logic/util";
-import { RootState } from "../redux/store";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as japanese from "japanese";
+import React, { useState } from "react";
 import Tokenizer from "../logic/Tokenizer";
 import { WordController } from "../logic/WordController";
+import { setGuessWord, setInputValue } from "../redux/feautures/appStateSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { RootState } from "../redux/store";
+import "../styles/App.css";
+import "../styles/WordField.css";
 
 const WordField: React.FC = () => {
   const guessWord = useAppSelector((state: RootState) => state.appState.guessWord);
@@ -20,7 +19,7 @@ const WordField: React.FC = () => {
   const includeKatakana = useAppSelector((state: RootState) => state.settings.includeKatakana);
   const dispatch = useAppDispatch();
 
-  const splitWord = Tokenizer.tokenize(guessWord.jp);
+  const splitWord:string[] = Tokenizer.tokenize(guessWord.jp.wd);
 
   const [hoveredChar, setHoveredChar] = useState<string | null>(null);
 
@@ -33,7 +32,7 @@ const WordField: React.FC = () => {
   };
 
   const renderWord = () => {
-    const charsArray = splitWord.wd;
+    const charsArray = splitWord;
     return charsArray.map((char: string, index: number) => {
       const uniqueKey = `${char}-${index}`;
       const isActive = hoveredChar === uniqueKey;

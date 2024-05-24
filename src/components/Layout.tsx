@@ -89,6 +89,7 @@ const Layout: React.FC = () => {
           <button
             className={showLayout ? "active" : ""}
             onClick={() => dispatch(setShowLayout(!showLayout))}
+            data-testid="toggle-layout-button"
             //disabled={appMode === "k2r"}
           >
             あ
@@ -96,6 +97,7 @@ const Layout: React.FC = () => {
           <button
             className={showRomaji && showLayout ? "active" : ""}
             onClick={() => setShowRomaji(!showRomaji)}
+            data-testid="toggle-romaji-button"
             //disabled={appMode === "k2r" || !showLayout}
           >
             A
@@ -104,6 +106,7 @@ const Layout: React.FC = () => {
           <div className="layout-switch">
             <button
               className="layout-switch-hira"
+              data-testid="toggle-hira-kana-button"
               data-active={typingMode === "hiragana"}
               onClick={() => dispatch(setTypingMode("hiragana"))}
               //disabled={appMode === "k2r" || !showLayout}
