@@ -6,7 +6,6 @@
 
 - [About This Project](#about-this-project)
 - [Why This Project Exists](#why-this-project-exists)
-- [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -24,6 +23,8 @@
 </p>
 
 **Romaji2Kanji** is a user-friendly web app designed to help Japanese language learners practice writing Hiragana and Katakana symbols. Its interactive exercises make learning Japanese symbols easier and more enjoyable, whenever it's transforming symbols to their romanian representation or vice versa.
+
+**To access the application, visit [here](https://nikinayzer.github.io/romaji2kanji/).**
 
 ## Why This Project Exists
 <p>
