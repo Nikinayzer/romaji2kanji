@@ -31,7 +31,7 @@ export class WordController {
    * @returns Filtered array of words including only Katakana
    */
   private static filterHiraganaWords(words: Word[]): Word[] {
-    return words.filter((word) => word.jp.isKatakana === true);
+    return words.filter((word) => word.jp.isKatakana === false);
   }
 
   /**
@@ -40,7 +40,7 @@ export class WordController {
    * @returns Filtered array of words including only Hiragana
    */
   private static filterKatakanaWords(words: Word[]): Word[] {
-    return words.filter((word) => word.jp.isKatakana === false);
+    return words.filter((word) => word.jp.isKatakana === true);
   }
 
   /**
