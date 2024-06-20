@@ -1,4 +1,5 @@
-import { configureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import thunkMiddleware from 'redux-thunk'
 import { AppStateSlice } from "./feautures/appStateSlice";
 import { SettingsSlice } from "./feautures/settingsSlice";
 
@@ -8,13 +9,12 @@ const store = configureStore({
     settings: SettingsSlice.reducer,
     appState: AppStateSlice.reducer,
   },
-  }
-);
+});
 
 // Get the type of our store variable
-export type AppStore = typeof store
+export type AppStore = typeof store;
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<AppStore['getState']>
+export type RootState = ReturnType<AppStore['getState']>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = AppStore['dispatch']
+export type AppDispatch = AppStore['dispatch'];
 export default store;

@@ -1,4 +1,28 @@
 /* WORDFIELD SECTION*/
+/* SPINNER/LOADER */
+.loading-dots {
+    display: flex;
+    flex-direction: row;
+    width: 1em;
+    text-align: center;
+  }
+  
+  .loading-dots > span {
+    display: inline-block;
+    animation: bounce 1.4s infinite ease-in-out both;
+    animation-delay: calc(var(--i) * 0.2s);
+    font-size: 4em;
+  }
+  
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-0.5em);
+    }
+  }
+  
 .word-field {
     position: relative;
     /* Make the word field a positioning context for absolute positioning */

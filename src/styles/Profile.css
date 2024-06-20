@@ -1,0 +1,15 @@
+.profile{
+
+}
+.profile-info{
+    background-color: var(--background-key);
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.profile-pic{
+    margin: 0 auto;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+}

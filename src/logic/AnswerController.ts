@@ -3,6 +3,7 @@ import * as japanese from "japanese";
 import * as wanakana from "wanakana";
 import Tokenizer from "./Tokenizer";
 import JapaneseConfigFactory from "./JapaneseConfigFactory";
+import { APPMODE } from "../redux/feautures/appStateSlice";
 
 /**
  * Controller for handling answers
@@ -40,14 +41,14 @@ class AnswerController {
   public static checkAnswer(
     inputWord: string,
     guessWord: GuessWord,
-    appMode: string
+    appMode: APPMODE
   ): boolean {
     let isCorrect = false;
-    if (appMode === "r2k") {
-      isCorrect = inputWord === guessWord.jp.wd;
+    if (appMode === APPMODE.R2K) {
+      isCorrect = inputWord === guessWord.kana;
     } else {
       const romanizations: Romanizations = this.getCorrectOptions(
-        guessWord.jp.wd
+        guessWord.kana
       );
       const romanizationsKonn: Romanizations = this.getCorrectOptions(
         "こんにちは"

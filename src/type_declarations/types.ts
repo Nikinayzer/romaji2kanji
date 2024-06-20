@@ -1,13 +1,21 @@
+// export interface Word {
+//   img: string;
+//   mean: string;
+//   jp: {
+//     wd: string;
+//     kj: string;
+//     isKatakana: boolean;
+//   };
+//   category: string;
+// }
 export interface Word {
-  img: string;
-  mean: string;
-  jp: {
-    wd: string;
-    kj: string;
-    isKatakana: boolean;
-  };
-  category: string;
+  id: number;
+  english: string;
+  kana: string;
+  kanji: string;
+  isKatakana: boolean;
 }
+
 export interface Symbol {
   kana: string;
   roumaji: string;

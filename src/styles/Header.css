@@ -45,6 +45,22 @@
     font-size: 1em;
     /* Adjusted to match typical size in such menus */
 }
+.mode-switch-right{
+    display: flex;
+    justify-content: flex-end;
+
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    font-size: 1em;
+    /* Adjusted to match typical size in such menus */
+}
+#profile-button{
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px;
+
+}
 
 .nav-button {
     border: none;

@@ -106,7 +106,7 @@
     border-color: #ccc;
 }
 
-button[type="submit"] {
+.modal-form button[type="submit"] {
     background-color: #19b01c;
     color: #fff;
     border: none;
@@ -116,7 +116,7 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.modal-form button[type="submit"]:hover {
     background-color: #128c10;
 }
 

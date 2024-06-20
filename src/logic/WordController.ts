@@ -1,54 +1,42 @@
 import { Word } from "../type_declarations/types";
-import words from "../data/words.json";
+import ApiService from "../api/apiService";
 
 export class WordController {
-  /**
-   * Method to get a random word based on the inclusion of Hiragana and Katakana
-   * @param includeHiragana - Boolean to include Hiragana words
-   * @param includeKatakana - Boolean to include Katakana words
-   * @returns A random word matching the specified criteria
-   */
-  public static getRandomWord(
-    includeHiragana: boolean,
-    includeKatakana: boolean
-  ): Word {
-    let filteredWords = words;
+  private static words: Word[] = [];
 
-    if (!includeHiragana) {
-      filteredWords = this.filterKatakanaWords(filteredWords);
+  public static async getWord(includeHiragana: boolean, includeKatakana: boolean): Promise<Word> {
+    if (this.words.length === 0) {
+      await this.fetchWords(includeHiragana, includeKatakana);
     }
 
-    if (!includeKatakana) {
-      filteredWords = this.filterHiraganaWords(filteredWords);
+    const filteredWords = this.words.filter(word => 
+      (includeHiragana && !word.isKatakana) || (includeKatakana && word.isKatakana)
+    );
+
+    if (filteredWords.length === 0) {
+      throw new Error('No words found matching the criteria');
     }
 
     return this.getRandomElement(filteredWords);
   }
 
-  /**
-   * Private method to filter out Hiragana words
-   * @param words - Array of words to filter
-   * @returns Filtered array of words including only Katakana
-   */
-  private static filterHiraganaWords(words: Word[]): Word[] {
-    return words.filter((word) => word.jp.isKatakana === false);
+  private static async fetchWords(includeHiragana: boolean, includeKatakana: boolean): Promise<void> {
+    try {
+      const words = await ApiService.fetchWords(100, includeHiragana, includeKatakana);
+      this.words = words; // Assuming `this.words` is a static variable to store fetched words
+    } catch (error) {
+      console.error('Failed to fetch words:', error);
+      // Retry after 5 seconds
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      await this.fetchWords(includeHiragana, includeKatakana); // Recursive call
+    }
   }
+  
 
-  /**
-   * Private method to filter out Katakana words
-   * @param words - Array of words to filter
-   * @returns Filtered array of words including only Hiragana
-   */
-  private static filterKatakanaWords(words: Word[]): Word[] {
-    return words.filter((word) => word.jp.isKatakana === true);
-  }
-
-  /**
-   * Private method to get a random element from an array
-   * @param array - Array from which to select a random element
-   * @returns A random element from the array
-   */
   private static getRandomElement<T>(array: T[]): T {
+    if (array.length === 0) {
+      throw new Error('Array is empty');
+    }
     return array[Math.floor(Math.random() * array.length)];
   }
 }

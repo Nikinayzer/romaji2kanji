@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 /src/scripts/
+src/resources/logo-psd/download (1).jpg
+src/resources/logo-psd/download (1).psd
+src/resources/logo-psd/logo.psd
+src/resources/logo-psd/without bg.png
+src/resources/logo-psd/test.png
+.vscode/extensions.json
+test.bru

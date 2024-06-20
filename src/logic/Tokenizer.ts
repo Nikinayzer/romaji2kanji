@@ -1,5 +1,3 @@
-import { tokenize } from "wanakana";
-
 /**
  * Tokenizer class for tokenizing Japanese words.
  */

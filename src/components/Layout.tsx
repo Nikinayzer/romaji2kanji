@@ -9,6 +9,7 @@ import {
   setInputValue,
   setTypingMode,
   setShowLayout,
+  APPMODE,
 } from "../redux/feautures/appStateSlice";
 import { Symbol } from "../type_declarations/types";
 
@@ -25,7 +26,7 @@ const Layout: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   const handleKeyPress = (kana: string) => {
-    if (appMode !== "k2r") {
+    if (appMode !== APPMODE.K2R) {
       dispatch(setInputValue(inputValue + kana));
     }
   };
@@ -49,10 +50,10 @@ const Layout: React.FC = () => {
           <div
             key={idx}
             className={`key ${d.type === "empty" ? "key-empty" : ""} ${
-              appMode === "k2r" ? "disabled" : ""
+              appMode === APPMODE.K2R ? "disabled" : ""
             }`}
             onClick={() =>
-              handleKeyPress(appMode === "r2k" ? d.kana : d.roumaji)
+              handleKeyPress(appMode === APPMODE.R2K ? d.kana : d.roumaji)
             }
           >
             <span className="key-kana">{d.kana}</span>

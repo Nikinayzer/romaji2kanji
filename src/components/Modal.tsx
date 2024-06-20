@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Modal.css";
-import { useAppSelector } from "../redux/hooks"
+import { useAppSelector } from "../redux/hooks";
 import * as japanese from "japanese";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -19,7 +19,6 @@ interface ErrorReport {
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const inputValue = useAppSelector((state) => state.appState.inputValue);
   const guessWord = useAppSelector((state) => state.appState.guessWord);
-
   const appMode = useAppSelector((state) => state.appState.appMode);
   const [variant, setVariant] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
@@ -30,35 +29,42 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   }, [inputValue]);
 
   useEffect(() => {
-    const errorReport: ErrorReport = {
-      reportedWord: guessWord.jp.wd,
-      inputValue: japanese.romanize(guessWord.jp.wd),
-      appMode: appMode,
-      variant: variant,
-      notes: notes,
-    };
+    if (guessWord) {
+      const errorReport: ErrorReport = {
+        reportedWord: guessWord.kana,
+        inputValue: japanese.romanize(guessWord.kana),
+        appMode: appMode.toString(),
+        variant: variant,
+        notes: notes,
+      };
 
-    const jsonBody = JSON.stringify(errorReport, null, 2);
-    setReportText(jsonBody);
+      const jsonBody = JSON.stringify(errorReport, null, 2);
+      setReportText(jsonBody);
+    }
   }, [guessWord, appMode, variant, notes]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const title:string = encodeURIComponent("Wrong Word Report");
-    const githubUrl:string = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${reportText}`;
-
+  
+    const title = encodeURIComponent("Wrong Word Report");
+    const githubUrl = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${reportText}`;
+  
     window.open(githubUrl, "_blank");
-
+  
     onClose();
   };
+
   const handleMailSubmit = () => {
-    const subject:string = encodeURIComponent("Wrong Word Report");
-    const body:string = encodeURIComponent(reportText);
-    const mailtoUrl:string = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
+    const subject = encodeURIComponent("Wrong Word Report");
+    const body = encodeURIComponent(reportText);
+    const mailtoUrl = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
 
     window.location.href = mailtoUrl;
   };
+
+  if (!guessWord) {
+    return null; // Render nothing if guessWord is null
+  }
 
   return (
     <>
@@ -79,7 +85,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     <input
                       type="text"
                       id="reportedWord"
-                      value={guessWord.jp.wd}
+                      value={guessWord.kana}
                       required
                       readOnly
                     />
@@ -89,7 +95,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     <input
                       type="text"
                       id="inputValue"
-                      value={japanese.romanize(guessWord.jp.wd)}
+                      value={japanese.romanize(guessWord.kana)}
                       required
                       readOnly
                     />
@@ -135,10 +141,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   />
                 </div>
                 <div className="button-container">
-                  <button className="github-button" onClick={()=>handleSubmit}>
+                  <button className="github-button" {...() => handleMailSubmit()}>
                     <FontAwesomeIcon icon={faGithub} /> Submit to GitHub
                   </button>
-                  <button className="mail-button" onClick={()=>handleMailSubmit}>
+                  <button className="mail-button" onClick={handleMailSubmit}>
                     <FontAwesomeIcon icon={faEnvelope} /> Submit via Email
                   </button>
                 </div>

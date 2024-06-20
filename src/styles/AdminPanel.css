@@ -1,0 +1,62 @@
+.admin-panel-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.admin-panel {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--background-key);
+    width: 90%;
+    min-height: 80%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel-menu {
+    background-color: #f7f7f7;
+    border-right: 1px solid #ccc;
+}
+
+.admin-panel-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-panel-menu li {
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-panel-menu li:hover,
+.admin-panel-menu li.active {
+    background-color: #ddd;
+    color: #000;
+}
+
+.admin-panel-content {
+    padding: 20px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.admin-panel-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-panel-content li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}

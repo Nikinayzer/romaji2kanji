@@ -1,25 +1,44 @@
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as japanese from "japanese";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Tokenizer from "../logic/Tokenizer";
 import { WordController } from "../logic/WordController";
-import { setGuessWord, setInputValue } from "../redux/feautures/appStateSlice";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import {
+  APPMODE,
+  setGuessWord,
+  setInputValue,
+  fetchAndSetRandomWord 
+} from "../redux/feautures/appStateSlice";
+import { useAppDispatch, useAppSelector} from "../redux/hooks";
 import { RootState } from "../redux/store";
 import "../styles/App.css";
 import "../styles/WordField.css";
 
 const WordField: React.FC = () => {
-  const guessWord = useAppSelector((state: RootState) => state.appState.guessWord);
+  const dispatch = useAppDispatch();
+  
+  useEffect(() => {
+    // Fetch and set initial random word
+    dispatch(fetchAndSetRandomWord({ includeHiragana: true, includeKatakana: true }));
+  }, [dispatch]);
+  
+  const guessWord = useAppSelector(
+    (state: RootState) => state.appState.guessWord
+  );
   const appMode = useAppSelector((state: RootState) => state.appState.appMode);
   const shake = useAppSelector((state: RootState) => state.appState.wrong);
   const correct = useAppSelector((state: RootState) => state.appState.correct);
-  const includeHiragana = useAppSelector((state: RootState) => state.settings.includeHiragana);
-  const includeKatakana = useAppSelector((state: RootState) => state.settings.includeKatakana);
-  const dispatch = useAppDispatch();
+  const includeHiragana = useAppSelector(
+    (state: RootState) => state.settings.includeHiragana
+  );
+  const includeKatakana = useAppSelector(
+    (state: RootState) => state.settings.includeKatakana
+  );
 
-  const splitWord:string[] = Tokenizer.tokenize(guessWord.jp.wd);
+  const splitWord: string[] = guessWord
+    ? Tokenizer.tokenize(guessWord.kana)
+    : [];
 
   const [hoveredChar, setHoveredChar] = useState<string | null>(null);
 
@@ -32,8 +51,17 @@ const WordField: React.FC = () => {
   };
 
   const renderWord = () => {
-    const charsArray = splitWord;
-    return charsArray.map((char: string, index: number) => {
+    if (!guessWord) {
+      return (
+        <div className="loading-dots">
+          <span style={{ "--i": 1 } as React.CSSProperties}>.</span>
+          <span style={{ "--i": 2 } as React.CSSProperties}>.</span>
+          <span style={{ "--i": 3 } as React.CSSProperties}>.</span>
+        </div>
+      );
+    }
+
+    return splitWord.map((char: string, index: number) => {
       const uniqueKey = `${char}-${index}`;
       const isActive = hoveredChar === uniqueKey;
 
@@ -52,12 +80,10 @@ const WordField: React.FC = () => {
             }
           }}
         >
-          {appMode === "r2k"
-            ? japanese.romanize(char)
-            : char}
+          {appMode === APPMODE.R2K ? japanese.romanize(char) : char}
           <span className={`tooltip ${isActive ? "active" : ""}`}>
             {isActive
-              ? appMode === "r2k"
+              ? appMode === APPMODE.R2K
                 ? char
                 : japanese.romanize(char)
               : ""}
@@ -67,43 +93,56 @@ const WordField: React.FC = () => {
     });
   };
 
+  const handleNewWordClick = async () => {
+    try {
+      const newWord = await WordController.getWord(includeHiragana, includeKatakana);
+      dispatch(setGuessWord(newWord));
+      dispatch(setInputValue(""));
+    } catch (error) {
+      console.error("Error fetching new word:", error);
+      // Handle error appropriately, such as showing a message to the user
+    }
+  };
+
   return (
     <div className="word-field">
       <div className="word-container">
-        <div className={`word ${shake ? "shake" : ""} ${correct ? "correct" : ""}`}>
+        <div
+          className={`word ${shake ? "shake" : ""} ${correct ? "correct" : ""}`}
+        >
           {renderWord()}
         </div>
-        <button
-          id="new-word-button"
-          onClick={() => {
-            dispatch(
-              setGuessWord(WordController.getRandomWord(includeHiragana, includeKatakana))
-            );
-            dispatch(setInputValue(""));
-          }}
-        >
-          <FontAwesomeIcon
-            className="new-word-icon"
-            icon={faArrowsRotate}
-            size="2xl"
-          />
-        </button>
-      </div>
-      <div className="word-info">
-        <div className="word-info-item">
-          <div className="word-info-title">
-            <img
-              width="25"
-              height="25"
-              src="https://img.icons8.com/color/48/great-britain-circular.png" //change later
-              alt="great-britain-circular"
+        {guessWord && (
+          <button
+            id="new-word-button"
+            onClick={handleNewWordClick}
+          >
+            <FontAwesomeIcon
+              className="new-word-icon"
+              icon={faArrowsRotate}
+              size="2xl"
             />
-          </div>
-          <span className="word-info-value">{guessWord.mean}</span>
-        </div>
+          </button>
+        )}
       </div>
+      {guessWord && (
+        <div className="word-info">
+          <div className="word-info-item">
+            <div className="word-info-title">
+              <img
+                width="25"
+                height="25"
+                src="https://img.icons8.com/color/48/great-britain-circular.png" //change later
+                alt="great-britain-circular"
+              />
+            </div>
+
+            <span className="word-info-value">{guessWord.english}</span>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default WordField;

@@ -13,6 +13,11 @@ import WordField from "./components/WordField";
 import FAQPage from "./components/FAQPage";
 import Footer from "./components/Footer";
 import ConsentBanner from './components/ConsentBanner';
+// pages
+import Profile from "./components/Profile";
+import Login from "./components/Login";
+import AdminPanel from "./components/AdminPanel";
+import { WordController } from "./logic/WordController";
 
 const TRACKING_ID = 'G-YTBJVQT22P';
 
@@ -48,6 +53,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/signup" element={<Login/>} />
+            <Route path="/admin" element={<AdminPanel/>} />
           </Routes>
           <Footer />
         </div>
