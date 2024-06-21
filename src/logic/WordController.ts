@@ -14,19 +14,21 @@ export class WordController {
     );
 
     if (filteredWords.length === 0) {
+      await this.fetchWords(includeHiragana, includeKatakana);
       throw new Error('No words found matching the criteria');
     }
 
-    return this.getRandomElement(filteredWords);
+    const word = this.getRandomElement(filteredWords);
+    this.words.splice(this.words.indexOf(word), 1); // Remove word from list
+    return word
   }
 
   private static async fetchWords(includeHiragana: boolean, includeKatakana: boolean): Promise<void> {
     try {
-      const words = await ApiService.fetchWords(100, includeHiragana, includeKatakana);
+      const words = await ApiService.fetchWords(10, includeHiragana, includeKatakana); //2 words for test, change later in production
       this.words = words; // Assuming `this.words` is a static variable to store fetched words
     } catch (error) {
       console.error('Failed to fetch words:', error);
-      // Retry after 5 seconds
       await new Promise(resolve => setTimeout(resolve, 5000));
       await this.fetchWords(includeHiragana, includeKatakana); // Recursive call
     }

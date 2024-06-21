@@ -1,6 +1,7 @@
 import "./styles/App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { CookiesProvider, useCookies } from 'react-cookie'
 import ReactGA from 'react-ga4';
 //redux
 import { Provider } from "react-redux";
@@ -24,6 +25,8 @@ const TRACKING_ID = 'G-YTBJVQT22P';
 function App() {
   const [hasConsent, setHasConsent] = useState<boolean | null>(null);
 
+ // const [cookies, setCookie] = useCookies(['test'])
+
   useEffect(() => {
     const consent = localStorage.getItem('consent');
     if (consent !== null) {
@@ -33,6 +36,7 @@ function App() {
         ReactGA.initialize(TRACKING_ID);
       }
     }
+  //  setCookie('test', true, { path: '/' })
   }, []);
 
   const handleConsent = (consent: boolean) => {
@@ -42,24 +46,24 @@ function App() {
       ReactGA.initialize(TRACKING_ID);
     }
   };
-  
-
   return (
     <Router basename="romaji2kanji">
       <Provider store={Store}>
+      <CookiesProvider defaultSetOptions={{ path: '/romaji2kanji' }}>
         <div className="App">
           <Header />
           {hasConsent === null && <ConsentBanner onConsent={handleConsent} />}
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/faq" element={<FAQPage />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:username" element={<Profile />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Login/>} />
             <Route path="/admin" element={<AdminPanel/>} />
           </Routes>
           <Footer />
         </div>
+        </CookiesProvider>
       </Provider>
     </Router>
   );

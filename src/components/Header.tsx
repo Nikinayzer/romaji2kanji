@@ -14,10 +14,12 @@ import { APPMODE, setAppMode } from "../redux/feautures/appStateSlice";
 
 const Header: React.FC = () => {
   const appMode = useAppSelector((state) => state.appState.appMode);
+  const username = useAppSelector((state) => state.session.username);
   const dispatch = useAppDispatch();
   const location = useLocation();
   const navigate = useNavigate();
 
+  const profilePath = username ? `/profile/${username}` : "/login"; // Redirect to login if no username
   const handleModeChange = (mode: APPMODE) => {
     navigate("/");
     dispatch(setAppMode(mode));
@@ -41,7 +43,7 @@ const Header: React.FC = () => {
                   R2K
                 </a>
                 <a
-                  className={`nav-button ${(APPMODE.K2R && location.pathname === "/") ? "active" : ""}`}
+                  className={`nav-button ${(appMode === APPMODE.K2R && location.pathname === "/") ? "active" : ""}`}
                   onClick={() => handleModeChange(APPMODE.K2R)}
                 >
                   K2R
@@ -57,7 +59,7 @@ const Header: React.FC = () => {
               </div>
 
             <div className="mode-switch-right">
-              <Link to="/profile" className={`nav-button`}  id="profile-button">
+              <Link to={profilePath} className={`nav-button`}  id="profile-button">
               <FontAwesomeIcon icon={faUser} className={`settings-button ${(location.pathname.includes("/profile")) ? "active" : ""}`}size="xl" />
               </Link>
             <Settings />

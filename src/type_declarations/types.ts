@@ -15,6 +15,14 @@ export interface Word {
   kanji: string;
   isKatakana: boolean;
 }
+export interface User{
+  id: number;
+  username: string;
+  role: string;
+  updatedAt: Date;
+  createdAt: Date
+
+}
 
 export interface Symbol {
   kana: string;
