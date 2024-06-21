@@ -127,7 +127,17 @@ class ApiService {
    */
   public static logout(): void {
   }
+/** fetch all words
+ * 
+ * @returns A promise that resolves to an array of Word objects
+ */
+  public static async fetchAllWords(): Promise<Word[]> {
+    return ApiService.apiRequest(`/admin/words/all`, { method: "GET" });
+  }
 
+  public static async fetchAllUsers(): Promise<User[]> {
+    return ApiService.apiRequest(`/admin/users/all`, { method: "GET" });
+  }
   /**
    * Fetch user details
    * @param username - The username

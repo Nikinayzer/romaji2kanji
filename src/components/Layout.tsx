@@ -3,7 +3,7 @@ import "../styles/Layout.css";
 import hiragana from "../data/hiragana.json";
 import katakana from "../data/katakana.json";
 import Util from "../logic/util";
-import { useState } from "react";
+import { Children, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import {
   setInputValue,
@@ -14,6 +14,7 @@ import {
 import { Symbol } from "../type_declarations/types";
 
 import Modal from "./Modal";
+import ModalReport from "./ModalReport";
 
 const Layout: React.FC = () => {
   const inputValue = useAppSelector((state) => state.appState.inputValue);
@@ -63,6 +64,8 @@ const Layout: React.FC = () => {
       </div>
     ));
 
+    
+  
   return (
     <div className="keyboard">
       <div className={`layout${!showLayout ? " hide" : ""}`}>
@@ -134,7 +137,7 @@ const Layout: React.FC = () => {
           </button>
         </div>
       </div>
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} />
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} children={<ModalReport onClose={() => setShowModal(false)}/>} />
     </div>
   );
 };

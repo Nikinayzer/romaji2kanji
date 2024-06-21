@@ -15,15 +15,25 @@ interface ErrorReport {
   variant: string;
   notes: string;
 }
+enum ModalType {
+  REPORT,
+  SETTINGS,
+}
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   const inputValue = useAppSelector((state) => state.appState.inputValue);
   const guessWord = useAppSelector((state) => state.appState.guessWord);
   const appMode = useAppSelector((state) => state.appState.appMode);
   const [variant, setVariant] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
   const [reportText, setReportText] = useState<string>("");
-
+  const [modalType, setModalType] = useState<ModalType>(ModalType.REPORT);
+  useEffect(() => {
+    if(modalType === ModalType.REPORT) {
+      setReportText("");
+    }
+  }, 
+  []);
   useEffect(() => {
     setVariant(inputValue);
   }, [inputValue]);
@@ -45,12 +55,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     const title = encodeURIComponent("Wrong Word Report");
     const githubUrl = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${reportText}`;
-  
+
     window.open(githubUrl, "_blank");
-  
+
     onClose();
   };
 
@@ -60,12 +70,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     const mailtoUrl = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
 
     window.location.href = mailtoUrl;
+
+    onClose();
   };
-
-  if (!guessWord) {
-    return null; // Render nothing if guessWord is null
-  }
-
+  
   return (
     <>
       {isOpen && (
@@ -77,84 +85,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 X
               </button>
             </div>
-            <div className="modal-form">
-              <form onSubmit={handleSubmit}>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="reportedWord">Reported word:</label>
-                    <input
-                      type="text"
-                      id="reportedWord"
-                      value={guessWord.kana}
-                      required
-                      readOnly
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="inputValue">In romaji:</label>
-                    <input
-                      type="text"
-                      id="inputValue"
-                      value={japanese.romanize(guessWord.kana)}
-                      required
-                      readOnly
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="reportedWord">App mode:</label>
-                    <input
-                      type="text"
-                      id="reportedWord"
-                      value={appMode}
-                      required
-                      readOnly
-                    />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="variant">What's correct variant?</label>
-                  <input
-                    type="text"
-                    id="variant"
-                    value={variant}
-                    onChange={(e) => setVariant(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="notes">Any notes?</label>
-                  <input
-                    type="text"
-                    id="notes"
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                  />
-                </div>
-                <div className="form-group code-label">
-                  <label htmlFor="reportText">Report Text:</label>
-                  <textarea
-                    id="reportText"
-                    value={reportText}
-                    onChange={(e) => setReportText(e.target.value)}
-                    required
-                    readOnly
-                  />
-                </div>
-                <div className="button-container">
-                  <button className="github-button" {...() => handleMailSubmit()}>
-                    <FontAwesomeIcon icon={faGithub} /> Submit to GitHub
-                  </button>
-                  <button className="mail-button" onClick={handleMailSubmit}>
-                    <FontAwesomeIcon icon={faEnvelope} /> Submit via Email
-                  </button>
-                </div>
-              </form>
-            </div>
+            {children}
           </div>
         </div>
       )}
     </>
   );
 };
+
 
 export default Modal;
