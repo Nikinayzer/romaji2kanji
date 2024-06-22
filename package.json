@@ -1,6 +1,6 @@
 {
   "name": "romaji2kanji",
-  "homepage": "https://nikinayzer.github.io/romaji2kanji",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

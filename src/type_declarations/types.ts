@@ -55,8 +55,8 @@ export interface User {
 }
 
 export interface Follower {
-  followed: string; // Assuming this is the username of the followed user
-  following: string; // Assuming this is the username of the following user
+  followed: string;
+  following: string;
   createdAt?: Date;
 }
 
@@ -72,7 +72,6 @@ export interface Report {
   state: STATE;
 }
 
-// Interface for the data provided
 export interface UserData {
   id: number;
   username: string;
@@ -104,7 +103,7 @@ export interface ReportRequest {
   reportedWordId: number;
   reportedWord: string;
   inputValue: string;
-  appMode: string; // Assuming the API expects appMode as a string
+  appMode: string;
   variant: string;
   notes: string | null;
 }

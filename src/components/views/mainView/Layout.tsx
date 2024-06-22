@@ -1,20 +1,20 @@
-import "../styles/App.css";
-import "../styles/Layout.css";
-import hiragana from "../data/hiragana.json";
-import katakana from "../data/katakana.json";
-import Util from "../util/util";
+import "../../../styles/App.css";
+import "../../../styles/Layout.css";
+import hiragana from "../../../data/hiragana.json";
+import katakana from "../../../data/katakana.json";
+import Util from "../../../util/util";
 import { Children, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import {
   setInputValue,
   setTypingMode,
   setShowLayout,
   APPMODE,
-} from "../redux/feautures/appStateSlice";
-import { Symbol } from "../type_declarations/types";
+} from "../../../redux/feautures/appStateSlice";
+import { Symbol } from "../../../type_declarations/types";
 
-import Modal from "./Modal";
-import ModalReport from "./ModalReport";
+import Modal from "../../Modal";
+import ModalReport from "../../ModalReport";
 
 const Layout: React.FC = () => {
   const inputValue = useAppSelector((state) => state.appState.inputValue);

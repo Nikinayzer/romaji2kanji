@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./styles/App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -7,28 +6,29 @@ import { CookiesProvider } from "react-cookie";
 import ReactGA from "react-ga4";
 
 //providers
-import { ToastProvider } from "./components/ToastContext";
+import { ToastProvider } from "./components/toastFactory/ToastContext";
 // redux
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
 
 // components
-import Header from "./components/Header";
-import Layout from "./components/Layout";
-import InputField from "./components/InputField";
-import WordField from "./components/WordField";
-import FAQPage from "./components/FAQPage";
-import Footer from "./components/Footer";
+import Header from "./components/header/Header";
+import Layout from "./components/views/mainView/Layout";
+import InputField from "./components/views/mainView/InputField";
+import WordField from "./components/views/mainView/WordField";
+import FAQPage from "./components/views/FAQPage/FAQPage";
+import Footer from "./components/footer/Footer";
 import ConsentBanner from "./components/ConsentBanner";
 //middleware
 import AdminMiddleware from "./components/middleware/AdminMiddleware";
 
 // pages
-import Profile from "./components/Profile";
-import Login from "./components/Login";
-import AdminPanel from "./components/AdminPanel";
+import Profile from "./components/views/profile/Profile";
+import Login from "./components/views/login/Login";
+import AdminPanel from "./components/views/adminPanel/AdminPanel";
 
+// Google Analytics //todo move to .env
 const TRACKING_ID = "G-YTBJVQT22P";
 
 function App() {

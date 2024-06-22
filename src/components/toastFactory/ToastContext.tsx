@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode, useCallback } from "react";
-import Toast, { ToastType, Position } from "../components/Toast"; // Ensure the path is correct
+import Toast, { ToastType, Position } from "./Toast"; // Ensure the path is correct
 
 interface Toast {
   id: string;

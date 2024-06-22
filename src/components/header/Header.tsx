@@ -1,16 +1,16 @@
 import React from "react";
 
-import { useAppSelector, useAppDispatch } from "../redux/hooks";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { Link, useLocation, redirect, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-import "../styles/App.css";
-import "../styles/Header.css";
+import "../../styles/App.css";
+import "../../styles/Header.css";
 import AppLogo from "./AppLogo";
-import Settings from "./Settings";
-import { APPMODE, setAppMode } from "../redux/feautures/appStateSlice";
+import Settings from "../Settings";
+import { APPMODE, setAppMode } from "../../redux/feautures/appStateSlice";
 
 const Header: React.FC = () => {
   const appMode = useAppSelector((state) => state.appState.appMode);

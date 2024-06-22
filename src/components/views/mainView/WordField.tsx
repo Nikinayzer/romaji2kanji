@@ -2,18 +2,18 @@ import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as japanese from "japanese";
 import React, { useState, useEffect } from "react";
-import Tokenizer from "../logic/Tokenizer";
-import { WordController } from "../logic/WordController";
+import Tokenizer from "../../../logic/Tokenizer";
+import { WordController } from "../../../logic/WordController";
 import {
   APPMODE,
   setGuessWord,
   setInputValue,
   fetchAndSetRandomWord 
-} from "../redux/feautures/appStateSlice";
-import { useAppDispatch, useAppSelector} from "../redux/hooks";
-import { RootState } from "../redux/store";
-import "../styles/App.css";
-import "../styles/WordField.css";
+} from "../../../redux/feautures/appStateSlice";
+import { useAppDispatch, useAppSelector} from "../../../redux/hooks";
+import { RootState } from "../../../redux/store";
+import "../../../styles/App.css";
+import "../../../styles/WordField.css";
 
 const WordField: React.FC = () => {
   const dispatch = useAppDispatch();

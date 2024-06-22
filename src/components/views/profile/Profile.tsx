@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import ApiService from "../../api/apiService";
-import "../../styles/Profile.css";
+import ApiService from "../../../api/apiService";
+import "../../../styles/Profile.css";
 import {
   User,
   WordProgress,
@@ -9,10 +9,10 @@ import {
   Report,
   Follower,
   ROLE,
-} from "../../type_declarations/types";
-import { useAppSelector } from "../../redux/hooks";
-import Spinner from "../Spinner";
-import Util from "../../util/util";
+} from "../../../type_declarations/types";
+import { useAppSelector } from "../../../redux/hooks";
+import Spinner from "../../spinner/Spinner";
+import Util from "../../../util/util";
 
 const Profile: React.FC = () => {
   const { username } = useParams<{ username: string }>();
@@ -98,7 +98,7 @@ const Profile: React.FC = () => {
       <div className="profile-info">
         <div className="profile-pic-wrapper">
           <img
-            src={require("../../resources/ava.jpg")}
+            src={require("../../../resources/avatar-template.jpg")}
             className="profile-pic"
             alt="Profile"
           />

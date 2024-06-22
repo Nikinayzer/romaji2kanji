@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Toast.css"; // Ensure your CSS file path is correct
+import "../../styles/Toast.css"; // Ensure your CSS file path is correct
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 

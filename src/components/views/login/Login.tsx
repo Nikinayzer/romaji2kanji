@@ -3,12 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import "../../styles/Login.css";
-import ApiService from "../../api/apiService";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { setSession, clearSession } from "../../redux/feautures/sessionSlice";
+import "../../../styles/Login.css";
+import ApiService from "../../../api/apiService";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { setSession, clearSession } from "../../../redux/feautures/sessionSlice";
 
-import { useToast, ToastType, Position } from "../ToastContext";
+import { useToast, ToastType, Position } from "../../toastFactory/ToastContext";
 
 const Login: React.FC = () => {
   const location = useLocation();
@@ -70,7 +70,7 @@ const Login: React.FC = () => {
       navigate(`/profile/${login}`);
       showToast(`Welcome, ${login}`, ToastType.SUCCESS, Position.BOTTOM_RIGHT);
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("login failed:", error);
       showToast("Failed to login. Please check your credentials and try again.", ToastType.ERROR, Position.TOP_CENTER);
       setError("Failed to login. Please check your credentials and try again.");
     } finally {

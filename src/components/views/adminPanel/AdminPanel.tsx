@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-import "../styles/AdminPanel.css";
-import ApiService from "../api/apiService";
-import Modal from "./Modal";
-import EditModal from "./EditModal";
-import Pagination from "./Pagination";
-import { getEnumString, formatDateTime } from "../util/util"; // Adjust the import path as necessary
-import { ROLE, TAB } from "../type_declarations/types";
-import Spinner from "./Spinner";
-import { useAppSelector } from "../redux/hooks";
-import { useToast, ToastType, Position } from "../components/ToastContext";
+import "../../../styles/AdminPanel.css";
+import ApiService from "../../../api/apiService";
+import Modal from "../../Modal";
+import EditModal from "../../EditModal";
+import Pagination from "../../Pagination";
+import { getEnumString, formatDateTime } from "../../../util/util"; // Adjust the import path as necessary
+import { ROLE, TAB } from "../../../type_declarations/types";
+import Spinner from "../../spinner/Spinner";
+import { useAppSelector } from "../../../redux/hooks";
+import { useToast, ToastType, Position } from "../../toastFactory/ToastContext";
 const AdminPanel: React.FC = () => {
   const [activeTab, setActiveTab] = useState(TAB.USERS);
   const [content, setContent] = useState<any[]>([]);

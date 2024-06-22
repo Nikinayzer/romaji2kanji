@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { APP_MODE, STATE, ReportRequest } from "../type_declarations/types";
-import { getEnumString } from "../logic/util";
+import { getEnumString } from "../util/util";
 import ApiService from "../api/apiService";
 
 interface ModalReportProps {
@@ -154,7 +154,7 @@ const ModalReport: React.FC<ModalReportProps> = ({ onClose }) => {
           </div>
           <div className="button-container">
             <button className="system-button" onClick={handleSubmit} disabled={!loggedIn}>
-              <FontAwesomeIcon icon={faEnvelope} /> {loggedIn ? "Submit" : "Login to Submit"}
+              <FontAwesomeIcon icon={faEnvelope} /> {loggedIn ? "Submit" : "login to Submit"}
             </button>
             <button className="github-button" onClick={handleGitHubSubmit}>
               <FontAwesomeIcon icon={faGithub} /> Submit to GitHub

@@ -1,7 +1,7 @@
-import "../styles/App.css";
-import "../styles/AppLogo.css";
+import "../../styles/App.css";
+import "../../styles/AppLogo.css";
 import React, { useState, MouseEvent } from "react";
-import { ReactComponent as Logo } from "../resources/logos/logo.svg";
+import { ReactComponent as Logo } from "../../resources/logos/logo.svg";
 
 interface MousePosition {
   x: number;
