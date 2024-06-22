@@ -9,7 +9,7 @@ import {
   setWrong,
   APPMODE,
 } from "../redux/feautures/appStateSlice";
-import Util from "../logic/util";
+import Util from "../util/util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import AnswerController from "../logic/AnswerController";

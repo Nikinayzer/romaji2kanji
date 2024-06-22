@@ -2,7 +2,7 @@ import "../styles/App.css";
 import "../styles/Layout.css";
 import hiragana from "../data/hiragana.json";
 import katakana from "../data/katakana.json";
-import Util from "../logic/util";
+import Util from "../util/util";
 import { Children, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import {

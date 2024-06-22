@@ -3,12 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import "../styles/Login.css";
-import ApiService from "../api/apiService";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { setSession, clearSession } from "../redux/feautures/sessionSlice";
+import "../../styles/Login.css";
+import ApiService from "../../api/apiService";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { setSession, clearSession } from "../../redux/feautures/sessionSlice";
 
-import { useToast, ToastType, Position } from "../components/ToastContext";
+import { useToast, ToastType, Position } from "../ToastContext";
 
 const Login: React.FC = () => {
   const location = useLocation();

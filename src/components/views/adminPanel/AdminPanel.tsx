@@ -5,7 +5,7 @@ import ApiService from "../api/apiService";
 import Modal from "./Modal";
 import EditModal from "./EditModal";
 import Pagination from "./Pagination";
-import { getEnumString, formatDateTime } from "../logic/util"; // Adjust the import path as necessary
+import { getEnumString, formatDateTime } from "../util/util"; // Adjust the import path as necessary
 import { ROLE, TAB } from "../type_declarations/types";
 import Spinner from "./Spinner";
 import { useAppSelector } from "../redux/hooks";
