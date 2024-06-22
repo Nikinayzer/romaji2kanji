@@ -15,7 +15,6 @@ export class WordController {
 
     if (filteredWords.length === 0) {
       await this.fetchWords(includeHiragana, includeKatakana);
-      throw new Error('No words found matching the criteria');
     }
 
     const word = this.getRandomElement(filteredWords);

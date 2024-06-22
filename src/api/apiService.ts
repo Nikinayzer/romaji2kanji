@@ -2,19 +2,22 @@ import { Word, User } from "../type_declarations/types";
 
 class ApiService {
   private static readonly API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-  private static readonly USERNAME = process.env.REACT_APP_USERNAME;
-  private static readonly PASSWORD = process.env.REACT_APP_PASSWORD;
+//   private static readonly USERNAME = process.env.REACT_APP_USERNAME;
+//   private static readonly PASSWORD = process.env.REACT_APP_PASSWORD;
 
   private static readonly HEADERS = {
-    Authorization: `Basic ${btoa(`${ApiService.USERNAME}:${ApiService.PASSWORD}`)}`,
-    "Content-Type": "application/json",
+    // Authorization: `Basic ${btoa(
+    //   `${ApiService.USERNAME}:${ApiService.PASSWORD}`
+    // )}`,
+    "Content-Type": "application/json",    
   };
 
   /**
    * Generic method to make API requests
    * @param endpoint - The endpoint to call
    * @param options - Fetch options
-   * @param useSessionToken - Boolean flag to determine which token to use
+   * @param isCustomHeader - Boolean to use custom headers
+   * @param header - Custom headers
    * @returns A promise that resolves to the response data
    */
   private static async apiRequest(
@@ -23,22 +26,29 @@ class ApiService {
     isCustomHeader?: boolean,
     header?: any
   ): Promise<any> {
-    
-    const headers = {
+    let headers = {
       ...ApiService.HEADERS,
       ...options.headers,
     };
-
+  
+    // Use custom headers if provided and isCustomHeader flag is set
+    if (isCustomHeader && header) {
+      headers = {
+        ...headers,
+        ...header,
+      };
+    }
+  
     const response = await fetch(`${ApiService.API_BASE_URL}${endpoint}`, {
       ...options,
       headers,
-     // credentials: 'include'
+      credentials: 'include'
     });
-
+  
     if (!response.ok) {
       return ApiService.handleError(response);
     }
-
+  
     try {
       return await response.json();
     } catch (error) {
@@ -95,7 +105,7 @@ class ApiService {
       h: includeHiragana.toString(),
       k: includeKatakana.toString(),
     });
-    return ApiService.apiRequest(`/words?${queryParams}`, { method: "GET",  });
+    return ApiService.apiRequest(`/words?${queryParams}`, { method: "GET" });
   }
 
   /**
@@ -115,29 +125,53 @@ class ApiService {
    */
   public static async login(username: string, password: string): Promise<any> {
     const header = {
-        Authorization: `Basic ${btoa(`${username}:${password}`)}`,
-        "Content-Type": "application/json",
-      };
+      Authorization: `Basic ${btoa(`${username}:${password}`)}`,
+    };
 
-    return ApiService.apiRequest(`/login`, { method: "GET", }, true, header);
+    return ApiService.apiRequest(`/login`, { method: "GET" }, true, header);
   }
 
   /**
    * User logout method
    */
-  public static logout(): void {
-  }
-/** fetch all words
- * 
- * @returns A promise that resolves to an array of Word objects
- */
+  public static logout(): void {}
+
+  /** fetch all words
+   *
+   * @returns A promise that resolves to an array of Word objects
+   */
   public static async fetchAllWords(): Promise<Word[]> {
-    return ApiService.apiRequest(`/admin/words/all`, { method: "GET" });
+    return ApiService.apiRequest(`/admin/words/all`, { method: "GET",
+     });
+  }
+  /**
+   * Update a word
+   * @param data - The updated word data
+   * @returns A promise that resolves to the updated word object
+   */
+  public static async updateWord(data: Partial<Word>): Promise<Word> {
+    return ApiService.apiRequest(`/admin/words/edit`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
   }
 
   public static async fetchAllUsers(): Promise<User[]> {
     return ApiService.apiRequest(`/admin/users/all`, { method: "GET" });
   }
+
+  /**
+   * Update a user
+   * @param data - The updated user data
+   * @returns A promise that resolves to the updated user object
+   */
+  public static async updateUser(data: Partial<User>): Promise<User> {
+    return ApiService.apiRequest(`/admin/users/edit`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  }
+
   /**
    * Fetch user details
    * @param username - The username
@@ -153,13 +187,10 @@ class ApiService {
    * @returns A promise that resolves to the response data
    */
   public static async createWord(data: Partial<Word>): Promise<Word> {
-    return ApiService.apiRequest(
-      `/words`,
-      {
-        method: "POST",
-        body: JSON.stringify(data),
-      }
-    );
+    return ApiService.apiRequest(`/words`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
   }
 
   // More methods for PUT, DELETE, etc. can be added similarly

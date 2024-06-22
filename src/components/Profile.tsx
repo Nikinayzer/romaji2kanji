@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import ApiService from "../api/apiService";
 import "../styles/Profile.css";
 import { User } from "../type_declarations/types"; // Import User interface
+import { useAppSelector } from "../redux/hooks"; // Import useAppSelector hook
 
 const Profile: React.FC = () => {
   const { username } = useParams<{ username: string }>(); // Get username from URL params
@@ -11,6 +12,11 @@ const Profile: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const ava = require("../resources/ava.jpg");
   const navigate = useNavigate();
+
+  const usernameRedux = useAppSelector((state) => state.session.username);
+  useEffect(() => {
+    console.log("Username from Redux store:", usernameRedux); // Debug log
+  }, []);
 
   useEffect(() => {
     if (!username) {

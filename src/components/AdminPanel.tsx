@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../redux/hooks";
-import { useLocation } from "react-router-dom";
-import "../styles/AdminPanel.css";
 
+import "../styles/AdminPanel.css";
 import ApiService from "../api/apiService";
+import Modal from "./Modal";
 import EditModal from "./EditModal";
 import Pagination from "./Pagination";
+import { getEnumString, formatDateTime } from "../logic/util"; // Adjust the import path as necessary
+import { Role } from "../type_declarations/types";
+import Spinner from "./Spinner"; // Import the Spinner component
 
 // Enum for tabs
 enum Tab {
@@ -16,19 +18,20 @@ enum Tab {
 }
 
 const AdminPanel: React.FC = () => {
-  // Redux hooks and state initialization
-  const appMode = useAppSelector((state) => state.appState.appMode);
-  const dispatch = useAppDispatch();
-  const location = useLocation();
-
-  // State variables
   const [activeTab, setActiveTab] = useState(Tab.USERS);
   const [content, setContent] = useState<any[]>([]);
+  const [filteredContent, setFilteredContent] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
   const [editingItem, setEditingItem] = useState<any>(null);
+  const [showModal, setShowModal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortConfig, setSortConfig] = useState<{
+    key: string;
+    direction: string;
+  }>({ key: "", direction: "" });
+  const [loading, setLoading] = useState(true); // State to track loading
 
-  // Fetch data based on active tab
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -41,90 +44,127 @@ const AdminPanel: React.FC = () => {
             data = await ApiService.fetchAllWords();
             break;
           case Tab.WORDS_SUGGESTIONS:
-            // Handle words suggestions if needed
             break;
           case Tab.REPORTS:
-            // Handle reports if needed
             break;
           default:
             data = [];
             break;
         }
         setContent(data);
+        setFilteredContent(data); // Initialize filteredContent with fetched data
+        setLoading(false); // Set loading to false when data is fetched
       } catch (error) {
         console.error("Error fetching data:", error);
         setContent([]);
+        setFilteredContent([]);
+        setLoading(false); // Set loading to false on error as well
       }
     };
 
     fetchData();
   }, [activeTab]);
 
-  // Handle edit button click
+  useEffect(() => {
+    // Perform filtering whenever searchTerm changes
+    const filteredData = content.filter((item) =>
+      Object.entries(item).some(([key, value]) =>
+        isTimestampKey(key) ? isTimestampMatch(value, searchTerm) : isValueMatch(value, searchTerm)
+      )
+    );
+    setFilteredContent(filteredData);
+  }, [content, searchTerm]);
+
   const handleEdit = (item: any) => {
     setEditingItem(item);
+    setShowModal(true);
   };
 
-  // Handle save action in modal
-  const handleSave = async () => {
+  const handleSave = async (updatedItem: any) => {
     try {
-      const response = await fetch(`/api/${activeTab.toLowerCase()}/${editingItem.id}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(editingItem),
-      });
-      const updatedItem = await response.json();
+      const response = await ApiService.updateWord(updatedItem);
+      const savedItem = response;
       setContent((prevContent) =>
-        prevContent.map((item) =>
-          item.id === updatedItem.id ? updatedItem : item
+        prevContent.map((item) => (item.id === savedItem.id ? savedItem : item))
+      );
+      setFilteredContent((prevFilteredContent) =>
+        prevFilteredContent.map((item) =>
+          item.id === savedItem.id ? savedItem : item
         )
       );
       setEditingItem(null);
+      setShowModal(false);
     } catch (error) {
       console.error("Failed to save the item.", error);
     }
   };
 
-  // Calculate pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = content.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredContent.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Handle pagination click
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  // Function to render details based on the active tab
-  const renderDetails = (item: any) => {
-    switch (activeTab) {
-      case Tab.USERS:
-        return (
-          <div className="details">
-            <div className="detail-row"><strong>Username:</strong> {item.username}</div>
-            <div className="detail-row"><strong>Role:</strong> {item.role}</div>
-            <div className="detail-row"><strong>Registered At:</strong> {item.registeredAt}</div>
-            <div className="detail-row"><strong>Updated At:</strong> {item.updatedAt}</div>
-          </div>
-        );
-      case Tab.WORDS:
-        return (
-          <div className="details">
-            <div className="detail-row"><strong>English:</strong> {item.english}</div>
-            <div className="detail-row"><strong>Kana:</strong> {item.kana}</div>
-            <div className="detail-row"><strong>Kanji:</strong> {item.kanji}</div>
-            <div className="detail-row"><strong>Is Katakana:</strong> {item.isKatakana ? "Yes" : "No"}</div>
-          </div>
-        );
-      default:
-        return null;
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const requestSort = (key: string) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
     }
+    setSortConfig({ key, direction });
+
+    const sortedData = [...filteredContent].sort((a, b) => {
+      if (isTimestampKey(key)) {
+        // Custom sorting for timestamps
+        const timestampA = new Date(a[key]).getTime();
+        const timestampB = new Date(b[key]).getTime();
+        return direction === "ascending" ? timestampA - timestampB : timestampB - timestampA;
+      } else {
+        // Default sorting for other keys
+        if (a[key] < b[key]) {
+          return direction === "ascending" ? -1 : 1;
+        }
+        if (a[key] > b[key]) {
+          return direction === "ascending" ? 1 : -1;
+        }
+        return 0;
+      }
+    });
+
+    setFilteredContent(sortedData);
+  };
+
+  const isTimestampKey = (key: string): boolean => {
+    // Define your logic to identify timestamp keys here
+    const timestampKeys = ["createdAt", "updatedAt","registeredAt"]; // Example: consider these as timestamp keys
+    return timestampKeys.includes(key);
+  };
+
+  const isTimestampMatch = (value: any, searchTerm: string): boolean => {
+    // Define your logic to check if a timestamp matches the search term
+    const timestamp = new Date(value).toLocaleString(); // Example: convert timestamp to a searchable string format
+    return timestamp.toLowerCase().includes(searchTerm.toLowerCase());
+  };
+
+  const isValueMatch = (value: any, searchTerm: string): boolean => {
+    // Default matching logic for non-timestamp values
+    return value !== null &&
+      value !== undefined &&
+      String(value).toLowerCase().includes(searchTerm.toLowerCase());
+  };
+
+  const formatTimestampToString = (timestamp: string): string => {
+    // Implement your function to format timestamp to date string here
+    // Example: Replace with your actual implementation
+    return formatDateTime(timestamp); // Implement your formatting logic
   };
 
   return (
     <div className="admin-panel-wrapper">
       <div className="admin-panel">
-        {/* Tab menu */}
         <div className="admin-panel-menu">
           <ul>
             {Object.values(Tab).map((tab) => (
@@ -133,47 +173,67 @@ const AdminPanel: React.FC = () => {
                 className={activeTab === tab ? "active" : ""}
                 onClick={() => setActiveTab(tab as Tab)}
               >
-                {tab.replace(/_/g, ' ')} {/* Display tab name with spaces */}
+                {tab.replace(/_/g, " ")}
               </li>
             ))}
           </ul>
         </div>
-        {/* Content section */}
         <div className="admin-panel-content">
           <div className="admin-panel-search-bar">
-            <input type="text" placeholder="Search..." />
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            <button onClick={() => requestSort("id")}>
+              Sort by ID {sortConfig.direction === "ascending" ? "↑" : "↓"}
+            </button>
           </div>
-          {/* List of items */}
           <ul className="admin-panel-content-list">
-            {currentItems.length > 0 ? (
-              currentItems.map((item) => (
-                <li key={item.id} className="content-item">
-                  {/* Render different fields based on active tab */}
-                  {renderDetails(item)}
-                  <button onClick={() => handleEdit(item)}>Edit</button>
-                </li>
-              ))
+            {loading ? (
+              <Spinner /> // Show spinner when loading
             ) : (
-              <li>Loading...</li>
+              currentItems.length > 0 ? (
+                currentItems.map((item) => (
+                  <li key={item.id} className="content-item">
+                    <div className="details">
+                      {Object.keys(item).map((key) => (
+                        <div key={key} className="detail-row">
+                          <strong>
+                            {key.charAt(0).toUpperCase() + key.slice(1)}:
+                          </strong>{" "}
+                          {key === "role"
+                            ? getEnumString(Role, item[key])
+                            : isTimestampKey(key)
+                            ? formatTimestampToString(item[key])
+                            : item[key].toString()}
+                        </div>
+                      ))}
+                    </div>
+                    <button onClick={() => handleEdit(item)}>Edit</button>
+                  </li>
+                ))
+              ) : (
+                <li>No items found.</li>
+              )
             )}
           </ul>
-          {/* Pagination component */}
           <Pagination
             itemsPerPage={itemsPerPage}
-            totalItems={content.length}
+            totalItems={filteredContent.length}
             paginate={paginate}
             currentPage={currentPage}
           />
         </div>
       </div>
-      {/* Edit modal */}
-      {editingItem && (
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <EditModal
           item={editingItem}
-          setItem={setEditingItem}
-          handleSave={handleSave}
+          onSave={handleSave}
+          onClose={() => setShowModal(false)}
         />
-      )}
+      </Modal>
     </div>
   );
 };

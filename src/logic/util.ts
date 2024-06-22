@@ -4,6 +4,25 @@
  * @param size size of each chunk
  * @returns Array with parts of chunked array
  */
+
+import { Role } from "../type_declarations/types"; // Adjust the import path as necessary
+
+export const getEnumString = (enumType: any, value: any): string => {
+  return enumType[value] || value;
+};
+export const formatDateTime = (timestamp: string): string => {
+  const date = new Date(timestamp);
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  };
+  return date.toLocaleDateString(undefined, options);
+};
+
 function chunkArray<T>(array: T[], size: number): T[][] {
   const chunkedArray: T[][] = [];
 
@@ -16,6 +35,6 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 }
 
 const Util = {
-  chunkArray,
+  chunkArray, getEnumString, formatDateTime
 };
 export default Util;

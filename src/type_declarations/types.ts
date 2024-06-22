@@ -8,6 +8,23 @@
 //   };
 //   category: string;
 // }
+
+export enum Status {
+  ACTIVE = "Active",
+  INACTIVE = "Inactive",
+  PENDING = "Pending",
+}
+
+export enum Role {
+  ADMIN = "Admin",
+  USER = "User",
+}
+export enum Tab {
+  USERS = "users",
+  WORDS = "words",
+  WORDS_SUGGESTIONS = "words_suggestions",
+  REPORTS = "reports",
+}
 export interface Word {
   id: number;
   english: string;
@@ -18,7 +35,7 @@ export interface Word {
 export interface User{
   id: number;
   username: string;
-  role: string;
+  role: Role;
   updatedAt: Date;
   createdAt: Date
 
