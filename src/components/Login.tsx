@@ -7,7 +7,8 @@ import "../styles/Login.css";
 import ApiService from "../api/apiService";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { setSession, clearSession } from "../redux/feautures/sessionSlice";
-import Toast, { ToastType, Position } from "./Toast"; // Adjust the path based on your file structure
+
+import { useToast, ToastType, Position } from "../components/ToastContext";
 
 const Login: React.FC = () => {
   const location = useLocation();
@@ -21,9 +22,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [state, setState] = useState("login");
 
-  useEffect(() => {
-    console.log(session); //debug
-  }, []);
+  const { showToast } = useToast();
 
   useEffect(() => {
     if (location.pathname === "/login") {
@@ -59,29 +58,32 @@ const Login: React.FC = () => {
 
     try {
       const response = await ApiService.login(login, password);
-      console.log(response);
       const id = response.id;
-      dispatch(setSession({ id: id, username: login, loggedIn: true }));
+      dispatch(
+        setSession({
+          id: id,
+          username: login,
+          role: response.role,
+          loggedIn: true,
+        })
+      );
       navigate(`/profile/${login}`);
+      showToast(`Welcome, ${login}`, ToastType.SUCCESS, Position.BOTTOM_RIGHT);
     } catch (error) {
       console.error("Login failed:", error);
+      showToast("Failed to login. Please check your credentials and try again.", ToastType.ERROR, Position.TOP_CENTER);
       setError("Failed to login. Please check your credentials and try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  // Redirect to profile page if session is active
+  //Redirect to profile page if session is active
   useEffect(() => {
     if (session.loggedIn) {
       navigate(`/profile/${session.username}`);
     }
   }, [session, session.username, navigate]);
-
-  // If already logged in, don't render the login page
-  if (session.loggedIn) {
-    return null; // or any other component or loading indicator
-  }
 
   return (
     <div className="login-wrapper">
@@ -115,16 +117,6 @@ const Login: React.FC = () => {
         </form>
         <Link to={state === "login" ? "/signup" : "/login"}>Sign Up</Link>
       </div>
-      {error && (
-        <Toast
-          message={error}
-          type={ToastType.ERROR}
-          position={Position.BOTTOM_RIGHT}
-          autoHide={true}
-          duration={5000}
-          onClose={() => setError(null)}
-        />
-      )}
     </div>
   );
 };

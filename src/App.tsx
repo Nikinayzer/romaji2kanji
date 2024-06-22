@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 import "./styles/App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { CookiesProvider } from 'react-cookie';
-import ReactGA from 'react-ga4';
+import { CookiesProvider } from "react-cookie";
+import ReactGA from "react-ga4";
 
+//providers
+import { ToastProvider } from "./components/ToastContext";
 // redux
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -18,22 +20,24 @@ import InputField from "./components/InputField";
 import WordField from "./components/WordField";
 import FAQPage from "./components/FAQPage";
 import Footer from "./components/Footer";
-import ConsentBanner from './components/ConsentBanner';
+import ConsentBanner from "./components/ConsentBanner";
+//middleware
+import AdminMiddleware from "./components/middleware/AdminMiddleware";
 
 // pages
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import AdminPanel from "./components/AdminPanel";
 
-const TRACKING_ID = 'G-YTBJVQT22P';
+const TRACKING_ID = "G-YTBJVQT22P";
 
 function App() {
   const [hasConsent, setHasConsent] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const consent = localStorage.getItem('consent');
+    const consent = localStorage.getItem("consent");
     if (consent !== null) {
-      const consentValue = consent === 'true';
+      const consentValue = consent === "true";
       setHasConsent(consentValue);
       if (consentValue) {
         ReactGA.initialize(TRACKING_ID);
@@ -42,7 +46,7 @@ function App() {
   }, []);
 
   const handleConsent = (consent: boolean) => {
-    localStorage.setItem('consent', String(consent));
+    localStorage.setItem("consent", String(consent));
     setHasConsent(consent);
     if (consent) {
       ReactGA.initialize(TRACKING_ID);
@@ -53,21 +57,32 @@ function App() {
     <Router basename="romaji2kanji">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <CookiesProvider>
+          <ToastProvider>
             <div className="App">
               <Header />
-              {hasConsent === null && <ConsentBanner onConsent={handleConsent} />}
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/faq" element={<FAQPage />} />
-                <Route path="/profile/:username" element={<Profile />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Login />} />
-                <Route path="/admin" element={<AdminPanel />} />
-              </Routes>
+              <div className="content-wrapper">
+                {hasConsent === null && (
+                  <ConsentBanner onConsent={handleConsent} />
+                )}
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/faq" element={<FAQPage />} />
+                  <Route path="/profile/:username" element={<Profile />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<Login />} />
+                  <Route
+                    path="/admin"
+                    element={
+                      <AdminMiddleware>
+                        <AdminPanel />
+                      </AdminMiddleware>
+                    }
+                  />
+                </Routes>
+              </div>
               <Footer />
             </div>
-          </CookiesProvider>
+          </ToastProvider>
         </PersistGate>
       </Provider>
     </Router>
@@ -76,12 +91,12 @@ function App() {
 
 const HomePage = () => {
   useEffect(() => {
-    const consent = localStorage.getItem('consent');
-    if (consent === 'true') {
+    const consent = localStorage.getItem("consent");
+    if (consent === "true") {
       ReactGA.send({
-        hitType: 'pageview',
+        hitType: "pageview",
         page: window.location.pathname,
-        title: "app"
+        title: "app",
       });
     }
   }, []);

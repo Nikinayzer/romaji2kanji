@@ -1,15 +1,15 @@
-import { Word, User } from "../type_declarations/types";
+import { Word, User, Report, ReportRequest } from "../type_declarations/types";
 
 class ApiService {
   private static readonly API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-//   private static readonly USERNAME = process.env.REACT_APP_USERNAME;
-//   private static readonly PASSWORD = process.env.REACT_APP_PASSWORD;
+  //   private static readonly USERNAME = process.env.REACT_APP_USERNAME;
+  //   private static readonly PASSWORD = process.env.REACT_APP_PASSWORD;
 
   private static readonly HEADERS = {
     // Authorization: `Basic ${btoa(
     //   `${ApiService.USERNAME}:${ApiService.PASSWORD}`
     // )}`,
-    "Content-Type": "application/json",    
+    "Content-Type": "application/json",
   };
 
   /**
@@ -30,7 +30,7 @@ class ApiService {
       ...ApiService.HEADERS,
       ...options.headers,
     };
-  
+
     // Use custom headers if provided and isCustomHeader flag is set
     if (isCustomHeader && header) {
       headers = {
@@ -38,17 +38,17 @@ class ApiService {
         ...header,
       };
     }
-  
+
     const response = await fetch(`${ApiService.API_BASE_URL}${endpoint}`, {
       ...options,
       headers,
-      credentials: 'include'
+      credentials: "include",
     });
-  
+
     if (!response.ok) {
       return ApiService.handleError(response);
     }
-  
+
     try {
       return await response.json();
     } catch (error) {
@@ -136,13 +136,25 @@ class ApiService {
    */
   public static logout(): void {}
 
+  public static async submitGuess(data:Partial<Word>): Promise<Word>{
+    return ApiService.apiRequest(`/words/guess`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  }
+
   /** fetch all words
    *
    * @returns A promise that resolves to an array of Word objects
    */
   public static async fetchAllWords(): Promise<Word[]> {
-    return ApiService.apiRequest(`/admin/words/all`, { method: "GET",
-     });
+    return ApiService.apiRequest(`/admin/words/all`, { method: "GET" });
+  }
+  public static async fetchAllUsers(): Promise<User[]> {
+    return ApiService.apiRequest(`/admin/users/all`, { method: "GET" });
+  }
+  public static async fetchAllReports(): Promise<Report[]> {
+    return ApiService.apiRequest(`/admin/reports/all`, { method: "GET" });
   }
   /**
    * Update a word
@@ -156,8 +168,8 @@ class ApiService {
     });
   }
 
-  public static async fetchAllUsers(): Promise<User[]> {
-    return ApiService.apiRequest(`/admin/users/all`, { method: "GET" });
+  public static async fetchCompleteUser(username: string): Promise<any> {
+    return ApiService.apiRequest(`/admin/users/${username}`, { method: "GET" });
   }
 
   /**
@@ -167,6 +179,18 @@ class ApiService {
    */
   public static async updateUser(data: Partial<User>): Promise<User> {
     return ApiService.apiRequest(`/admin/users/edit`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  }
+  public static async updateReport(data: Partial<Report>): Promise<Report> {
+    return ApiService.apiRequest(`/admin/reports/edit`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  }
+  public static async createReport(data: Partial<ReportRequest>): Promise<Report> {
+    return ApiService.apiRequest(`/words/report`, {
       method: "POST",
       body: JSON.stringify(data),
     });

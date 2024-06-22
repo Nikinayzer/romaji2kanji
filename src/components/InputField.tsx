@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import AnswerController from "../logic/AnswerController";
 import { WordController } from "../logic/WordController";
+import ApiService from "../api/apiService";
 
 const InputField: React.FC = () => {
   const inputValue = useAppSelector((state) => state.appState.inputValue);
@@ -36,15 +37,21 @@ const InputField: React.FC = () => {
     const typedValue = e.target.value;
     dispatch(setInputValue(typedValue));
   };
-
+  interface guess{
+    id: number;
+    successful: boolean;
+  }
   const handleSubmit = async () => {
-    const inputWord = inputValueRef.current; // Use ref instead of state
-  
+    const inputWord = inputValueRef.current;
+
     if (!guessWord) {
       return;
     }
-  
-    if (AnswerController.checkAnswer(inputWord, guessWord, appMode)) {
+
+    const isSuccessful = AnswerController.checkAnswer(inputWord, guessWord, appMode);
+
+    // Update UI based on successful or unsuccessful guess
+    if (isSuccessful) {
       dispatch(setCorrect(true));
       setTimeout(async () => {
         dispatch(setCorrect(false));
@@ -58,9 +65,25 @@ const InputField: React.FC = () => {
         }
       }, 1000);
     } else {
-      console.log("Incorrect guess!");
+      //console.log("Incorrect guess!");
       dispatch(setWrong(true));
-      setTimeout(() => dispatch(setWrong(false)), 500); // Remove shake state after animation
+      setTimeout(() => dispatch(setWrong(false)), 500);
+    }
+
+    // Prepare guess object
+    const guessData: guess = {
+      id: guessWord.id,
+      successful: isSuccessful,
+    };
+
+    // Submit guess to ApiService
+    try {
+      const response = await ApiService.submitGuess(guessData);
+      //console.log("Guess submitted successfully:", response);
+      // Handle success as needed
+    } catch (error) {
+      console.error("Failed to submit guess:", error);
+      // Handle error state or display an error message to the user
     }
   };
 

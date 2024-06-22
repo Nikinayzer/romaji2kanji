@@ -172,7 +172,8 @@
 }
 
 .github-button,
-.mail-button {
+.mail-button,
+.system-button {
     background-color: #24292e;
     color: #ffffff;
     padding: 10px 20px;

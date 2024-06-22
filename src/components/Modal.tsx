@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "../styles/Modal.css";
-import { useAppSelector } from "../redux/hooks";
 import * as japanese from "japanese";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import React, { useEffect, useState } from "react";
+import { useAppSelector } from "../redux/hooks";
+import "../styles/Modal.css";
 
 import { ModalProps } from "../type_declarations/types";
 

@@ -24,7 +24,7 @@ export const fetchAndSetRandomWord = createAsyncThunk(
       const randomWord = await WordController.getWord(includeHiragana, includeKatakana);
       return randomWord;
     } catch (error) {
-      console.error(error);
+      console.error();
       throw Error('Failed to fetch and set random word');
     }
   }

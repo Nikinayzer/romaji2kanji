@@ -60,16 +60,6 @@
     margin-left: 5px; /* Add spacing between checkbox and label text */
   }
   
-  button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
   button[type="submit"]:hover {
     background-color: #0056b3;
   }

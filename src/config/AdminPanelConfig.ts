@@ -1,13 +1,13 @@
 // adminPanelConfig.ts
 
-import { Tab } from "../type_declarations/types";
+import { TAB } from "../type_declarations/types";
 
 interface SortingFunction {
   (a: any, b: any, direction: string): number;
 }
 
 export interface TabConfig {
-  key: Tab;
+  key: TAB;
   filter: (item: any, searchTerm: string) => boolean;
   sorting: {
     [key: string]: SortingFunction;
@@ -16,7 +16,7 @@ export interface TabConfig {
 
 const adminPanelConfig: TabConfig[] = [
   {
-    key: Tab.USERS,
+    key: TAB.USERS,
     filter: (item: any, searchTerm: string) => item.isAdmin === true,
     sorting: {
       id: (a: any, b: any, direction: string) => {
@@ -25,7 +25,7 @@ const adminPanelConfig: TabConfig[] = [
     },
   },
   {
-    key: Tab.WORDS,
+    key: TAB.WORDS,
     filter: (item: any, searchTerm: string) => item.isKatakana === true,
     sorting: {
       id: (a: any, b: any, direction: string) => {

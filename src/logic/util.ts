@@ -5,7 +5,7 @@
  * @returns Array with parts of chunked array
  */
 
-import { Role } from "../type_declarations/types"; // Adjust the import path as necessary
+import { ROLE } from "../type_declarations/types"; // Adjust the import path as necessary
 
 export const getEnumString = (enumType: any, value: any): string => {
   return enumType[value] || value;

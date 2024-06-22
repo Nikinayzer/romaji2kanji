@@ -4,7 +4,6 @@
   --background-key:#f0f0f0;
   --text-color: #000000;
   --accent-color: #b30092;
-
 }
 
 .dark-mode {
@@ -16,28 +15,30 @@
 }
 
 .App {
-
   text-align: center;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
-.main-wrapper {
-  min-height: 630px;
-  padding-top: 40px;
-  padding-bottom: 60px;
-
-
+.content-wrapper{
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 100vh;
+  margin-bottom: 20px;
 }
 
-a:link, a:visited {
+/* a:link, a:visited {
   text-decoration: none;
   color: white;
   cursor: pointer;
+} */
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {

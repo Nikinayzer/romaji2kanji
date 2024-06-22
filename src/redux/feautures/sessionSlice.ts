@@ -6,6 +6,7 @@ import { User } from "../../type_declarations/types";
 interface State {
   id: number | null;
   username: string | null;
+  isAdmin: boolean;
   loggedIn: boolean;
 }
 
@@ -13,6 +14,7 @@ interface State {
 const initialState: State = {
   id: null,
   username: null,
+  isAdmin: false,
   loggedIn: false,
 };
 
@@ -23,11 +25,13 @@ export const SessionSlice = createSlice({
     setSession(state, action: PayloadAction<any>) {
       state.id = action.payload.id;
       state.username = action.payload.username;
+      state.isAdmin = action.payload.role == "ROLE_ADMIN";
       state.loggedIn = true;
     },
     clearSession(state) {
       state.id = null;
       state.username = null;
+      state.isAdmin = false;
       state.loggedIn = false;
     },
   },

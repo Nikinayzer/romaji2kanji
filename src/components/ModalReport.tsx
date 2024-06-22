@@ -1,66 +1,72 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Modal.css";
 import { useAppSelector } from "../redux/hooks";
 import * as japanese from "japanese";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-
-import { ModalProps } from "../type_declarations/types";
-
-interface ErrorReport {
-  reportedWord: string;
-  inputValue: string;
-  appMode: string;
-  variant: string;
-  notes: string;
-}
-enum ModalType {
-  REPORT,
-  SETTINGS,
-}
+import { APP_MODE, STATE, ReportRequest } from "../type_declarations/types";
+import { getEnumString } from "../logic/util";
+import ApiService from "../api/apiService";
 
 interface ModalReportProps {
   onClose: () => void;
 }
 
-const ModalReport: React.FC<ModalReportProps> = ({onClose}) => {
+const ModalReport: React.FC<ModalReportProps> = ({ onClose }) => {
+  const loggedIn = useAppSelector((state) => state.session.loggedIn);
   const inputValue = useAppSelector((state) => state.appState.inputValue);
   const guessWord = useAppSelector((state) => state.appState.guessWord);
   const appMode = useAppSelector((state) => state.appState.appMode);
-  const [variant, setVariant] = useState<string>("");
-  const [notes, setNotes] = useState<string>("");
-  const [reportText, setReportText] = useState<string>("");
-  const [modalType, setModalType] = useState<ModalType>(ModalType.REPORT);
-  useEffect(() => {
-    if (modalType === ModalType.REPORT) {
-      setReportText("");
-    }
-  }, []);
-  useEffect(() => {
-    setVariant(inputValue);
-  }, [inputValue]);
+  const [report, setReport] = useState<ReportRequest>({
+    reportedWordId: 0,
+    reportedWord: "",
+    inputValue: "",
+    appMode: "",
+    variant: "",
+    notes: null,
+  });
 
   useEffect(() => {
     if (guessWord) {
-      const errorReport: ErrorReport = {
+      setReport({
+        reportedWordId: guessWord.id,
         reportedWord: guessWord.kana,
         inputValue: japanese.romanize(guessWord.kana),
-        appMode: appMode.toString(),
-        variant: variant,
-        notes: notes,
-      };
-
-      const jsonBody = JSON.stringify(errorReport, null, 2);
-      setReportText(jsonBody);
+        appMode: getEnumString(APP_MODE, appMode),
+        variant: report.variant,
+        notes: report.notes,
+      });
     }
-  }, [guessWord, appMode, variant, notes]);
+  }, [guessWord, appMode]);
+  const validateReport = () => {
+    if (!report.variant) {
+      //alert("Please provide a correct variant.");
+      return false;
+    }
+    return true;
+  };
+  const handleSubmit = async () => {
+    if (!validateReport()) {
+      return;
+    }
+    try {
+      const response = await ApiService.createReport(report);
+      console.log("Report submitted successfully:", response);
+      onClose();
+    } catch (error) {
+      console.error("Failed to submit report:", error);
+      // Handle error state or display an error message to the user
+    }
+  };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const handleGitHubSubmit = () => {
     const title = encodeURIComponent("Wrong Word Report");
-    const githubUrl = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${reportText}`;
+    const githubUrl = `https://github.com/nikinayzer/romaji2kanji/issues/new?title=${title}&body=${JSON.stringify(
+      report,
+      null,
+      2
+    )}`;
 
     window.open(githubUrl, "_blank");
 
@@ -69,7 +75,7 @@ const ModalReport: React.FC<ModalReportProps> = ({onClose}) => {
 
   const handleMailSubmit = () => {
     const subject = encodeURIComponent("Wrong Word Report");
-    const body = encodeURIComponent(reportText);
+    const body = encodeURIComponent(JSON.stringify(report, null, 2));
     const mailtoUrl = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
 
     window.location.href = mailtoUrl;
@@ -84,7 +90,7 @@ const ModalReport: React.FC<ModalReportProps> = ({onClose}) => {
   return (
     <>
       <div className="modal-form">
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="reportedWord">Reported word:</label>
@@ -111,7 +117,7 @@ const ModalReport: React.FC<ModalReportProps> = ({onClose}) => {
               <input
                 type="text"
                 id="reportedWord"
-                value={appMode}
+                value={report.appMode}
                 required
                 readOnly
               />
@@ -122,8 +128,10 @@ const ModalReport: React.FC<ModalReportProps> = ({onClose}) => {
             <input
               type="text"
               id="variant"
-              value={variant}
-              onChange={(e) => setVariant(e.target.value)}
+              value={report.variant || ""}
+              onChange={(e) =>
+                setReport({ ...report, variant: e.target.value })
+              }
               required
             />
           </div>
@@ -132,22 +140,23 @@ const ModalReport: React.FC<ModalReportProps> = ({onClose}) => {
             <input
               type="text"
               id="notes"
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
+              value={report.notes || ""}
+              onChange={(e) => setReport({ ...report, notes: e.target.value })}
             />
           </div>
           <div className="form-group code-label">
             <label htmlFor="reportText">Report Text:</label>
             <textarea
               id="reportText"
-              value={reportText}
-              onChange={(e) => setReportText(e.target.value)}
-              required
+              value={JSON.stringify(report, null, 2)}
               readOnly
             />
           </div>
           <div className="button-container">
-            <button className="github-button" {...() => handleMailSubmit()}>
+            <button className="system-button" onClick={handleSubmit} disabled={!loggedIn}>
+              <FontAwesomeIcon icon={faEnvelope} /> {loggedIn ? "Submit" : "Login to Submit"}
+            </button>
+            <button className="github-button" onClick={handleGitHubSubmit}>
               <FontAwesomeIcon icon={faGithub} /> Submit to GitHub
             </button>
             <button className="mail-button" onClick={handleMailSubmit}>

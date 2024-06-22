@@ -1,9 +1,13 @@
 import "../styles/App.css";
 import "../styles/Settings.css";
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
+import {
+  clearSession,
+} from "../redux/feautures/sessionSlice";
 import {
   toggleDarkMode,
   toggleIncludeHiragana,
@@ -64,6 +68,14 @@ const Settings: React.FC = () => {
     }
   }, [isDarkMode]);
 
+  const deleteCookie = (name: string) => {
+    document.cookie = `${name}=; Max-Age=0; path=/api; domain=${window.location.hostname}`;
+  };
+
+  const logout = () => {
+    deleteCookie('JSESSIONID');
+    dispatch(clearSession());
+  };
   return (
     <div className="settings-container" ref={dropdownRef}>
       <button
@@ -87,8 +99,9 @@ const Settings: React.FC = () => {
               readOnly
               checked={isDarkMode}
             />
-            <label htmlFor="dark-mode-switch" className="title">
+            <label htmlFor="dark-mode-switch" className="title" onClick={() => handleDarkModeToggle()}>
               {isDarkMode ? "Dark Mode" : "Light Mode"}
+              
             </label>
           </div>
           <div className="switches-list">
@@ -107,6 +120,12 @@ const Settings: React.FC = () => {
               onChange={() => handleSwitchToggle("katakana")}
             />
           </div>
+          <Link
+            to={"/login"}
+            onClick={() => logout()}
+          >
+            Logout
+          </Link>
         </div>
       )}
     </div>

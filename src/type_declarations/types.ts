@@ -1,44 +1,112 @@
-// export interface Word {
-//   img: string;
-//   mean: string;
-//   jp: {
-//     wd: string;
-//     kj: string;
-//     isKatakana: boolean;
-//   };
-//   category: string;
-// }
-
-export enum Status {
-  ACTIVE = "Active",
-  INACTIVE = "Inactive",
-  PENDING = "Pending",
+export enum APP_MODE {
+  R2K = "R2K",
+  K2R = "K2R",
 }
 
-export enum Role {
-  ADMIN = "Admin",
-  USER = "User",
+export enum STATE {
+  NEW = "NEW",
+  IN_PROGRESS = "IN_PROGRESS",
+  RESOLVED = "RESOLVED",
 }
-export enum Tab {
+
+export enum ROLE {
+  ADMIN = "ROLE_ADMIN",
+  USER = "ROLE_USER",
+}
+
+export enum TAB {
   USERS = "users",
   WORDS = "words",
-  WORDS_SUGGESTIONS = "words_suggestions",
+  //WORDS_SUGGESTIONS = "words_suggestions",
   REPORTS = "reports",
 }
+
 export interface Word {
   id: number;
   english: string;
   kana: string;
   kanji: string;
   isKatakana: boolean;
+  createdBy: string;
+  createdAt: Date;
+  updatedAt: Date | null;
 }
-export interface User{
+
+export interface WordProgress {
+  username: string;
+  word: Word;
+  tries: number;
+  successful: boolean;
+  createdAt: Date;
+  updatedAt: Date | null;
+}
+
+export interface User {
   id: number;
   username: string;
-  role: Role;
+  role: ROLE;
+  registeredAt: Date;
   updatedAt: Date;
-  createdAt: Date
+  createdWords: Word[];
+  wordProgresses: WordProgress[];
+  reports: Report[];
+  followers: Follower[];
+  followingUsers: Follower[];
+}
 
+export interface Follower {
+  followed: string; // Assuming this is the username of the followed user
+  following: string; // Assuming this is the username of the following user
+  createdAt?: Date;
+}
+
+export interface Report {
+  id: number;
+  reportedWordId: number;
+  reportedWord: string;
+  inputValue: string;
+  appMode: APP_MODE;
+  variant: string;
+  notes: string | null;
+  createdAt: Date;
+  state: STATE;
+}
+
+// Interface for the data provided
+export interface UserData {
+  id: number;
+  username: string;
+  role: ROLE;
+  registeredAt: Date;
+  updatedAt: Date;
+  createdWords: Word[];
+  wordProgresses: {
+    username: string;
+    word: Word;
+    tries: number;
+    successful: boolean;
+    createdAt: Date;
+    updatedAt: Date | null;
+  }[];
+  reports: Report[];
+  followers: {
+    followed: string;
+    following: string;
+    createdAt: Date;
+  }[];
+  followingUsers: {
+    followed: string;
+    following: string;
+    createdAt: Date;
+  }[];
+}
+export interface ReportRequest {
+  reportedWordId: number;
+  reportedWord: string;
+  inputValue: string;
+  appMode: string; // Assuming the API expects appMode as a string
+  variant: string;
+  notes: string | null;
 }
 
 export interface Symbol {
@@ -46,6 +114,7 @@ export interface Symbol {
   roumaji: string;
   type: string;
 }
+
 export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
