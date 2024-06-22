@@ -1,7 +1,4 @@
-export enum APP_MODE {
-  R2K = "R2K",
-  K2R = "K2R",
-}
+import React from "react";
 
 export enum STATE {
   NEW = "NEW",
@@ -118,4 +115,9 @@ export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+}
+
+export enum APP_MODE {
+  R2K="R2K",
+  K2R="K2R",
 }

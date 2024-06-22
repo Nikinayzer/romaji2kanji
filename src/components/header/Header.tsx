@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-import "../../styles/App.css";
-import "../../styles/Header.css";
+import "../../styles/app.scss";
+import "../../styles/header.scss";
 import AppLogo from "./AppLogo";
 import Settings from "../Settings";
-import { APPMODE, setAppMode } from "../../redux/feautures/appStateSlice";
+import { setAppMode } from "../../redux/feautures/appStateSlice";
+import {APP_MODE} from "../../type_declarations/types";
 
 const Header: React.FC = () => {
   const appMode = useAppSelector((state) => state.appState.appMode);
@@ -20,7 +21,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const profilePath = username ? `/profile/${username}` : "/login"; // Redirect to login if no username
-  const handleModeChange = (mode: APPMODE) => {
+  const handleModeChange = (mode: APP_MODE) => {
     navigate("/");
     dispatch(setAppMode(mode));
   };
@@ -37,14 +38,14 @@ const Header: React.FC = () => {
 
               <div className="nav-buttons">
                 <a
-                  className={`nav-button ${(appMode === APPMODE.R2K && location.pathname === "/") ? "active" : ""}`}
-                  onClick={() => handleModeChange(APPMODE.R2K)}
+                  className={`nav-button ${(appMode === APP_MODE.R2K && location.pathname === "/") ? "active" : ""}`}
+                  onClick={() => handleModeChange(APP_MODE.R2K)}
                 >
                   R2K
                 </a>
                 <a
-                  className={`nav-button ${(appMode === APPMODE.K2R && location.pathname === "/") ? "active" : ""}`}
-                  onClick={() => handleModeChange(APPMODE.K2R)}
+                  className={`nav-button ${(appMode === APP_MODE.K2R && location.pathname === "/") ? "active" : ""}`}
+                  onClick={() => handleModeChange(APP_MODE.K2R)}
                 >
                   K2R
                 </a>

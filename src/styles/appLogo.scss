@@ -1,0 +1,105 @@
+// Variables
+$white-color: rgba(255, 255, 255, 1);
+$hover-fill-color: rgba(219, 127, 255, 0);
+$dialog-bubble-bg: white;
+$dialog-bubble-border: black;
+$dialog-bubble-shadow: 3px 2px 0px black, 3px 2px 0px 1px white;
+
+// Logo Container
+.logo-container {
+    display: flex;
+    color: $white-color;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    align-items: center;
+    user-select: none;
+}
+
+// Logo Wrapper
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+
+    &:hover .app-logo {
+        background-image: url(../resources/logos/logo-fill.png);
+        background-size: cover;
+    }
+}
+
+// App Logo
+.app-logo {
+    height: 100%;
+    width: 150px;
+    fill: white;
+
+    * {
+        fill: white;
+        transition: fill 0.1s;
+    }
+
+    &:hover * {
+        fill: $hover-fill-color;
+    }
+}
+
+// Dialog Bubble
+.dialog-bubble {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 110px;
+    left: 50px;
+    background-color: $dialog-bubble-bg;
+    color: black;
+    padding: 10px 15px;
+    border: 2px solid $dialog-bubble-border;
+    border-radius: 35px;
+    box-shadow: $dialog-bubble-shadow;
+    opacity: 0;
+    pointer-events: none;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 0.9em;
+    white-space: nowrap;
+
+    &.show {
+        opacity: 1;
+    }
+
+    p {
+        margin: 0 auto;
+        line-height: 20px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 30px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $dialog-bubble-border;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: 30px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid $dialog-bubble-bg;
+    }
+
+    @media (max-width: 600px) {
+        top: 100px;
+        left: 55px;
+    }
+}

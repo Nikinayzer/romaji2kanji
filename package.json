@@ -1,6 +1,5 @@
 {
   "name": "romaji2kanji",
-  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,6 +26,7 @@
     "redux-persist-transform-encrypt": "^5.1.1",
     "redux-persist-transform-expire": "^0.0.2",
     "redux-thunk": "^3.1.0",
+    "sass": "^1.77.6",
     "typescript": "^5.4.5",
     "wanakana": "^5.3.1",
     "web-vitals": "^2.1.4"

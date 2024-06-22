@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import "../../../styles/Login.css";
+import "../../../styles/login.scss";
 import ApiService from "../../../api/apiService";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { setSession, clearSession } from "../../../redux/feautures/sessionSlice";
@@ -71,7 +71,7 @@ const Login: React.FC = () => {
       showToast(`Welcome, ${login}`, ToastType.SUCCESS, Position.BOTTOM_RIGHT);
     } catch (error) {
       console.error("login failed:", error);
-      showToast("Failed to login. Please check your credentials and try again.", ToastType.ERROR, Position.TOP_CENTER);
+      showToast("Failed to login. Please check your credentials and try again.", ToastType.ERROR, Position.TOP_CENTER, true);
       setError("Failed to login. Please check your credentials and try again.");
     } finally {
       setLoading(false);

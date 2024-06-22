@@ -1,0 +1,131 @@
+// Variables
+$background-color-light: #ffffff;
+$background-color-light-secondary: #fafafa;
+$background-box-light: #00000008;
+$background-key-light: #f0f0f0;
+$text-color-light: #000000;
+$disabled-color-light: #00000038;
+$accent-color-light: rgb(236, 52, 153);
+$accent-color-light-hover: #8c0070;
+$accent-color-fade: rgba(179, 0, 146, 0.4);
+
+$background-color-dark: #1c1f24;
+$background-color-dark-secondary: #24262c;
+$background-box-dark: #282c34a8;
+$background-key-dark: #3e2e43ba;
+$text-color-dark: #efefef;
+$disabled-color-dark: rgba(138, 138, 138, 0.22);
+$accent-color-dark: #d604b0;
+$accent-color-dark-hover: #8c0070;
+$accent-color-dark-fade: rgba(214, 4, 176, 0.4);
+
+// Root Variables
+:root {
+  --background-color: #{$background-color-light};
+  --background-color-secondary: #{$background-color-light-secondary};
+  --background-box: #{$background-box-light};
+  --background-key: #{$background-key-light};
+  --text-color: #{$text-color-light};
+    --disabled-color: #{$disabled-color-light};
+  --accent-color: #{$accent-color-light};
+  --accent-color-hover: #{$accent-color-light-hover};
+  --accent-color-fade: #{$accent-color-fade};
+}
+
+// Dark Mode Variables
+.dark-mode {
+  --background-color: #{$background-color-dark};
+    --background-color-secondary: #{$background-color-dark-secondary};
+  --background-box: #{$background-box-dark};
+  --background-key: #{$background-key-dark};
+  --text-color: #{$text-color-dark};
+    --disabled-color: #{$disabled-color-dark};
+  --accent-color: #{$accent-color-dark};
+  --accent-color-hover: #{$accent-color-dark-hover};
+  --accent-color-fade: #{$accent-color-dark-fade};
+}
+
+// App Styles
+.App {
+  text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  .App-logo {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+}
+
+// Content Wrapper
+.content-wrapper {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 100vh;
+  margin-bottom: 20px;
+}
+
+// Links
+a:-webkit-any-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+// Disabled State
+.disabled {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+// Keyframes
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+// Inputs
+input[type="text"] {
+  padding: 10px;
+  font-size: 0.8em;
+  border: 1px solid #ccc;
+  color: var(--text-color);
+  background-color: var(--background-color-secondary);
+  border-radius: 5px;
+}
+input:disabled {
+    background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+select {
+  padding: 10px;
+  font-size: 0.8em;
+  border: 1px solid #ccc;
+  color: var(--text-color);
+  background-color: var(--background-color-secondary);
+  border-radius: 5px;
+}
+
+// Buttons
+button {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--accent-color-hover);
+  }
+}

@@ -1,5 +1,5 @@
-import "../../styles/App.css";
-import "../../styles/AppLogo.css";
+import "../../styles/app.scss";
+import "../../styles/appLogo.scss";
 import React, { useState, MouseEvent } from "react";
 import { ReactComponent as Logo } from "../../resources/logos/logo.svg";
 

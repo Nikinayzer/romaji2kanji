@@ -1,7 +1,7 @@
 import * as japanese from "japanese";
 import React, { useEffect, useState } from "react";
 import { useAppSelector } from "../redux/hooks";
-import "../styles/Modal.css";
+import "../styles/modal.scss";
 
 import { ModalProps } from "../type_declarations/types";
 

@@ -1,5 +1,5 @@
-import "../styles/App.css";
-import "../styles/Settings.css";
+import "../styles/app.scss";
+import "../styles/settings.scss";
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -121,6 +121,7 @@ const Settings: React.FC = () => {
             />
           </div>
           <Link
+              id={"logout-link"}
             to={"/login"}
             onClick={() => logout()}
           >

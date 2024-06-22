@@ -1,4 +1,4 @@
-import { Word } from "../type_declarations/types";
+import {Word} from "../type_declarations/types";
 import ApiService from "../api/apiService";
 
 export class WordController {
@@ -24,12 +24,11 @@ export class WordController {
 
   private static async fetchWords(includeHiragana: boolean, includeKatakana: boolean): Promise<void> {
     try {
-      const words = await ApiService.fetchWords(10, includeHiragana, includeKatakana); //2 words for test, change later in production
-      this.words = words; // Assuming `this.words` is a static variable to store fetched words
+      this.words = await ApiService.fetchWords(10, includeHiragana, includeKatakana);
     } catch (error) {
       console.error('Failed to fetch words:', error);
       await new Promise(resolve => setTimeout(resolve, 5000));
-      await this.fetchWords(includeHiragana, includeKatakana); // Recursive call
+      await this.fetchWords(includeHiragana, includeKatakana);
     }
   }
   

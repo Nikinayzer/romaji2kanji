@@ -1,0 +1,59 @@
+/* Login Wrapper */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Login Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: min-content;
+    padding: 20px;
+    justify-content: center;
+    background-color: var(--background-box);
+    border-radius: 20px;
+    min-width: 250px;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Title */
+.login-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-form h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input[type="password"],
+.form-group textarea {
+    padding: 10px;
+    font-size: 0.8em;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff00c8;
+    box-shadow: 0 0 0 2px rgba(255, 0, 200, 0.5);
+}

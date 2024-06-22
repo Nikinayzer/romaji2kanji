@@ -1,0 +1,61 @@
+/* Pagination.css */
+
+/* Variables */
+:root {
+  --pagination-padding: 20px 0;
+  --pagination-margin: 20px 0;
+  --pagination-background: var(--background-box);
+  --pagination-active-background: var(--accent-color);
+  --pagination-hover-background: var(--accent-color-fade);
+  --pagination-hover-color: #fff;
+  --pagination-border: 1px solid var(--background-box);
+  --pagination-color: #a0a2a3;
+  --pagination-font-size: 14px;
+  --pagination-transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination {
+  display: inline-block;
+  padding: var(--pagination-padding);
+  margin: var(--pagination-margin);
+  list-style: none;
+  text-align: center;
+}
+
+.page-item {
+  display: inline;
+}
+
+.page-link {
+  display: inline-block;
+  width: 40px; /* Fixed size */
+  height: 40px; /* Fixed size */
+  line-height: 40px; /* Center text vertically */
+  margin: 0 5px;
+  border-radius: 50%;
+  border: var(--pagination-border);
+  background-color: var(--pagination-background);
+  color: var(--pagination-color);
+  font-size: var(--pagination-font-size);
+  cursor: pointer;
+  text-align: center;
+  transition: var(--pagination-transition);
+  text-decoration: none;
+}
+
+.page-link[data-active="true"] {
+  background-color: var(--pagination-active-background);
+  color: #ffffff;
+
+}
+
+
+.page-link[data-active="false"]:hover {
+  background-color: var(--pagination-hover-background);
+  color: var(--pagination-hover-color);
+}
+
+.page-item:hover .page-link {
+
+  color: var(--pagination-hover-color);
+}

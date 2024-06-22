@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "../../../styles/AdminPanel.css";
+import "../../../styles/adminPanel.scss";
 import ApiService from "../../../api/apiService";
 import Modal from "../../Modal";
 import EditModal from "../../EditModal";

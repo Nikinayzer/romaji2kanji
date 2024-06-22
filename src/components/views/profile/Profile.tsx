@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import ApiService from "../../../api/apiService";
-import "../../../styles/Profile.css";
+import "../../../styles/profile.scss";
 import {
   User,
   WordProgress,

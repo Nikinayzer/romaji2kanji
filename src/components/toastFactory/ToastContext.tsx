@@ -1,49 +1,49 @@
 import React, { createContext, useContext, useState, ReactNode, useCallback } from "react";
-import Toast, { ToastType, Position } from "./Toast"; // Ensure the path is correct
+import Toast, {ToastType, Position, ToastProps} from "./Toast"; // Ensure the path is correct
 
-interface Toast {
+interface ToastWithContext extends ToastProps {
   id: string;
-  message: string;
-  type: ToastType;
-  position: Position;
+  autoHide: boolean;
   duration: number;
-  onClose?: () => void;
 }
 
 interface ToastContextType {
-  showToast: (message: string, type: ToastType, position: Position, duration?: number) => void;
+  showToast: (message: string, type: ToastType, position: Position, autoHide?: boolean, duration?: number) => void;
 }
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
 export const ToastProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [toasts, setToasts] = useState<Toast[]>([]);
+  const [toasts, setToasts] = useState<ToastWithContext[]>([]);
 
-  const showToast = useCallback((message: string, type: ToastType, position: Position, duration: number = 5000) => {
+  const showToast = useCallback((message: string, type: ToastType, position: Position, autoHide = true, duration = 5000) => {
     const id = Math.random().toString(36).substr(2, 9);
-    setToasts((prevToasts) => [...prevToasts, { id, message, type, position, duration }]);
-    setTimeout(() => {
-      setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
-    }, duration);
+    setToasts((prevToasts) => [...prevToasts, { id, message, type, position, autoHide, duration }]);
+    if (autoHide) {
+      setTimeout(() => {
+        setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
+      }, duration);
+    }
   }, []);
 
   return (
-    <ToastContext.Provider value={{ showToast }}>
-      {children}
-      <div className="toast-container">
-        {toasts.map((toast) => (
-          <Toast
-            key={toast.id}
-            message={toast.message}
-            type={toast.type}
-            position={toast.position}
-            autoHide={true}
-            duration={toast.duration}
-            onClose={() => setToasts((prevToasts) => prevToasts.filter((t) => t.id !== toast.id))}
-          />
-        ))}
-      </div>
-    </ToastContext.Provider>
+      <ToastContext.Provider value={{ showToast }}>
+        {children}
+        <div className="toast-container">
+          {toasts.map((toast) => (
+              <Toast
+                  key={toast.id}
+                  id={toast.id}
+                  message={toast.message}
+                  type={toast.type}
+                  position={toast.position}
+                  autoHide={toast.autoHide}
+                  duration={toast.duration}
+                  onClose={() => setToasts((prevToasts) => prevToasts.filter((t) => t.id !== toast.id))}
+              />
+          ))}
+        </div>
+      </ToastContext.Provider>
   );
 };
 

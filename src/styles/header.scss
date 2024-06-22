@@ -1,0 +1,145 @@
+// Variables
+$header-bg-color: #282c34;
+$header-text-color: #ffffff;
+$hover-color: #ff00c8;
+$font-size-lg: 1.5em;
+$font-size-md: 1.1em;
+$font-size-sm: 1em;
+$font-size-xs: 0.8em;
+$font-size-xss: 0.5em;
+$padding-lg: 20px;
+$padding-md: 10px;
+$border-radius: 4px;
+$transition: 0.3s ease;
+
+// Header
+.app-header {
+    background-color: $header-bg-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    color: $header-text-color;
+    background-image: url(../resources/petals.gif);
+    background-repeat: no-repeat;
+
+    @media (max-width: 800px) {
+        gap: 0;
+        align-items: stretch;
+    }
+}
+
+// Header Content
+.header-content {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: $padding-lg;
+
+    @media (max-width: 800px) {
+        gap: 10px;
+        width: 90%;
+        padding: 0;
+    }
+}
+
+// Header Text Content
+.header-text-content {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-grow: 1;
+    align-items: center;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+// App Logo Text
+.app-logo-text {
+    font-size: $font-size-md;
+    font-weight: bold;
+    margin: 0;
+    height: 100%;
+
+    @media (max-width: 800px) {
+        font-size: $font-size-xs;
+    }
+}
+
+// Mode Switch
+.mode-switch {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    height: 100%;
+    padding: $padding-md;
+    font-size: $font-size-sm;
+
+    @media (max-width: 800px) {
+        justify-content: center;
+        padding: 0;
+        gap: 0;
+    }
+}
+
+.mode-switch-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding: $padding-md;
+    font-size: $font-size-sm;
+    @media (max-width: 800px) {
+        justify-content: center;
+        padding: 0;
+        gap: 0;
+        // Profile Button
+        #profile-button {
+            cursor: pointer;
+            color: $header-text-color;
+            padding: 5px;
+            font-size: small;
+        }
+        #settings-button {
+            cursor: pointer;
+            color: $header-text-color;
+            padding: 5px;
+            font-size: smaller;
+        }
+    }
+
+}
+
+
+
+// Navigation Button
+    .nav-button {
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: $font-size-lg;
+    background-color: transparent;
+    text-decoration: none;
+    transition: background-color $transition, color $transition;
+
+    &:hover {
+        color: $hover-color;
+    }
+
+    &.active {
+        color: $hover-color;
+    }
+
+    @media (max-width: 500px) {
+        font-size: $font-size-sm;
+        padding: 5px;
+    }
+}

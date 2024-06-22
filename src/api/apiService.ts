@@ -2,13 +2,8 @@ import { Word, User, Report, ReportRequest } from "../type_declarations/types";
 
 class ApiService {
   private static readonly API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-  //   private static readonly USERNAME = process.env.REACT_APP_USERNAME;
-  //   private static readonly PASSWORD = process.env.REACT_APP_PASSWORD;
 
   private static readonly HEADERS = {
-    // Authorization: `Basic ${btoa(
-    //   `${ApiService.USERNAME}:${ApiService.PASSWORD}`
-    // )}`,
     "Content-Type": "application/json",
   };
 

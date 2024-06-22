@@ -1,5 +1,5 @@
-import "../../../styles/App.css";
-import "../../../styles/Layout.css";
+import "../../../styles/app.scss";
+import "../../../styles/layout.scss";
 import hiragana from "../../../data/hiragana.json";
 import katakana from "../../../data/katakana.json";
 import Util from "../../../util/util";
@@ -9,9 +9,9 @@ import {
   setInputValue,
   setTypingMode,
   setShowLayout,
-  APPMODE,
+
 } from "../../../redux/feautures/appStateSlice";
-import { Symbol } from "../../../type_declarations/types";
+import {APP_MODE, Symbol} from "../../../type_declarations/types";
 
 import Modal from "../../Modal";
 import ModalReport from "../../ModalReport";
@@ -27,7 +27,7 @@ const Layout: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   const handleKeyPress = (kana: string) => {
-    if (appMode !== APPMODE.K2R) {
+    if (appMode !== APP_MODE.K2R) {
       dispatch(setInputValue(inputValue + kana));
     }
   };
@@ -51,10 +51,10 @@ const Layout: React.FC = () => {
           <div
             key={idx}
             className={`key ${d.type === "empty" ? "key-empty" : ""} ${
-              appMode === APPMODE.K2R ? "disabled" : ""
+              appMode === APP_MODE.K2R ? "disabled" : ""
             }`}
             onClick={() =>
-              handleKeyPress(appMode === APPMODE.R2K ? d.kana : d.roumaji)
+              handleKeyPress(appMode === APP_MODE.R2K ? d.kana : d.roumaji)
             }
           >
             <span className="key-kana">{d.kana}</span>

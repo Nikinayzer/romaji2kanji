@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ROLE, STATE, APP_MODE } from "../type_declarations/types";
-import "../styles/EditModal.css";
+import "../styles/editModal.scss";
 
 interface EditModalProps {
   item: any;

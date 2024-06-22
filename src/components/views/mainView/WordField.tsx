@@ -5,15 +5,15 @@ import React, { useState, useEffect } from "react";
 import Tokenizer from "../../../logic/Tokenizer";
 import { WordController } from "../../../logic/WordController";
 import {
-  APPMODE,
   setGuessWord,
   setInputValue,
   fetchAndSetRandomWord 
 } from "../../../redux/feautures/appStateSlice";
 import { useAppDispatch, useAppSelector} from "../../../redux/hooks";
 import { RootState } from "../../../redux/store";
-import "../../../styles/App.css";
-import "../../../styles/WordField.css";
+import "../../../styles/app.scss";
+import "../../../styles/wordField.scss";
+import {APP_MODE} from "../../../type_declarations/types";
 
 const WordField: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -80,10 +80,10 @@ const WordField: React.FC = () => {
             }
           }}
         >
-          {appMode === APPMODE.R2K ? japanese.romanize(char) : char}
+          {appMode === APP_MODE.R2K ? japanese.romanize(char) : char}
           <span className={`tooltip ${isActive ? "active" : ""}`}>
             {isActive
-              ? appMode === APPMODE.R2K
+              ? appMode === APP_MODE.R2K
                 ? char
                 : japanese.romanize(char)
               : ""}
@@ -99,8 +99,7 @@ const WordField: React.FC = () => {
       dispatch(setGuessWord(newWord));
       dispatch(setInputValue(""));
     } catch (error) {
-      console.error("Error fetching new word:", error);
-      // Handle error appropriately, such as showing a message to the user
+      console.log(error);
     }
   };
 
@@ -132,7 +131,7 @@ const WordField: React.FC = () => {
               <img
                 width="25"
                 height="25"
-                src="https://img.icons8.com/color/48/great-britain-circular.png" //change later
+                src="https://img.icons8.com/color/48/great-britain-circular.png" //todo change later
                 alt="great-britain-circular"
               />
             </div>

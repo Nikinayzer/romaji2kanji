@@ -1,9 +1,8 @@
-import { Word } from "../type_declarations/types";
+import {APP_MODE, Word} from "../type_declarations/types";
 import * as japanese from "japanese";
 import * as wanakana from "wanakana";
 import Tokenizer from "./Tokenizer";
 import JapaneseConfigFactory from "./JapaneseConfigFactory";
-import { APPMODE } from "../redux/feautures/appStateSlice";
 
 /**
  * Controller for handling answers
@@ -41,10 +40,10 @@ class AnswerController {
   public static checkAnswer(
     inputWord: string,
     guessWord: GuessWord,
-    appMode: APPMODE
+    appMode: APP_MODE
   ): boolean {
     let isCorrect = false;
-    if (appMode === APPMODE.R2K) {
+    if (appMode === APP_MODE.R2K) {
       isCorrect = inputWord === guessWord.kana;
     } else {
       const romanizations: Romanizations = this.getCorrectOptions(

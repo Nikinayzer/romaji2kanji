@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import "../styles/Modal.css";
-import { useAppSelector } from "../redux/hooks";
+import React, {useEffect, useState} from "react";
+import "../styles/modal.scss";
+import {useAppSelector} from "../redux/hooks";
 import * as japanese from "japanese";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { APP_MODE, STATE, ReportRequest } from "../type_declarations/types";
-import { getEnumString } from "../util/util";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGithub} from "@fortawesome/free-brands-svg-icons";
+import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
+import {APP_MODE, ReportRequest} from "../type_declarations/types";
+import {getEnumString} from "../util/util";
 import ApiService from "../api/apiService";
 
 interface ModalReportProps {
@@ -76,9 +76,7 @@ const ModalReport: React.FC<ModalReportProps> = ({ onClose }) => {
   const handleMailSubmit = () => {
     const subject = encodeURIComponent("Wrong Word Report");
     const body = encodeURIComponent(JSON.stringify(report, null, 2));
-    const mailtoUrl = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
-
-    window.location.href = mailtoUrl;
+    window.location.href = `mailto:nikinayzer@gmail.com?subject=${subject}&body=${body}`;
 
     onClose();
   };

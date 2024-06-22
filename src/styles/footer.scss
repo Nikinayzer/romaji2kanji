@@ -1,0 +1,55 @@
+// Variables
+$footer-bg-color: rgba(0, 0, 0, 0.85);
+$footer-text-color: white;
+$footer-padding: 10px 20px;
+$footer-font-size: 0.8em;
+$footer-link-hover-color: rgb(236, 52, 153);
+$container-gap: 15px;
+$text-font-size: 14px;
+$social-icon-size: 20px;
+$social-gap: 5px;
+
+// Footer
+.footer {
+    background-color: $footer-bg-color;
+    color: $footer-text-color;
+    padding: $footer-padding;
+    text-align: center;
+
+    p {
+        font-size: $footer-font-size;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $container-gap;
+
+        a:hover {
+            fill: $footer-link-hover-color;
+            color: $footer-link-hover-color;
+        }
+    }
+
+    .footer-text {
+        margin: 0;
+        font-size: $text-font-size;
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: $social-gap;
+    }
+
+    .social-link {
+        display: inline-block;
+        margin: 0 $social-gap;
+    }
+
+    .social-icon {
+        width: $social-icon-size;
+        height: auto;
+    }
+}

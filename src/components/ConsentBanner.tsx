@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/ConsentBanner.css';
+import '../styles/consentBanner.scss';
 
 interface ConsentBannerProps {
   onConsent: (consent: boolean) => void;

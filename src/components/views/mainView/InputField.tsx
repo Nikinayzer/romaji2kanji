@@ -1,5 +1,5 @@
-import "../../../styles/App.css";
-import "../../../styles/InputField.css";
+import "../../../styles/app.scss";
+import "../../../styles/inputField.scss";
 import React, { useRef, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import {
@@ -7,7 +7,7 @@ import {
   setCorrect,
   setGuessWord,
   setWrong,
-  APPMODE,
+
 } from "../../../redux/feautures/appStateSlice";
 import Util from "../../../util/util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,6 +15,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import AnswerController from "../../../logic/AnswerController";
 import { WordController } from "../../../logic/WordController";
 import ApiService from "../../../api/apiService";
+import {APP_MODE} from "../../../type_declarations/types";
 
 const InputField: React.FC = () => {
   const inputValue = useAppSelector((state) => state.appState.inputValue);

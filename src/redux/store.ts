@@ -25,6 +25,12 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 // Create the Redux store using configureStore
 const store = configureStore({
   reducer: persistedReducer,
+  //ignore serializable check for persist action //todo remove this in production?
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+        ignoredActions: ["persist/PERSIST"],
+    }
+  }),
 });
 
 // Create a persistor

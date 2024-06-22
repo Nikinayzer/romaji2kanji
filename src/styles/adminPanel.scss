@@ -1,0 +1,149 @@
+.admin-panel-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.admin-panel {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: var(--background-box);
+  width: 90%;
+  min-height: 80vh; /* Adjusted for viewport height */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel-menu {
+  background-color: var(--background-color-secondary);
+  border-right: 1px solid #ccc;
+}
+
+.admin-panel-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-panel-menu li {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: xx-large;
+  font-weight: bold;
+
+  &:hover,
+  &.active {
+    background-color: var(--background-key);
+    color: var(--accent-color);
+  }
+}
+
+.admin-panel-content {
+  padding: 20px;
+  border: 0;
+}
+
+.admin-panel-search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}
+
+.admin-panel-toolbar {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end; /* Adjusted to end */
+}
+
+.admin-panel-content-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  li {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .details {
+      flex-grow: 1;
+      padding-left: 20px; /* Added padding for better separation */
+
+      div {
+        margin-bottom: 8px; /* Added spacing between detail lines */
+        font-size: 14px; /* Adjusted font size for details */
+        color: #666; /* Adjusted color for details */
+      }
+    }
+
+    button {
+      background-color: var(--accent-color);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: var(--accent-color-hover);
+      }
+    }
+  }
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    li {
+      margin: 0 5px;
+
+      a {
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #007bff;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover,
+        &.active {
+          background-color: #007bff;
+          color: #fff;
+          border-color: #007bff;
+        }
+      }
+    }
+  }
+}

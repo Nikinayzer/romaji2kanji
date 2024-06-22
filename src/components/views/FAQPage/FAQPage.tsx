@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styles/FAQPage.css";
+import "../../../styles/faqPage.scss";
 
 const FAQPage: React.FC = () => {
   return (
