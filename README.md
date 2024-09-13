@@ -2,6 +2,9 @@
 
 [![GitHub license](https://img.shields.io/badge/license-GNU-blue.svg)](LICENCE)
 
+### UPDATE
+This project is in ongoing migration to Client/Server architecture. Here is new [branch](https://github.com/Nikinayzer/romaji2kanji/tree/backend-integration) and [server](https://github.com/Zemlovka/romaji-to-kanji-server)
+
 ## Table of Contents
 
 - [About This Project](#about-this-project)
