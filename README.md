@@ -130,7 +130,5 @@ This project is licensed under the GNU License - see the [LICENSE](LICENSE) file
 If you have any questions or suggestions, feel free to reach out:
 
 - **GitHub**: [nikinayzer](https://github.com/nikinayzer)
-- **Instagram**: [Instagram](https://instagram.com)
-
 Let's make Japanese less suffering!
 ---
